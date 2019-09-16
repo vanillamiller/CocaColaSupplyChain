@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>CocaCola Supply Chain Internal</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 	<p>
@@ -15,12 +17,7 @@
 		Current time: <%= new java.util.Date()%>
 	</p>
 	<h2>Hello CocaCola HQ</h2>
-	<form action="MakeSyrup" method="post">
-		Make more syrup: <input type="submit" value="Make Syrup">
-	</form>
-	
-	Syrup available: {{syrup available}}
-	
+
 	<br><br>
 	
 	<form action="mbsdc" method="post">

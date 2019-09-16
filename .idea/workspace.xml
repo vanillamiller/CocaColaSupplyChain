@@ -6,7 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="" />
+    <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/internal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/internal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +209,8 @@
       <updated>1568539545488</updated>
       <workItem from="1568539551300" duration="4077000" />
       <workItem from="1568543652049" duration="17636000" />
-      <workItem from="1568626936844" duration="255000" />
+      <workItem from="1568626936844" duration="3259000" />
+      <workItem from="1568631023538" duration="367000" />
     </task>
     <task id="LOCAL-00001" summary="commiting after regaining intellij workspace">
       <created>1568627108360</created>
@@ -212,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568627173638</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commiting after regaining intellij workspace">
+      <created>1568627251014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568627251014</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
