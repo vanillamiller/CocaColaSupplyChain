@@ -23,7 +23,6 @@
 			<option value="retailer6">Retailer6</option>
 			<option value="retailer7">Retailer7</option>
 			<option value="retailer8">Retailer8</option>
-			<option value="retailer9">Retailer9</option>
 		</select><br>
 		Password: <input type="text" name="password"><br>
 		<input type="submit" value="Login">

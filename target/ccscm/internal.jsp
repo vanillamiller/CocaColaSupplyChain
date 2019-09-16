@@ -28,6 +28,7 @@
 			<option value="dccn1">DistributionCenterCN1</option>
 			<option value="dcaus1">DistributionCenterAUS1</option>
 			<option value="dcaus2">DistributionCenterAUS2</option>
+			<option value="dcaus3">DistributionCenterAUS3</option>
 		</select>
 		<input type="submit" value="Mix, Bottle and Send to DC">
 	</form>	
