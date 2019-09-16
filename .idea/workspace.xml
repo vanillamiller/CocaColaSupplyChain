@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ccscm:war exploded" />
+      <artifact name="CocaColaSupplyChain" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="" />
+    <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccscm.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ccscm_war2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccscm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ccscm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/internal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/internal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DoJobServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +48,17 @@
   <component name="FavoritesManager">
     <favorites_list name="ccscm" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -45,12 +74,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1QrrRADb7WtMd5XqdHNwaJQN5J3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -79,18 +112,18 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.24" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/ccscm_war_exploded/" />
+    <configuration name="Tomcat 9.0.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CocaColaSupplyChain/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="ccscm:war exploded">
+        <artifact name="CocaColaSupplyChain">
           <settings>
-            <option name="CONTEXT_PATH" value="/ccscm_war_exploded" />
+            <option name="CONTEXT_PATH" value="/CocaColaSupplyChain" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ccscm" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ccscm_2" />
         <option name="DEPLOY_TOMCAT_APPS" value="true" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
@@ -99,7 +132,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56354" />
+        <option name="DEBUG_PORT" value="51343" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -149,7 +182,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="ccscm:war exploded" />
+          <artifact name="CocaColaSupplyChain" />
         </option>
       </method>
     </configuration>
@@ -180,11 +213,22 @@
       <option name="presentableId" value="Default" />
       <updated>1568539545488</updated>
       <workItem from="1568539551300" duration="4077000" />
-      <workItem from="1568543652049" duration="1919000" />
+      <workItem from="1568543652049" duration="17636000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
