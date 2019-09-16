@@ -7,40 +7,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af6c9bc8-47de-4b4c-bf0b-219229b5b365" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CocaColaSupplyChain.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/67bced94-d3a1-48d0-a907-7f1a6916a0f8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/67bced94-d3a1-48d0-a907-7f1a6916a0f8/storage_v2/_src_/database/dfc109863pt1p.f_3zcQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/67bced94-d3a1-48d0-a907-7f1a6916a0f8/storage_v2/_src_/database/dfc109863pt1p.f_3zcQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/67bced94-d3a1-48d0-a907-7f1a6916a0f8/storage_v2/_src_/database/dfc109863pt1p.f_3zcQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/67bced94-d3a1-48d0-a907-7f1a6916a0f8/storage_v2/_src_/database/dfc109863pt1p.f_3zcQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth/DoJobServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/DoJobServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/View_DB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/View_DB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/populate_DB_with_dummy_data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/internal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/internal.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/internal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/internal.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="4a92eaf0-5ae1-49ae-a79d-d2a1668918f3" />
+    </checked>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,6 +63,8 @@
   </component>
   <component name="ProjectId" id="1QupQZ44FC4qYcQ0kgzUcGsfRBA" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -248,6 +245,26 @@
       <item itemvalue="Tomcat Server.Tomcat 9.0.24" />
     </list>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@eea98a62" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@eea98a62" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1508f0eb" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -258,7 +275,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568630319597</updated>
-      <workItem from="1568630320953" duration="677000" />
+      <workItem from="1568630320953" duration="1688000" />
     </task>
     <servers />
   </component>
