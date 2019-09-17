@@ -5,14 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Retailer Login Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 	<p>
+<%--	TODO THE FOLLOWING LINK MAY OR MAY NOT WORK WHEN DEPLOYED. not sure. 	--%>
 		<a href="/CocaColaSupplyChain">Back to Home</a>
 		<br>
 		Current time: <%= new java.util.Date()%>
 	</p>
-	<form action="RetailerLoginServlet" method="post">
+	<form action="retailerloggedin.jsp" method="post">
 		User: <select name="user">
 			<option value="retailer0">Retailer0</option>
 		  	<option value="retailer1">Retailer1</option>
@@ -26,6 +28,10 @@
 		</select><br>
 		Password: <input type="text" name="password"><br>
 		<input type="submit" value="Login">
+		<%
+		if(request.getAttribute("errorMessage") != null ){ %>
+		<%= request.getAttribute("errorMessage") %>
+		<% } %>
 	</form>
 	
 </body>
