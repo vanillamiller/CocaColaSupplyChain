@@ -3,14 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <% String pw = request.getParameter("password");
 	String user = request.getParameter("user");
-	request.setAttribute("pallets", "0");
+	request.setAttribute("pallets", 0);
 	if(pw.equals("a")){ //TODO
 		System.out.println("Retail user " + user + " successfully logged in");
 	}else{
 		System.out.println("Retail user " + user + " failed to log in");
 		request.setAttribute("errorMessage", "Invalid user or password");
 		request.getRequestDispatcher("/retailer.jsp").forward(request, response);
-
 }
 
 %>

@@ -14,24 +14,72 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
-  <servlet>
-  	<servlet-name>RetailerLoginServlet</servlet-name>
-  	<servlet-class>auth.RetailerLoginServlet</servlet-class>
-  </servlet>
 
+    <servlet>
+        <servlet-name>ainternalLoginServlet</servlet-name>
+        <servlet-class>auth.ainternalLoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>RetailerLoginServlet</servlet-name>
-        <url-pattern>/RetailerLoginServlet</url-pattern>
+        <servlet-name>ainternalLoginServlet</servlet-name>
+        <url-pattern>/ainternalLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>amakePalletServlet</servlet-name>
+        <servlet-class>auth.amakePalletServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>amakePalletServlet</servlet-name>
+        <url-pattern>/amakePalletServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>apurchasePalletServlet</servlet-name>
+        <servlet-class>auth.apurchasePalletServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>apurchasePalletServlet</servlet-name>
+        <url-pattern>/apurchasePalletServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>aretailerLoginServlet</servlet-name>
+        <servlet-class>auth.aretailerLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>aretailerLoginServlet</servlet-name>
+        <url-pattern>/aretailerLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adummydataServlet</servlet-name>
+        <servlet-class>auth.adummydataServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adummydataServlet</servlet-name>
+        <url-pattern>/adummydataServlet</url-pattern>
     </servlet-mapping>
 
 
-    <servlet>
-  	<servlet-name>LoginServlet</servlet-name>
-  	<servlet-class>auth.LoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>LoginServlet</servlet-name>
-  	<url-pattern>/LoginServlet</url-pattern>
-  </servlet-mapping>
+
+<!--          <servlet>-->
+<!--          <servlet-name>RetailerLoginServlet</servlet-name>-->
+<!--          <servlet-class>auth.RetailerLoginServlet</servlet-class>-->
+<!--      </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>RetailerLoginServlet</servlet-name>-->
+<!--        <url-pattern>/RetailerLoginServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+
+<!--    <servlet>-->
+<!--  	<servlet-name>LoginServlet</servlet-name>-->
+<!--  	<servlet-class>auth.LoginServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--  	<servlet-name>LoginServlet</servlet-name>-->
+<!--  	<url-pattern>/LoginServlet</url-pattern>-->
+<!--  </servlet-mapping>-->
 
 </web-app>
