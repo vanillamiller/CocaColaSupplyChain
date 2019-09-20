@@ -1,8 +1,8 @@
-package auth;
+package domain;
 import java.sql.*;
 import java.util.List;
 
-public class DC {
+public class DC{
 	private int DCId;
 	private String name;
 	private int accountBookID;

@@ -10,7 +10,6 @@
 		System.out.println("Retail user " + user + " failed to log in");
 		request.setAttribute("errorMessage", "Invalid user or password");
 		request.getRequestDispatcher("/retailer.jsp").forward(request, response);
-
 }
 
 %>

@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 //		String pwi2 = getServletConfig().getInitParameter("userNameI");
 		System.out.println("Helldsadsaaso from Post: Your user name is: " + user + ", Your password is: " + pw + ".");
 //		response.sendRedirect("success.jsp");
-		
+
 		if(pw.equals("a")){ //TODO
 			System.out.println("Hello from Post: Your user name is: " + user + ", Your password is: " + pw + ".");
 			response.sendRedirect("success.jsp");
@@ -75,8 +75,8 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("Error logging in.");
 			response.sendRedirect("LoginForm.html");
 		}
-		
-		
+
+
 		doGet(request, response);
 	}
 
