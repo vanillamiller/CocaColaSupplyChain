@@ -16,7 +16,7 @@
 <body>
 
 <h2>Welcome to the CocaCola HQ</h2>
-
+<a href="atransactionviewer.jsp" class="btn btn-primary">See all transactions</a>
 <br>
 
 
@@ -41,6 +41,8 @@
         </li>
     <% } %>
     </ul>
+
+
 
 </body>
 </html>

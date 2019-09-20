@@ -51,35 +51,10 @@
         <url-pattern>/aretailerLoginServlet</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>adummydataServlet</servlet-name>
-        <servlet-class>auth.adummydataServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>adummydataServlet</servlet-name>
-        <url-pattern>/adummydataServlet</url-pattern>
-    </servlet-mapping>
 
 
 
-<!--          <servlet>-->
-<!--          <servlet-name>RetailerLoginServlet</servlet-name>-->
-<!--          <servlet-class>auth.RetailerLoginServlet</servlet-class>-->
-<!--      </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>RetailerLoginServlet</servlet-name>-->
-<!--        <url-pattern>/RetailerLoginServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
 
 
-<!--    <servlet>-->
-<!--  	<servlet-name>LoginServlet</servlet-name>-->
-<!--  	<servlet-class>auth.LoginServlet</servlet-class>-->
-<!--  </servlet>-->
-<!--  <servlet-mapping>-->
-<!--  	<servlet-name>LoginServlet</servlet-name>-->
-<!--  	<url-pattern>/LoginServlet</url-pattern>-->
-<!--  </servlet-mapping>-->
 
 </web-app>

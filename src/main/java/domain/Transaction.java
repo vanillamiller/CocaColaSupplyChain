@@ -6,10 +6,10 @@ public class Transaction {
 
     private int numPallets;
     private Date date;
-    private String from;
-    private String to;
+    private Integer from;
+    private Integer to;
 
-    public Transaction(int numPallets, Date date, String from, String to) {
+    public Transaction(int numPallets, Date date, Integer from, Integer to) {
 
         this.numPallets = numPallets;
         this.date = date;
@@ -25,11 +25,11 @@ public class Transaction {
         return date;
     }
 
-    public String getFrom() {
+    public Integer getFrom() {
         return from;
     }
 
-    public String getTo() {
+    public Integer getTo() {
         return to;
     }
 }
