@@ -14,7 +14,7 @@ import java.io.IOException;
 
 
 @WebServlet(name = "amakePalletServlet")
-public class amakePalletServlet extends HttpServlet {
+public class makePalletServlet extends HttpServlet {
 
 
 
@@ -26,7 +26,7 @@ public class amakePalletServlet extends HttpServlet {
 //        TODO when makePallet is called, need to increment pallet ID.
         Persistance.makePallet();
 
-        request.getRequestDispatcher("ainternaldashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("internaldashboard.jsp").forward(request, response);
     }
 
 }

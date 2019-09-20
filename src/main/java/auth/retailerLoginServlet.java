@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "aretailerLoginServlet")
-public class aretailerLoginServlet extends HttpServlet {
+public class retailerLoginServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
@@ -53,11 +53,11 @@ public class aretailerLoginServlet extends HttpServlet {
 
 
             System.out.println("Session ID: " + session.getId() + " Times accessed: " + accessCount);
-            response.sendRedirect("aretailerdashboard.jsp");
+            response.sendRedirect("retailerdashboard.jsp");
         }else{
             System.out.println("Retail user " + user + " failed to log in");
             request.setAttribute("errorMessage", "Invalid user or password");
-            request.getRequestDispatcher("aretailerlogin.jsp").forward(request, response);
+            request.getRequestDispatcher("retailerlogin.jsp").forward(request, response);
         }
 
 

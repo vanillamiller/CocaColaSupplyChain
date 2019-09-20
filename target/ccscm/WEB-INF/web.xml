@@ -17,7 +17,7 @@
 
     <servlet>
         <servlet-name>ainternalLoginServlet</servlet-name>
-        <servlet-class>auth.ainternalLoginServlet</servlet-class>
+        <servlet-class>auth.internalLoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ainternalLoginServlet</servlet-name>
@@ -26,7 +26,7 @@
 
     <servlet>
         <servlet-name>amakePalletServlet</servlet-name>
-        <servlet-class>auth.amakePalletServlet</servlet-class>
+        <servlet-class>auth.makePalletServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>amakePalletServlet</servlet-name>
@@ -35,7 +35,7 @@
 
     <servlet>
         <servlet-name>apurchasePalletServlet</servlet-name>
-        <servlet-class>auth.apurchasePalletServlet</servlet-class>
+        <servlet-class>auth.purchasePalletServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>apurchasePalletServlet</servlet-name>
@@ -44,7 +44,7 @@
 
     <servlet>
         <servlet-name>aretailerLoginServlet</servlet-name>
-        <servlet-class>auth.aretailerLoginServlet</servlet-class>
+        <servlet-class>auth.retailerLoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>aretailerLoginServlet</servlet-name>

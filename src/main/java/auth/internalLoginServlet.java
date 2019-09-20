@@ -12,7 +12,7 @@ import domain.Persistance;
 
 @WebServlet(name = "ainternalLoginServlet")
 
-public class ainternalLoginServlet extends HttpServlet {
+public class internalLoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO password login in feature B
         System.out.println("CocaCola HQ Internal successfully logged in");
@@ -34,7 +34,7 @@ public class ainternalLoginServlet extends HttpServlet {
 
 
         System.out.println("Session ID: " + session.getId() + " Times accessed: " + accessCount);
-        response.sendRedirect("ainternaldashboard.jsp");
+        response.sendRedirect("internaldashboard.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
