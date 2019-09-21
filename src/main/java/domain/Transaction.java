@@ -29,7 +29,5 @@ public class Transaction {
         return from;
     }
 
-    public Integer getTo() {
-        return to;
-    }
+    public Integer getTo() { return to; }
 }

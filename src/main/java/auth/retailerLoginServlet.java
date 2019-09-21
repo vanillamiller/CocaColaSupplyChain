@@ -33,12 +33,13 @@ public class retailerLoginServlet extends HttpServlet {
         System.out.println("Hello from Post: Your user name is: " + user + ", Your password is: " + pw + ".");
 
         if(pw.equals("a")){ //TODO - make password in DB i guess?
-            System.out.println("Retail user " + user + " successfully logged in");
+
 
 // get session, then invalidate then create a new one ensures every time someone logs in it's a new session
             HttpSession session = request.getSession();
-            session.invalidate();
-            session = request.getSession();
+            session.setAttribute("user",user);
+
+            System.out.println("Retail user " + session.getAttribute("user") + " successfully logged in");
 
             Integer accessCount;
             synchronized(session) {
