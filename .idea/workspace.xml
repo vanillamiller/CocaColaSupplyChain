@@ -2,26 +2,27 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ccscm:war exploded" />
+      <artifact name="CocaColaSupplyChain" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/buypallet.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DoJobServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DoJobServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerloggedin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailerloggedin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/internal.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/internal.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm/retailer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DoJobServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DoJobServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerloggedin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerloggedin.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +56,7 @@
   </component>
   <component name="ProjectId" id="1QupQZ44FC4qYcQ0kgzUcGsfRBA" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
