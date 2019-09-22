@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "aretailerLoginServlet")
+@WebServlet(name = "retailerLoginServlet")
 public class retailerLoginServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,9 +37,9 @@ public class retailerLoginServlet extends HttpServlet {
 
 // get session, then invalidate then create a new one ensures every time someone logs in it's a new session
             HttpSession session = request.getSession();
-            session.setAttribute("user",user);
+            session.setAttribute("retailerID",user);
 
-            System.out.println("Retail user " + session.getAttribute("user") + " successfully logged in");
+            System.out.println("Retail user " + session.getAttribute("retailerID") + " successfully logged in");
 
             Integer accessCount;
             synchronized(session) {

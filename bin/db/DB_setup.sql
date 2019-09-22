@@ -4,7 +4,7 @@ DROP TABLE Inventory;
 DROP TABLE AccountBooks;
 
 CREATE TYPE vessel AS ENUM ('cans', 'bottles');
-CREATE TYPE flavour AS ENUM ('regular', 'vanilla', 'zero');
+
 
 CREATE TABLE DCs(
 	DCId SERIAL PRIMARY KEY,
@@ -27,7 +27,6 @@ CREATE TABLE Transactions(
 CREATE TABLE Inventory(
 	itemId SERIAL PRIMARY KEY,
 	vesselType vessel,
-	flavourType flavour,
 	ownerID INTEGER
 );
 

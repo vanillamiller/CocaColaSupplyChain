@@ -10,7 +10,7 @@ import java.io.IOException;
 import domain.Persistance;
 
 
-@WebServlet(name = "ainternalLoginServlet")
+@WebServlet(name = "internalLoginServlet")
 
 public class internalLoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

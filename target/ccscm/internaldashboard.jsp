@@ -3,7 +3,8 @@
 <%@ page import="java.util.*"%>
 <%@ page import="domain.Persistance" %>
 <%@ page import="domain.DC" %>
-<%@ page import="domain.Pallet" %>
+<%@ page import="domain.DCMapper" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,25 +23,27 @@
 
     Distribution Centers:
     <%
-        for (DC i : Persistance.getAllDCs()) {
+        for (DC i : DCMapper.getAllDCs()) {
     %>
-    <form action="amakePalletServlet" method="post">
-        <button name="pluspallet" type="submit" value="<%=i.getDCId()%>">+1 Pallet</button><%=i.getname()%>
+    <form action="makePalletServlet" method="post">
+        <input type="number" name="quantity" min="1" required >
+        <button name="pluspallet" type="submit" value="<%=i.getDCId()%>" required>Add Pallet</button><%=i.getname()%> <%=i.getnumPallets()%>
+<%--        has <%=i.getNumPallets()%> Pallets--%>
 <%--        <option value="<%=i.getDCId()%>"><%=i.getname()%></option>--%>
 <%--        <input type="submit" value="Mix, Bottle and Send to DC">--%>
-    </form> Pallets<br>
+    </form><br>
     <% } %>
 
-    <h3>All Pallets:</h3>
-    <ul>
-    <%
-        for (Pallet i : Persistance.getAllPallets()) {
-    %>
-        <li>
-            PalletID: <%=i.getPalletID()%> Date: <%=i.getDate()%> Flavour:  <%=i.getFlavour()%>
-        </li>
-    <% } %>
-    </ul>
+<%--    <h3>All Pallets:</h3>--%>
+<%--    <ul>--%>
+<%--    <%--%>
+<%--        for (Pallet i : Persistance.getAllPallets()) {--%>
+<%--    %>--%>
+<%--        <li>--%>
+<%--            PalletID: <%=i.getPalletID()%> Date: <%=i.getDate()%>--%>
+<%--        </li>--%>
+<%--    <% } %>--%>
+<%--    </ul>--%>
 
 
 

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="domain.Persistance" %>
+<%@ page import="domain.RetailerMapper" %>
 <%@ page import="domain.Retailer" %>
 
 <html>
@@ -17,10 +17,10 @@
 <body>
 
 
-<form action="aretailerLoginServlet" method="post">
+<form action="retailerLoginServlet" method="post">
     User: <select name="user">
     <%
-        for (Retailer i : Persistance.getAllretailers()) {
+        for (Retailer i : RetailerMapper.getAllretailers()) {
     %>
     <option value="<%=i.getretailerId()%>"><%=i.getname()%></option>
     <% } %>

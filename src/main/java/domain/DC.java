@@ -2,17 +2,17 @@ package domain;
 import java.sql.*;
 import java.util.List;
 
-public class DC{
+public class DC implements SupplyChainEntity{
 	private int DCId;
 	private String name;
 	private int accountBookID;
-	private int inventoryID;
+	private int numPallets;
 			
-	public DC(int DCId, String name, int accountBookID, int inventoryID){
+	public DC(int DCId, String name, int accountBookID, int numPallets){
 		this.DCId = DCId;
 		this.name = name;
 		this.accountBookID = accountBookID;
-		this.inventoryID = inventoryID;
+		this.numPallets = numPallets;
 	}
 	
 	public int getDCId(){
@@ -31,20 +31,36 @@ public class DC{
 		this.name = name;
 	}
 
-	public int getaccountBookID(){
-		return accountBookID;
+	public int getaccountBookID(){ return accountBookID;}
+
+	public void setaccountBookID(int accountBookID){ this.accountBookID = accountBookID;}
+
+	public int getnumPallets(){
+		return numPallets;
 	}
 
-	public void setaccountBookID(int accountBookID){
-		this.accountBookID = accountBookID;
+	public int restockPallets(int restockPallets){
+		this.numPallets = this.numPallets + restockPallets;
+		return this.numPallets;
 	}
 
-	public int getinventoryID(){
-		return inventoryID;
+	public boolean canShip(int shipPallets) {
+		if (shipPallets > this.numPallets) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
-	public void setinventoryID(int inventoryID){
-		this.inventoryID = inventoryID;
+	public int ship(int shipPallets) {
+		if (canShip(shipPallets) == true) {
+			this.numPallets = this.numPallets - shipPallets;
+			return this.numPallets;
+		}
+		else{
+			return -1;
+		}
+
 	}
 
 //	public static List<DC> getAllDCs() {

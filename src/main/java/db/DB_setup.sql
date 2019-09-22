@@ -4,10 +4,8 @@ DROP TABLE DCsRetailers;
 DROP TABLE Transactions;
 DROP TABLE Inventory;
 
-DROP TYPE flavour;
 DROP TYPE colaForm;
 
-CREATE TYPE flavour AS ENUM ('regular', 'vanilla', 'zero');
 CREATE TYPE colaForm AS ENUM ('syrup', 'pallet');
 
 CREATE TABLE DCs(
@@ -41,7 +39,6 @@ CREATE TABLE Transactions(
 CREATE TABLE Inventory(
 	inventoryID SERIAL PRIMARY KEY,
 	DCId INTEGER,
-	flavourType flavour,
 	sold BOOLEAN
 );
 
@@ -101,21 +98,20 @@ VALUES
 
 INSERT INTO Inventory(
     DCId,
-    flavourType,
     sold
 )
 VALUES
-(1,'regular',true),
-(2,'vanilla',true),
-(3,'regular',true),
-(4,'zero',true),
-(5,'vanilla',true),
-(6,'regular',true),
-(7,'zero',true),
-(8,'regular',true),
-(9,'regular',false),
-(10,'zero',false),
-(11,'vanilla',false),
-(12,'regular',false),
-(13,'regular',false),
-(14,'vanilla',false);
+(1,true),
+(2,true),
+(3,true),
+(4,true),
+(5,true),
+(6,true),
+(7,true),
+(8,true),
+(9,false),
+(10,false),
+(11,false),
+(12,false),
+(13,false),
+(14,false);

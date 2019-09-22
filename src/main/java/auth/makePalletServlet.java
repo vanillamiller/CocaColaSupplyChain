@@ -1,9 +1,7 @@
 package auth;
 
 import domain.DC;
-import domain.Persistance;
-import domain.Pallet;
-import java.util.Date;
+import domain.DCMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,18 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "amakePalletServlet")
+@WebServlet(name = "makePalletServlet")
 public class makePalletServlet extends HttpServlet {
 
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer newPalletForDC = null;
-        newPalletForDC = Integer.parseInt(request.getParameter("pluspallet"));
-        System.out.println("who gets a new pallet: " + newPalletForDC);
+        int DCId = Integer.parseInt(request.getParameter("pluspallet"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        System.out.println("CREATE: " + quantity + " new pallets for: " + DCId);
 
 //        TODO when makePallet is called, need to increment pallet ID.
-        Persistance.makePallet(newPalletForDC);
+        DC dc = DCMapper.findDC(DCId);
+        dc.restockPallets(quantity);
 
         request.getRequestDispatcher("internaldashboard.jsp").forward(request, response);
     }
