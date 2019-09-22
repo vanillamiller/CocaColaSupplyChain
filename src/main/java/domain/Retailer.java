@@ -42,13 +42,9 @@ public class Retailer implements ClientEntity{
 	}
 
 
-	public boolean buy(int buyPallets, int DCId){
-//		Need DCMapper to find the right DC.
-//		DC dc = dc.getDCId(DCId).sell(buyPallets)
-//		Logic here is:
-//		if the dc returns -1, buy failed, otherwise, buy is successful and the pallets increase by what is returned.
+	public boolean buy(int buyPallets, int DCId) throws SQLException {
 		DC dc = DCMapper.findDC(DCId);
-		int palletsBought = dc.ship(buyPallets);
+		int palletsBought = dc.ship(buyPallets, this.retailerId);
 		if(palletsBought == -1){
 			return false;
 		}else{

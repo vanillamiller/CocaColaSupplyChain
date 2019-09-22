@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "purchasePalletServlet")
 public class purchasePalletServlet extends HttpServlet {
@@ -20,10 +21,16 @@ public class purchasePalletServlet extends HttpServlet {
 
 //        TODO when makePallet is called, need to increment pallet ID.
         Retailer retailer = RetailerMapper.findretailer(retailerID);
-        if(retailer.buy(quantity, DCId)==false){
-            request.setAttribute("errorMessage", "Not enough pallets available");
+        boolean result = false;
+        try {
+            result = retailer.buy(quantity, DCId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if(result==true){
+            //           TODO generate transaction!
         }else{
-//           TODO generate transaction!
+            request.setAttribute("errorMessage", "Not enough pallets available");
         }
         request.getRequestDispatcher("retailerdashboard.jsp").forward(request, response);
     }

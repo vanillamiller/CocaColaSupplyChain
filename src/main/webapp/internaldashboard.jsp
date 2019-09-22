@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="domain.Persistance" %>
 <%@ page import="domain.DC" %>
 <%@ page import="domain.DCMapper" %>
 
@@ -33,17 +32,6 @@
 <%--        <input type="submit" value="Mix, Bottle and Send to DC">--%>
     </form><br>
     <% } %>
-
-<%--    <h3>All Pallets:</h3>--%>
-<%--    <ul>--%>
-<%--    <%--%>
-<%--        for (Pallet i : Persistance.getAllPallets()) {--%>
-<%--    %>--%>
-<%--        <li>--%>
-<%--            PalletID: <%=i.getPalletID()%> Date: <%=i.getDate()%>--%>
-<%--        </li>--%>
-<%--    <% } %>--%>
-<%--    </ul>--%>
 
 
 

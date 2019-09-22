@@ -2,6 +2,8 @@ package domain;
 import java.sql.*;
 import java.util.List;
 
+
+
 public class DC implements SupplyChainEntity{
 	private int DCId;
 	private String name;
@@ -52,9 +54,11 @@ public class DC implements SupplyChainEntity{
 		}
 	}
 
-	public int ship(int shipPallets) {
+	public int ship(int shipPallets, int toID) throws SQLException {
 		if (canShip(shipPallets) == true) {
 			this.numPallets = this.numPallets - shipPallets;
+//			create transaction
+			DBTransactionMapper.makeTransaction(shipPallets,this.DCId,toID);
 			return this.numPallets;
 		}
 		else{

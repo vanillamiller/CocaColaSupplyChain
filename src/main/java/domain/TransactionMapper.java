@@ -4,11 +4,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-
-public class Persistance {
-
-
-
+public class TransactionMapper {
     public static List<Transaction> transactions;
     public static List<Transaction> getAllTransactions(){
         if (transactions == null) {
@@ -20,10 +16,23 @@ public class Persistance {
         }
         return transactions;
     }
-    public static Transaction makeTransaction() {
+
+    public static void addtran(Transaction tran){
+        if (transactions == null) {
+            transactions = new LinkedList<Transaction>();
+            transactions.add(tran);
+        }
+        else{
+            transactions.add(tran);
+        }
+    }
+
+    public static Transaction makeTransaction(int numPallets, int fromID, int toID) {
         //        TODO when makeTransaction is called, need to auto increment transaction ID.
         Date date = new Date();
-        transactions.add(new Transaction(1,date,4,4));
+        Transaction tran = new Transaction(numPallets,date,fromID,toID);
+//        transactions.add(tran);
+        addtran(tran);
         return null;
     }
 }

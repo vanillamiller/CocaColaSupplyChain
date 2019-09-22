@@ -6,20 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="domain.Persistance" %>
+<%@ page import="domain.DBTransactionMapper" %>
 <%@ page import="domain.Transaction" %>
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Transaction Viewer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <ul>
     <%
-        for (Transaction i : Persistance.getAllTransactions()) {
+        for (Transaction i : DBTransactionMapper.findAllTransactions()) {
     %>
     <li>
-        TransactionID: <%=i.getNumPallets()%> Date: <%=i.getDate()%> From:  <%=i.getFrom()%> To:  <%=i.getTo()%>
+        TransactionID: <%=i.getNumPallets()%> &#9 Date: <%=i.getDate()%> &#9 From:  <%=i.getFrom()%> &#9 To:  <%=i.getTo()%>
     </li>
     <% } %>
 </ul>

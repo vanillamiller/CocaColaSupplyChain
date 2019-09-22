@@ -1,8 +1,9 @@
 package auth;
 import java.sql.*;
+import java.util.Date;
 
 public class DBConnection {
-	private static final String DB_CONNECTION = "jdbc:postgresql://ec2-23-21-148-223.compute-1.amazonaws.com:5432/dfc109863pt1p";
+	private static final String DB_CONNECTION = "jdbc:postgresql://ec2-23-21-148-223.compute-1.amazonaws.com:5432/dfc109863pt1p?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 	
 	private static final String DB_USER = "gvkwjgcpmfgdqn";
 	private static final String DB_PASSWORD = "effd128d0f9f5cf67e5f40c6b305437d3ef311bac1307cee9922bab51794e65e";
@@ -48,4 +49,16 @@ public class DBConnection {
 		System.out.println("connection issues");
 		return null;
 	}
+
+	public static PreparedStatement prepare(String sql, int numPallets, Date date, Integer from, Integer to) {
+		PreparedStatement preparedStatement = null;
+		try {
+			Connection dbConnection = getDBConnection();
+			preparedStatement = dbConnection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return preparedStatement;
+	}
+
 }

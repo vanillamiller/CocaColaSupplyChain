@@ -9,38 +9,41 @@ DROP TYPE colaForm;
 CREATE TYPE colaForm AS ENUM ('syrup', 'pallet');
 
 CREATE TABLE DCs(
-	DCId SERIAL PRIMARY KEY,
-	name VARCHAR(50)
+    DCId SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    accountBookID INTEGER,
+    numPallets INTEGER
 );
 
 CREATE TABLE Retailers(
-	RetailerId SERIAL PRIMARY KEY,
-	name VARCHAR(50)
+    RetailerId SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    accountBookID INTEGER,
+    totalPalletsBought INTEGER
 );
 
 
 CREATE TABLE DCsRetailers(
-	DCRetailerId SERIAL PRIMARY KEY,
-	DCId INTEGER,
-	RetailerId INTEGER
+     DCRetailerId SERIAL PRIMARY KEY,
+     DCId INTEGER,
+     RetailerId INTEGER
 );
 
 
 CREATE TABLE Transactions(
-	txId SERIAL PRIMARY KEY,
-	price money,
-	inventoryID INTEGER,
-	txTime TIMESTAMP,
-	sellerID INTEGER,
-	buyerID INTEGER
+    txId SERIAL PRIMARY KEY,
+    numPallets INTEGER,
+    txTime TIMESTAMP,
+    fromID INTEGER,
+    toID INTEGER
 );
 
 
-CREATE TABLE Inventory(
-	inventoryID SERIAL PRIMARY KEY,
-	DCId INTEGER,
-	sold BOOLEAN
-);
+-- CREATE TABLE Inventory(
+-- 	inventoryID SERIAL PRIMARY KEY,
+-- 	DCId INTEGER,
+-- 	sold BOOLEAN
+-- );
 
 
 
@@ -49,22 +52,26 @@ CREATE TABLE Inventory(
 
 
 INSERT INTO DCs(
-	name
+    name,
+    accountBookID,
+    numPallets
 )
 VALUES
-('Melbourne DC'),
-('Sydney DC'),
-('Brisbane DC'),
-('Perth DC');
+('Melbourne DC',0,20),
+('Sydney DC',1,30),
+('Brisbane DC',2,10),
+('Perth DC',3,232);
 
 INSERT INTO Retailers(
-    name
+    name,
+    accountBookID,
+    totalPalletsBought
 )
 VALUES
-('Coles Collingwood'),
-('Coles Fitzroy'),
-('Coles Sydney'),
-('Coles Perth');
+('Coles Collingwood',11,0),
+('Coles Fitzroy',12,0),
+('Coles Sydney',13,0),
+('Coles Perth',14,0);
 
 
 INSERT INTO DCsRetailers(
@@ -79,39 +86,38 @@ VALUES
 
 
 INSERT INTO Transactions(
-    price,
-    inventoryID,
+    numPallets,
     txTime,
-    sellerID,
-    buyerID
+    fromID,
+    toID
 )
 VALUES
-('$220', 1, CURRENT_TIMESTAMP, 1, 2),
-('$333', 2, CURRENT_TIMESTAMP, 2, 3),
-('$102', 3, CURRENT_TIMESTAMP, 1, 2),
-('$50.25', 4, CURRENT_TIMESTAMP, 4, 4),
-('$253', 5, CURRENT_TIMESTAMP, 1, 1),
-('$132', 6, CURRENT_TIMESTAMP, 2, 3),
-('$425', 7, CURRENT_TIMESTAMP, 1, 2),
-('$80.5', 8, CURRENT_TIMESTAMP, 1, 2);
+(2, CURRENT_TIMESTAMP, 1, 2),
+(7, CURRENT_TIMESTAMP, 2, 3),
+(7, CURRENT_TIMESTAMP, 1, 2),
+(3, CURRENT_TIMESTAMP, 4, 4),
+(6, CURRENT_TIMESTAMP, 1, 1),
+(8, CURRENT_TIMESTAMP, 2, 3),
+(1, CURRENT_TIMESTAMP, 1, 2),
+(23, CURRENT_TIMESTAMP, 1, 2);
 
 
-INSERT INTO Inventory(
-    DCId,
-    sold
-)
-VALUES
-(1,true),
-(2,true),
-(3,true),
-(4,true),
-(5,true),
-(6,true),
-(7,true),
-(8,true),
-(9,false),
-(10,false),
-(11,false),
-(12,false),
-(13,false),
-(14,false);
+-- INSERT INTO Inventory(
+--     DCId,
+--     sold
+-- )
+-- VALUES
+-- (1,true),
+-- (2,true),
+-- (3,true),
+-- (4,true),
+-- (5,true),
+-- (6,true),
+-- (7,true),
+-- (8,true),
+-- (9,false),
+-- (10,false),
+-- (11,false),
+-- (12,false),
+-- (13,false),
+-- (14,false);
