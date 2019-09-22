@@ -56,7 +56,7 @@ public class Persistance {
         }
         return pallets;
     }
-    public static Pallet makePallet() {
+    public static Pallet makePallet(Integer DCId) {
         //        TODO when makePallet is called, need to auto increment pallet ID.
         Date date = new Date();
         pallets.add(new Pallet(2, date, "regular"));

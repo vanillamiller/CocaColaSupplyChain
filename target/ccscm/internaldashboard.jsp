@@ -25,10 +25,10 @@
         for (DC i : Persistance.getAllDCs()) {
     %>
     <form action="amakePalletServlet" method="post">
-        <%=i.getname() + ": "%><button name="pluspallet" type="submit" value="<%=i.getDCId()%>">+1 Pallet</button>
+        <button name="pluspallet" type="submit" value="<%=i.getDCId()%>">+1 Pallet</button><%=i.getname()%>
 <%--        <option value="<%=i.getDCId()%>"><%=i.getname()%></option>--%>
 <%--        <input type="submit" value="Mix, Bottle and Send to DC">--%>
-    </form><br>
+    </form> Pallets<br>
     <% } %>
 
     <h3>All Pallets:</h3>

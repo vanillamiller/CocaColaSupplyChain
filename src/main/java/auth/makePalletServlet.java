@@ -19,12 +19,12 @@ public class makePalletServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String newPalletForDC = null;
-        newPalletForDC = request.getParameter("pluspallet");
-        System.out.println("who gets a new pallet:" + newPalletForDC);
+        Integer newPalletForDC = null;
+        newPalletForDC = Integer.parseInt(request.getParameter("pluspallet"));
+        System.out.println("who gets a new pallet: " + newPalletForDC);
 
 //        TODO when makePallet is called, need to increment pallet ID.
-        Persistance.makePallet();
+        Persistance.makePallet(newPalletForDC);
 
         request.getRequestDispatcher("internaldashboard.jsp").forward(request, response);
     }
