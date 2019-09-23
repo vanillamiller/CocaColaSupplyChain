@@ -1,7 +1,7 @@
 package auth;
 
 import domain.Retailer;
-import domain.DBRetailerMapper;
+import domain.RetailerMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +22,7 @@ public class purchasePalletServlet extends HttpServlet {
 //        TODO when makePallet is called, need to increment pallet ID.
         Retailer retailer = null;
         try {
-            retailer = DBRetailerMapper.findRetailer(retailerID);
+            retailer = RetailerMapper.findRetailer(retailerID);
         } catch (SQLException e) {
             e.printStackTrace();
         }

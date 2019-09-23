@@ -1,8 +1,6 @@
 package domain;
-import com.sun.corba.se.impl.orb.ParserTable;
 
 import java.sql.*;
-import java.util.List;
 
 public class Retailer implements ClientEntity{
 	private int retailerID;
@@ -50,14 +48,14 @@ public class Retailer implements ClientEntity{
 	}
 
 	public boolean buy(int buyPallets, int DCID) throws SQLException {
-		DC dc = DBDCMapper.findDC(DCID);
+		DC dc = DCMapper.findDC(DCID);
 		int palletsBought = dc.ship(buyPallets, this.retailerID);
 		if(palletsBought < 0){
 			System.out.println("issue in buy, error code: " + buyPallets);
 			return false;
 		}else{
 			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
-			DBRetailerMapper.updateRetailer(getretailerID(),this.totalPalletsBought);
+			RetailerMapper.updateRetailer(getretailerID(),this.totalPalletsBought);
 
 			return true;
 		}

@@ -1,7 +1,5 @@
 package domain;
 import java.sql.*;
-import java.util.List;
-
 
 
 public class DC implements SupplyChainEntity{
@@ -43,7 +41,7 @@ public class DC implements SupplyChainEntity{
 
 	public int restockPallets(int restockPallets) throws SQLException {
 		this.numPallets = this.numPallets + restockPallets;
-		DBDCMapper.updateDC(getDCID(),this.numPallets);
+		DCMapper.updateDC(getDCID(),this.numPallets);
 		return this.numPallets;
 	}
 
@@ -58,9 +56,9 @@ public class DC implements SupplyChainEntity{
 	public int ship(int shipPallets, int toID) throws SQLException {
 		if (canShip(shipPallets) == true) {
 			this.numPallets = this.numPallets - shipPallets;
-			DBDCMapper.updateDC(getDCID(),this.numPallets);
+			DCMapper.updateDC(getDCID(),this.numPallets);
 //			create transaction
-			if(DBTransactionMapper.makeTransaction(shipPallets,this.DCID,toID)==true){
+			if(TransactionMapper.makeTransaction(shipPallets,this.DCID,toID)==true){
 				return this.numPallets;
 			}
 			else{

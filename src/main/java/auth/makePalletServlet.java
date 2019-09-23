@@ -1,7 +1,7 @@
 package auth;
 
 import domain.DC;
-import domain.DBDCMapper;
+import domain.DCMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +25,7 @@ public class makePalletServlet extends HttpServlet {
 //        TODO when makePallet is called, need to increment pallet ID.
         DC dc = null;
         try {
-            dc = DBDCMapper.findDC(DCID);
+            dc = DCMapper.findDC(DCID);
         } catch (SQLException e) {
             e.printStackTrace();
         }
