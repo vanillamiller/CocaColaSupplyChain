@@ -9,14 +9,14 @@ DROP TYPE colaForm;
 CREATE TYPE colaForm AS ENUM ('syrup', 'pallet');
 
 CREATE TABLE DCs(
-    DCId SERIAL PRIMARY KEY,
+    DCID SERIAL PRIMARY KEY,
     name VARCHAR(50),
     accountBookID INTEGER,
     numPallets INTEGER
 );
 
 CREATE TABLE Retailers(
-    RetailerId SERIAL PRIMARY KEY,
+    RetailerID SERIAL PRIMARY KEY,
     name VARCHAR(50),
     accountBookID INTEGER,
     totalPalletsBought INTEGER
@@ -24,16 +24,16 @@ CREATE TABLE Retailers(
 
 
 CREATE TABLE DCsRetailers(
-     DCRetailerId SERIAL PRIMARY KEY,
-     DCId INTEGER,
-     RetailerId INTEGER
+     DCRetailerID SERIAL PRIMARY KEY,
+     DCID INTEGER,
+     RetailerID INTEGER
 );
 
 
 CREATE TABLE Transactions(
-    txId SERIAL PRIMARY KEY,
+    txID SERIAL PRIMARY KEY,
     numPallets INTEGER,
-    txTime TIMESTAMP,
+    date TIMESTAMP,
     fromID INTEGER,
     toID INTEGER
 );
@@ -41,7 +41,7 @@ CREATE TABLE Transactions(
 
 -- CREATE TABLE Inventory(
 -- 	inventoryID SERIAL PRIMARY KEY,
--- 	DCId INTEGER,
+-- 	DCID INTEGER,
 -- 	sold BOOLEAN
 -- );
 
@@ -74,36 +74,36 @@ VALUES
 ('Coles Perth',14,0);
 
 
-INSERT INTO DCsRetailers(
-    DCId,
-    RetailerId
-)
-VALUES
-(1,1),
-(1,2),
-(2,3),
-(4,4);
-
-
-INSERT INTO Transactions(
-    numPallets,
-    txTime,
-    fromID,
-    toID
-)
-VALUES
-(2, CURRENT_TIMESTAMP, 1, 2),
-(7, CURRENT_TIMESTAMP, 2, 3),
-(7, CURRENT_TIMESTAMP, 1, 2),
-(3, CURRENT_TIMESTAMP, 4, 4),
-(6, CURRENT_TIMESTAMP, 1, 1),
-(8, CURRENT_TIMESTAMP, 2, 3),
-(1, CURRENT_TIMESTAMP, 1, 2),
-(23, CURRENT_TIMESTAMP, 1, 2);
+-- INSERT INTO DCsRetailers(
+--     DCID,
+--     RetailerID
+-- )
+-- VALUES
+-- (1,1),
+-- (1,2),
+-- (2,3),
+-- (4,4);
+--
+--
+-- INSERT INTO Transactions(
+--     numPallets,
+--     date,
+--     fromID,
+--     toID
+-- )
+-- VALUES
+-- (2, CURRENT_TIMESTAMP, 1, 2),
+-- (7, CURRENT_TIMESTAMP, 2, 3),
+-- (7, CURRENT_TIMESTAMP, 1, 2),
+-- (3, CURRENT_TIMESTAMP, 4, 4),
+-- (6, CURRENT_TIMESTAMP, 1, 1),
+-- (8, CURRENT_TIMESTAMP, 2, 3),
+-- (1, CURRENT_TIMESTAMP, 1, 2),
+-- (23, CURRENT_TIMESTAMP, 1, 2);
 
 
 -- INSERT INTO Inventory(
---     DCId,
+--     DCID,
 --     sold
 -- )
 -- VALUES

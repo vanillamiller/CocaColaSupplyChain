@@ -5,24 +5,24 @@ import java.util.List;
 
 
 public class DC implements SupplyChainEntity{
-	private int DCId;
+	private int DCID;
 	private String name;
 	private int accountBookID;
 	private int numPallets;
 			
-	public DC(int DCId, String name, int accountBookID, int numPallets){
-		this.DCId = DCId;
+	public DC(int DCID, String name, int accountBookID, int numPallets){
+		this.DCID = DCID;
 		this.name = name;
 		this.accountBookID = accountBookID;
 		this.numPallets = numPallets;
 	}
 	
-	public int getDCId(){
-		return DCId;
+	public int getDCID(){
+		return DCID;
 	}
 
-	public void setDCId(int DCId){
-		this.DCId = DCId;
+	public void setDCID(int DCID){
+		this.DCID = DCID;
 	}
 
 	public String getname(){
@@ -41,8 +41,9 @@ public class DC implements SupplyChainEntity{
 		return numPallets;
 	}
 
-	public int restockPallets(int restockPallets){
+	public int restockPallets(int restockPallets) throws SQLException {
 		this.numPallets = this.numPallets + restockPallets;
+		DBDCMapper.updateDC(getDCID(),this.numPallets);
 		return this.numPallets;
 	}
 
@@ -57,9 +58,16 @@ public class DC implements SupplyChainEntity{
 	public int ship(int shipPallets, int toID) throws SQLException {
 		if (canShip(shipPallets) == true) {
 			this.numPallets = this.numPallets - shipPallets;
+			DBDCMapper.updateDC(getDCID(),this.numPallets);
 //			create transaction
-			DBTransactionMapper.makeTransaction(shipPallets,this.DCId,toID);
-			return this.numPallets;
+			if(DBTransactionMapper.makeTransaction(shipPallets,this.DCID,toID)==true){
+				return this.numPallets;
+			}
+			else{
+				return -2;
+			}
+
+
 		}
 		else{
 			return -1;

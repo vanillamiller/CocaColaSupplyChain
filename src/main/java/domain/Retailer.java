@@ -5,24 +5,24 @@ import java.sql.*;
 import java.util.List;
 
 public class Retailer implements ClientEntity{
-	private int retailerId;
+	private int retailerID;
 	private String name;
 	private int accountBookID;
 	private int totalPalletsBought;
 
-	public Retailer(int retailerId, String name, int accountBookID){
-		this.retailerId = retailerId;
+	public Retailer(int retailerID, String name, int accountBookID, int totalPalletsBought){
+		this.retailerID = retailerID;
 		this.name = name;
 		this.accountBookID = accountBookID;
 		this.totalPalletsBought = totalPalletsBought;
 	}
 
-	public int getretailerId(){
-		return retailerId;
+	public int getretailerID(){
+		return retailerID;
 	}
 
-	public void setretailerId(int retailerId){
-		this.retailerId = retailerId;
+	public void setretailerID(int retailerID){
+		this.retailerID = retailerID;
 	}
 
 	public String getname(){
@@ -41,23 +41,27 @@ public class Retailer implements ClientEntity{
 		this.accountBookID = accountBookID;
 	}
 
+	public int gettotalPalletsBought(){
+		return totalPalletsBought;
+	}
 
-	public boolean buy(int buyPallets, int DCId) throws SQLException {
-		DC dc = DCMapper.findDC(DCId);
-		int palletsBought = dc.ship(buyPallets, this.retailerId);
-		if(palletsBought == -1){
+	public void settotalPalletsBought(int totalPalletsBought){
+		this.totalPalletsBought = totalPalletsBought;
+	}
+
+	public boolean buy(int buyPallets, int DCID) throws SQLException {
+		DC dc = DBDCMapper.findDC(DCID);
+		int palletsBought = dc.ship(buyPallets, this.retailerID);
+		if(palletsBought < 0){
+			System.out.println("issue in buy, error code: " + buyPallets);
 			return false;
 		}else{
-			this.totalPalletsBought = this.totalPalletsBought + palletsBought;
+			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
+			DBRetailerMapper.updateRetailer(getretailerID(),this.totalPalletsBought);
+
 			return true;
 		}
 
 	}
-
-//	public static List<retailer> getAllretailers() {
-//		retailerGateway retailerg = new retailerGateway();
-//		TODOTODOTODOTODOTODOTODOTODO
-//		return result;
-//	}
 
 }

@@ -2,7 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="domain.DC" %>
-<%@ page import="domain.DCMapper" %>
+<%@ page import="domain.DBDCMapper" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,13 +22,13 @@
 
     Distribution Centers:
     <%
-        for (DC i : DCMapper.getAllDCs()) {
+        for (DC i : DBDCMapper.findAllDCs()) {
     %>
     <form action="makePalletServlet" method="post">
         <input type="number" name="quantity" min="1" required >
-        <button name="pluspallet" type="submit" value="<%=i.getDCId()%>" required>Add Pallet</button><%=i.getname()%> <%=i.getnumPallets()%>
+        <button name="pluspallet" type="submit" value="<%=i.getDCID()%>" required>Add Pallet</button><%=i.getname()%> <%=i.getnumPallets()%>
 <%--        has <%=i.getNumPallets()%> Pallets--%>
-<%--        <option value="<%=i.getDCId()%>"><%=i.getname()%></option>--%>
+<%--        <option value="<%=i.getDCID()%>"><%=i.getname()%></option>--%>
 <%--        <input type="submit" value="Mix, Bottle and Send to DC">--%>
     </form><br>
     <% } %>

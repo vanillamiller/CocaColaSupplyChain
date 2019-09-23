@@ -1,4 +1,4 @@
-<%@ page import="domain.DCMapper" %>
+<%@ page import="domain.DBDCMapper" %>
 <%@ page import="domain.DC" %><%--
   Created by IntelliJ IDEA.
   User: tomglynch
@@ -23,9 +23,9 @@
     From which DC?:<br>
     <ul>
     <%
-        for (DC i : DCMapper.getAllDCs()) {
+        for (DC i : DBDCMapper.findAllDCs()) {
     %>
-    <li><input type="radio" name="DCId" value="<%=i.getDCId()%>" checked required><%=i.getname()%> (<%=i.getnumPallets()%> available)</input></li>
+    <li><input type="radio" name="DCID" value="<%=i.getDCID()%>" checked required><%=i.getname()%> (<%=i.getnumPallets()%> available)</input></li>
      <% } %>
     </ul>
     <input type="submit" value="Buy">

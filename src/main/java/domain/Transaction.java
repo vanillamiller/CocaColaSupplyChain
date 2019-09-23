@@ -22,6 +22,10 @@ public class Transaction {
         this.from = from;
         this.to = to;
     }
+    public int gettxID() {
+        return txID;
+    }
+
     public int getNumPallets() {
         return numPallets;
     }

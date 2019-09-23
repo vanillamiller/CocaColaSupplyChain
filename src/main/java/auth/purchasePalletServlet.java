@@ -1,7 +1,7 @@
 package auth;
 
 import domain.Retailer;
-import domain.RetailerMapper;
+import domain.DBRetailerMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,16 +14,21 @@ import java.sql.SQLException;
 @WebServlet(name = "purchasePalletServlet")
 public class purchasePalletServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int DCId = Integer.parseInt(request.getParameter("DCId"));
+        int DCID = Integer.parseInt(request.getParameter("DCID"));
         int retailerID = Integer.parseInt(request.getParameter("retailerID"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        System.out.println("BUY: Retailer" + retailerID + " buys " + quantity + " new pallets from: " + DCId);
+        System.out.println("BUY: Retailer" + retailerID + " buys " + quantity + " new pallets from: " + DCID);
 
 //        TODO when makePallet is called, need to increment pallet ID.
-        Retailer retailer = RetailerMapper.findretailer(retailerID);
+        Retailer retailer = null;
+        try {
+            retailer = DBRetailerMapper.findRetailer(retailerID);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         boolean result = false;
         try {
-            result = retailer.buy(quantity, DCId);
+            result = retailer.buy(quantity, DCID);
         } catch (SQLException e) {
             e.printStackTrace();
         }

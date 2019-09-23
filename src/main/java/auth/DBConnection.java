@@ -18,7 +18,7 @@ public class DBConnection {
 			Connection dbConnection = getDBConnection();
 			
 			preparedStatement = dbConnection.prepareStatement(stm);
-		
+			System.out.println("up to here2");
 		} catch (SQLException e) {
 		
 			System.out.println(e.getMessage());
@@ -36,8 +36,6 @@ public class DBConnection {
 			
 			// open connection
 			dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER,DB_PASSWORD);
-			dbConnection.setAutoCommit(false);
-			
 			return dbConnection;
 		
 		} catch (SQLException e) {
@@ -48,17 +46,6 @@ public class DBConnection {
 		
 		System.out.println("connection issues");
 		return null;
-	}
-
-	public static PreparedStatement prepare(String sql, int numPallets, Date date, Integer from, Integer to) {
-		PreparedStatement preparedStatement = null;
-		try {
-			Connection dbConnection = getDBConnection();
-			preparedStatement = dbConnection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return preparedStatement;
 	}
 
 }

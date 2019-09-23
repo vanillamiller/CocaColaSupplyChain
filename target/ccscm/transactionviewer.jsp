@@ -15,14 +15,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<ul>
+
+All transactions:
+<table style="width:500px">
+    <th>TransactionID</th><th>NumPallets</th><th>Date</th><th>From</th><th>To</th>
     <%
         for (Transaction i : DBTransactionMapper.findAllTransactions()) {
     %>
-    <li>
-        TransactionID: <%=i.getNumPallets()%> &#9 Date: <%=i.getDate()%> &#9 From:  <%=i.getFrom()%> &#9 To:  <%=i.getTo()%>
-    </li>
+    <tr>
+        <th><%=i.gettxID()%></th><th><%=i.getNumPallets()%></th><th><%=i.getDate()%></th><th><%=i.getFrom()%></th><th><%=i.getTo()%></th>
+    </tr>
     <% } %>
-</ul>
+</table>
 </body>
 </html>

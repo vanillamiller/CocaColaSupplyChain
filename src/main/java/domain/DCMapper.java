@@ -16,9 +16,9 @@ public class DCMapper {
         return dcs;
     }
 
-    public static DC findDC(int DCId) {
+    public static DC findDC(int DCID) {
         for (DC dc : getAllDCs()) {
-            if (dc.getDCId() == (DCId)) {
+            if (dc.getDCID() == (DCID)) {
                 return dc;
             }
         }
