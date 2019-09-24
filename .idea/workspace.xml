@@ -9,37 +9,31 @@
   <component name="ChangeListManager">
     <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CorporateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/CorporateEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/internalLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/internalLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CocaColaHQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/CocaColaHQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CorporateEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/DCMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DCMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/TransactionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/IdentityMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/IdentityMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/internaldashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/internaldashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/META-INF/ccscm.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/internalLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/internalLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/retailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/retailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/CorporateEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DCMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DCMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/RetailerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/RetailerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/TransactionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ccscm.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/internalLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/internalLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/retailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/retailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/IdentityMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/IdentityMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/UnitOfWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/UnitOfWork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/CorporateEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/DC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/domain/DCMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/DCMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Persistance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Retailer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/RetailerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/RetailerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/domain/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/TransactionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UnitOfWork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/IdentityMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/IdentityMap.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +91,26 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dfc109863pt1p@ec2-23-21-148-223.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dfc109863pt1p: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dcs: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dfc109863pt1p@ec2-23-21-148-223.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dfc109863pt1p: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dcsretailers: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -342,7 +356,7 @@
       <workItem from="1568626936844" duration="3259000" />
       <workItem from="1568631023538" duration="367000" />
       <workItem from="1569294390270" duration="618000" />
-      <workItem from="1569295025805" duration="5619000" />
+      <workItem from="1569295025805" duration="12199000" />
     </task>
     <task id="LOCAL-00001" summary="commiting after regaining intellij workspace">
       <created>1568627108360</created>

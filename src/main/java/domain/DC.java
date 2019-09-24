@@ -14,6 +14,10 @@ public class DC implements SupplyChainEntity{
 		this.accountBookID = accountBookID;
 		this.numPallets = numPallets;
 	}
+
+	public DC(int DCID){
+		this.DCID=DCID;
+	}
 	
 	public int getDCID(){
 		return DCID;
@@ -64,8 +68,6 @@ public class DC implements SupplyChainEntity{
 			else{
 				return -2;
 			}
-
-
 		}
 		else{
 			return -1;

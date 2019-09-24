@@ -8,6 +8,8 @@ public class Transaction {
     private Integer from;
     private Integer to;
 
+    public Transaction(){};
+
     public Transaction(int numPallets, Date date, Integer from, Integer to) {
         this.numPallets = numPallets;
         this.date = date;

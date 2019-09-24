@@ -10,12 +10,19 @@ import mappers.IdentityMap;
 
 public class TransactionMapper {
 
-    public static List<Transaction> findAllTransactions() throws SQLException {
+    public static List<Transaction> findAllTransactions(int id, String dcOrRet) {
 
         List<Transaction> result = new ArrayList<>();
+        String sql;
 
-        String sql = "SELECT txID, numPallets, date, fromID, toID FROM Transactions";
+        if(dcOrRet.equals("DC")) {
+            sql = "SELECT txID, numPallets, date, fromID, toID FROM Transactions WHERE fromID="+id;
+        } else {
+            sql = "SELECT txID, numPallets, date, fromID, toID FROM Transactions WHERE toID="+id;
+        }
+
         try {
+
             PreparedStatement stmt = DBConnection.prepare(sql);
             ResultSet rs = stmt.executeQuery();
 
@@ -35,7 +42,6 @@ public class TransactionMapper {
         System.out.println(result);
         return result;
     }
-
 
     public static boolean makeTransaction(int numPallets, int fromID, int toID) throws SQLException {
         Date now = new Date();
