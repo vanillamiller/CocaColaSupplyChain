@@ -4,10 +4,10 @@ DROP TABLE Inventory;
 DROP TABLE AccountBooks;
 
 CREATE TYPE vessel AS ENUM ('cans', 'bottles');
-CREATE TYPE flavour AS ENUM ('regular', 'vanilla', 'zero');
+
 
 CREATE TABLE DCs(
-	DCId SERIAL PRIMARY KEY,
+	DCID SERIAL PRIMARY KEY,
 	name VARCHAR(50),
 	accountBookID INTEGER,
 	inventoryID INTEGER,
@@ -15,7 +15,7 @@ CREATE TABLE DCs(
 
 
 CREATE TABLE Transactions(
-	txId SERIAL PRIMARY KEY,
+	txID SERIAL PRIMARY KEY,
 	price money,
 	palletID INTEGER,
 	txTime TIMESTAMP,
@@ -25,14 +25,13 @@ CREATE TABLE Transactions(
 
 
 CREATE TABLE Inventory(
-	itemId SERIAL PRIMARY KEY,
+	itemID SERIAL PRIMARY KEY,
 	vesselType vessel,
-	flavourType flavour,
 	ownerID INTEGER
 );
 
 CREATE TABLE AccountBooks(
-	accountBookId SERIAL PRIMARY KEY
+	accountBookID SERIAL PRIMARY KEY
 );
 
 INSERT INTO DCs (

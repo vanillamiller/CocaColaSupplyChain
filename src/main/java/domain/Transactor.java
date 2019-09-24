@@ -10,12 +10,12 @@ public abstract class Transactor {
 
     public abstract void Transactor(int id, String name);
 
-    public abstract int getId();
+    public abstract int getID();
 
     public abstract String getName();
 
     public abstract List<Transaction> getTransactions();
 
-    public abstract Transaction getTransactionById();
+    public abstract Transaction getTransactionByID();
 
 }

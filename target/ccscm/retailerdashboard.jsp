@@ -1,4 +1,5 @@
-<%--
+<%@ page import="domain.DCMapper" %>
+<%@ page import="domain.DC" %><%--
   Created by IntelliJ IDEA.
   User: tomglynch
   Date: 18/9/19
@@ -15,9 +16,25 @@
 <h2>Welcome to the Retailer Dashboard</h2>
 
 <br>
-<form action="apurchasePalletServlet" method="post">
-    Buy Pallet: <button name="puchasepallet" type="submit" value="TODOthisDCID">+1 Pallet</button>
+<h3>Buy Pallets:</h3>
+<form action="purchasePalletServlet" method="post">
+    <input type="hidden" name="retailerID" value=<%=session.getAttribute("retailerID")%>>
+    How many Pallets: <input type="number" name="quantity" min="1" required><br>
+    From which DC?:<br>
+    <ul>
+    <%
+        for (DC i : DCMapper.findAllDCs()) {
+    %>
+    <li><input type="radio" name="DCID" value="<%=i.getDCID()%>" checked required><%=i.getname()%> (<%=i.getnumPallets()%> available)</input></li>
+     <% } %>
+    </ul>
+    <input type="submit" value="Buy">
+            <%
+        if(request.getAttribute("errorMessage") != null ){ %>
+            <%= request.getAttribute("errorMessage") %>
+            <% } %>
 </form><br>
 
 </body>
 </html>
+

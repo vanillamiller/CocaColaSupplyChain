@@ -1,26 +1,26 @@
 package domain;
 import java.sql.*;
-import java.util.List;
 
-public class DC{
-	private int DCId;
+
+public class DC implements SupplyChainEntity{
+	private int DCID;
 	private String name;
 	private int accountBookID;
-	private int inventoryID;
+	private int numPallets;
 			
-	public DC(int DCId, String name, int accountBookID, int inventoryID){
-		this.DCId = DCId;
+	public DC(int DCID, String name, int accountBookID, int numPallets){
+		this.DCID = DCID;
 		this.name = name;
 		this.accountBookID = accountBookID;
-		this.inventoryID = inventoryID;
+		this.numPallets = numPallets;
 	}
 	
-	public int getDCId(){
-		return DCId;
+	public int getDCID(){
+		return DCID;
 	}
 
-	public void setDCId(int DCId){
-		this.DCId = DCId;
+	public void setDCID(int DCID){
+		this.DCID = DCID;
 	}
 
 	public String getname(){
@@ -31,20 +31,46 @@ public class DC{
 		this.name = name;
 	}
 
-	public int getaccountBookID(){
-		return accountBookID;
+	public int getaccountBookID(){ return accountBookID;}
+
+	public void setaccountBookID(int accountBookID){ this.accountBookID = accountBookID;}
+
+	public int getnumPallets(){
+		return numPallets;
 	}
 
-	public void setaccountBookID(int accountBookID){
-		this.accountBookID = accountBookID;
+	public int restockPallets(int restockPallets) throws SQLException {
+		this.numPallets = this.numPallets + restockPallets;
+		DCMapper.updateDC(getDCID(),this.numPallets);
+		return this.numPallets;
 	}
 
-	public int getinventoryID(){
-		return inventoryID;
+	public boolean canShip(int shipPallets) {
+		if (shipPallets > this.numPallets) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
-	public void setinventoryID(int inventoryID){
-		this.inventoryID = inventoryID;
+	public int ship(int shipPallets, int toID) throws SQLException {
+		if (canShip(shipPallets) == true) {
+			this.numPallets = this.numPallets - shipPallets;
+			DCMapper.updateDC(getDCID(),this.numPallets);
+//			create transaction
+			if(TransactionMapper.makeTransaction(shipPallets,this.DCID,toID)==true){
+				return this.numPallets;
+			}
+			else{
+				return -2;
+			}
+
+
+		}
+		else{
+			return -1;
+		}
+
 	}
 
 //	public static List<DC> getAllDCs() {

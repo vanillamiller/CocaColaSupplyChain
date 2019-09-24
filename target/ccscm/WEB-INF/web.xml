@@ -16,39 +16,39 @@
 
 
     <servlet>
-        <servlet-name>ainternalLoginServlet</servlet-name>
+        <servlet-name>internalLoginServlet</servlet-name>
         <servlet-class>auth.internalLoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ainternalLoginServlet</servlet-name>
-        <url-pattern>/ainternalLoginServlet</url-pattern>
+        <servlet-name>internalLoginServlet</servlet-name>
+        <url-pattern>/internalLoginServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>amakePalletServlet</servlet-name>
+        <servlet-name>makePalletServlet</servlet-name>
         <servlet-class>auth.makePalletServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>amakePalletServlet</servlet-name>
-        <url-pattern>/amakePalletServlet</url-pattern>
+        <servlet-name>makePalletServlet</servlet-name>
+        <url-pattern>/makePalletServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>apurchasePalletServlet</servlet-name>
+        <servlet-name>purchasePalletServlet</servlet-name>
         <servlet-class>auth.purchasePalletServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>apurchasePalletServlet</servlet-name>
-        <url-pattern>/apurchasePalletServlet</url-pattern>
+        <servlet-name>purchasePalletServlet</servlet-name>
+        <url-pattern>/purchasePalletServlet</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>aretailerLoginServlet</servlet-name>
+        <servlet-name>retailerLoginServlet</servlet-name>
         <servlet-class>auth.retailerLoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>aretailerLoginServlet</servlet-name>
-        <url-pattern>/aretailerLoginServlet</url-pattern>
+        <servlet-name>retailerLoginServlet</servlet-name>
+        <url-pattern>/retailerLoginServlet</url-pattern>
     </servlet-mapping>
 
 

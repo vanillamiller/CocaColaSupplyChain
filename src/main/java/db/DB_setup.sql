@@ -4,46 +4,46 @@ DROP TABLE DCsRetailers;
 DROP TABLE Transactions;
 DROP TABLE Inventory;
 
-DROP TYPE flavour;
 DROP TYPE colaForm;
 
-CREATE TYPE flavour AS ENUM ('regular', 'vanilla', 'zero');
 CREATE TYPE colaForm AS ENUM ('syrup', 'pallet');
 
 CREATE TABLE DCs(
-	DCId SERIAL PRIMARY KEY,
-	name VARCHAR(50)
+    DCID SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    accountBookID INTEGER,
+    numPallets INTEGER
 );
 
 CREATE TABLE Retailers(
-	RetailerId SERIAL PRIMARY KEY,
-	name VARCHAR(50)
+    RetailerID SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    accountBookID INTEGER,
+    totalPalletsBought INTEGER
 );
 
 
 CREATE TABLE DCsRetailers(
-	DCRetailerId SERIAL PRIMARY KEY,
-	DCId INTEGER,
-	RetailerId INTEGER
+     DCRetailerID SERIAL PRIMARY KEY,
+     DCID INTEGER,
+     RetailerID INTEGER
 );
 
 
 CREATE TABLE Transactions(
-	txId SERIAL PRIMARY KEY,
-	price money,
-	inventoryID INTEGER,
-	txTime TIMESTAMP,
-	sellerID INTEGER,
-	buyerID INTEGER
+    txID SERIAL PRIMARY KEY,
+    numPallets INTEGER,
+    date TIMESTAMP,
+    fromID INTEGER,
+    toID INTEGER
 );
 
 
-CREATE TABLE Inventory(
-	inventoryID SERIAL PRIMARY KEY,
-	DCId INTEGER,
-	flavourType flavour,
-	sold BOOLEAN
-);
+-- CREATE TABLE Inventory(
+-- 	inventoryID SERIAL PRIMARY KEY,
+-- 	DCID INTEGER,
+-- 	sold BOOLEAN
+-- );
 
 
 
@@ -52,70 +52,73 @@ CREATE TABLE Inventory(
 
 
 INSERT INTO DCs(
-	name
+    name,
+    accountBookID,
+    numPallets
 )
 VALUES
-('Melbourne DC'),
-('Sydney DC'),
-('Brisbane DC'),
-('Perth DC');
+('Melbourne DC',0,20),
+('Sydney DC',1,30),
+('Brisbane DC',2,10),
+('Perth DC',3,232);
 
 INSERT INTO Retailers(
-    name
+    name,
+    accountBookID,
+    totalPalletsBought
 )
 VALUES
-('Coles Collingwood'),
-('Coles Fitzroy'),
-('Coles Sydney'),
-('Coles Perth');
+('Coles Collingwood',11,0),
+('Coles Fitzroy',12,0),
+('Coles Sydney',13,0),
+('Coles Perth',14,0);
 
 
 INSERT INTO DCsRetailers(
-    DCId,
-    RetailerId
+    DCID,
+    RetailerID
 )
 VALUES
 (1,1),
 (1,2),
 (2,3),
+(3,1),
 (4,4);
+--
+--
+-- INSERT INTO Transactions(
+--     numPallets,
+--     date,
+--     fromID,
+--     toID
+-- )
+-- VALUES
+-- (2, CURRENT_TIMESTAMP, 1, 2),
+-- (7, CURRENT_TIMESTAMP, 2, 3),
+-- (7, CURRENT_TIMESTAMP, 1, 2),
+-- (3, CURRENT_TIMESTAMP, 4, 4),
+-- (6, CURRENT_TIMESTAMP, 1, 1),
+-- (8, CURRENT_TIMESTAMP, 2, 3),
+-- (1, CURRENT_TIMESTAMP, 1, 2),
+-- (23, CURRENT_TIMESTAMP, 1, 2);
 
 
-INSERT INTO Transactions(
-    price,
-    inventoryID,
-    txTime,
-    sellerID,
-    buyerID
-)
-VALUES
-('$220', 1, CURRENT_TIMESTAMP, 1, 2),
-('$333', 2, CURRENT_TIMESTAMP, 2, 3),
-('$102', 3, CURRENT_TIMESTAMP, 1, 2),
-('$50.25', 4, CURRENT_TIMESTAMP, 4, 4),
-('$253', 5, CURRENT_TIMESTAMP, 1, 1),
-('$132', 6, CURRENT_TIMESTAMP, 2, 3),
-('$425', 7, CURRENT_TIMESTAMP, 1, 2),
-('$80.5', 8, CURRENT_TIMESTAMP, 1, 2);
-
-
-INSERT INTO Inventory(
-    DCId,
-    flavourType,
-    sold
-)
-VALUES
-(1,'regular',true),
-(2,'vanilla',true),
-(3,'regular',true),
-(4,'zero',true),
-(5,'vanilla',true),
-(6,'regular',true),
-(7,'zero',true),
-(8,'regular',true),
-(9,'regular',false),
-(10,'zero',false),
-(11,'vanilla',false),
-(12,'regular',false),
-(13,'regular',false),
-(14,'vanilla',false);
+-- INSERT INTO Inventory(
+--     DCID,
+--     sold
+-- )
+-- VALUES
+-- (1,true),
+-- (2,true),
+-- (3,true),
+-- (4,true),
+-- (5,true),
+-- (6,true),
+-- (7,true),
+-- (8,true),
+-- (9,false),
+-- (10,false),
+-- (11,false),
+-- (12,false),
+-- (13,false),
+-- (14,false);

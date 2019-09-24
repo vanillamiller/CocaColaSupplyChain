@@ -2,7 +2,7 @@ package domain;
 
 import java.util.*;
 
-public interface CocaColaCorporateEntity {
+public interface CorporateEntity {
 
     public AccountBook getTransactionsByCenter();
 }

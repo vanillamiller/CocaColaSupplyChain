@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "aretailerLoginServlet")
+@WebServlet(name = "retailerLoginServlet")
 public class retailerLoginServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,12 +33,13 @@ public class retailerLoginServlet extends HttpServlet {
         System.out.println("Hello from Post: Your user name is: " + user + ", Your password is: " + pw + ".");
 
         if(pw.equals("a")){ //TODO - make password in DB i guess?
-            System.out.println("Retail user " + user + " successfully logged in");
+
 
 // get session, then invalidate then create a new one ensures every time someone logs in it's a new session
             HttpSession session = request.getSession();
-            session.invalidate();
-            session = request.getSession();
+            session.setAttribute("retailerID",user);
+
+            System.out.println("Retail user " + session.getAttribute("retailerID") + " successfully logged in");
 
             Integer accessCount;
             synchronized(session) {

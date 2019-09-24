@@ -7,85 +7,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/auth/internalLoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/auth/makePalletServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/auth/purchasePalletServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/auth/retailerLoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Pallet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Persistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/internaldashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/internallogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/retailerlogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/transactionviewer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/META-INF/ccscm.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/internalLoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/retailerLoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Pallet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Persistance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/internaldashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/internallogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/retailerlogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ccscm/transactionviewer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/ccscm.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/auth/internalLoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/auth/retailerLoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/domain/Pallet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/domain/Persistance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/domain/Retailer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/dependency/webapp-runner.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/mvn-dependency-list.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth/DCGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth/DoJobServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth/LoginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth/RetailerLoginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/BusinessTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/BusinessTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/updatetest.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/ClientEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/DCMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/DCToRetailerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/RetailerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/SupplyChainEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/TransactionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/ClientEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/CorporateEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DBRetailerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DBTransactionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DCMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/SupplyChainEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/ClientEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/CorporateEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/DBRetailerMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/DBTransactionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/DCMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/SupplyChainEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/db/DB_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bin/db/DB_setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/internalLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/internalLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/makePalletServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/makePalletServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/purchasePalletServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/purchasePalletServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/retailerLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/retailerLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DB_setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/View_DB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/View_DB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CocaColaCorporateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/CorporateEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CocaColaSupplyChainEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Pallet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Persistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Persistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/LoginForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/LoginForm2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/buypallet.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/internal.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerloggedin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/success.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/LoginForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/LoginForm2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DCGateway.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DoJobServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/RetailerLoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/BusinessTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/BusinessTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/internaldashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/internaldashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/internallogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/internallogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailerlogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/transactionviewer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/transactionviewer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/internalLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/internalLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/retailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/retailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/CocaColaCorporateEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/CocaColaSupplyChainEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Pallet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Persistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Persistance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/buypallet.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/internal.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/retailer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerloggedin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerloggedin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/success.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/DC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DCGateway.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/DoJobServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth/RetailerLoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/BusinessTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/BusinessTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/internaldashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/internaldashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/internallogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/internallogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerlogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/transactionviewer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/transactionviewer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/internalLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/internalLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/retailerLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/retailerLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/CocaColaCorporateEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/CocaColaSupplyChainEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Pallet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Persistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Persistance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Retailer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transactor.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
