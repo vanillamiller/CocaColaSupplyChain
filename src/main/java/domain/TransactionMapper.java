@@ -6,10 +6,14 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import auth.DBConnection;
+import mappers.IdentityMap;
 
 public class TransactionMapper {
+
     public static List<Transaction> findAllTransactions() throws SQLException {
+
         List<Transaction> result = new ArrayList<>();
+
         String sql = "SELECT txID, numPallets, date, fromID, toID FROM Transactions";
         try {
             PreparedStatement stmt = DBConnection.prepare(sql);
