@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="domain.DBRetailerMapper" %>
+<%@ page import="domain.RetailerMapper" %>
 <%@ page import="domain.Retailer" %>
 
 <html>
@@ -20,7 +20,7 @@
 <form action="retailerLoginServlet" method="post">
     User: <select name="user">
     <%
-        for (Retailer retailer : DBRetailerMapper.findAllRetailers()) {
+        for (Retailer retailer : RetailerMapper.findAllRetailers()) {
     %>
     <option value="<%=retailer.getretailerID()%>"><%=retailer.getname()%></option>
     <% } %>
