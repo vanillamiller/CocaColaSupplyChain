@@ -33,12 +33,12 @@ public class DCMapper {
 
     public static List<DC> findMyDCs(int aRetailerID) throws SQLException {
         List<DC> result = new ArrayList<>();
-
+        System.out.println("here D9");
         String sql = "SELECT DCs.DCID, DCs.name, DCs.accountBookID, DCs.numPallets from DCsRetailers NATURAL JOIN DCs where RetailerID = ?";
         try (PreparedStatement sqlPrepared = DBConnection.prepare(sql)) {
             sqlPrepared.setInt(1, aRetailerID);
             ResultSet rs = sqlPrepared.executeQuery();
-
+            System.out.println("here D10");
             while (rs.next()) {
                 int DCID = rs.getInt(1);
                 String name = rs.getString(2);
@@ -49,7 +49,7 @@ public class DCMapper {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("here D5");
+            System.out.println("here D8");
         }
         System.out.println(result);
         return result;

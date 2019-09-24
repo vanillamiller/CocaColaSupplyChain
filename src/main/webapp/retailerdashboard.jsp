@@ -23,7 +23,8 @@
     From which DC?:<br>
     <ul>
     <%
-        for (DC i : DCMapper.findMyDCs((Integer)session.getAttribute("retailerID"))) {
+        Integer x = Integer.parseInt((String)session.getAttribute("retailerID"));
+        for (DC i : DCMapper.findMyDCs(x)) {
     %>
     <li><input type="radio" name="DCID" value="<%=i.getDCID()%>" checked required><%=i.getname()%> (<%=i.getnumPallets()%> available)</input></li>
      <% } %>

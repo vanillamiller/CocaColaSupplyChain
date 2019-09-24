@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="domain.DBTransactionMapper" %>
+<%@ page import="domain.TransactionMapper" %>
 <%@ page import="domain.Transaction" %>
 
 <html>
@@ -20,7 +20,7 @@ All transactions:
 <table style="width:500px">
     <th>TransactionID</th><th>NumPallets</th><th>Date</th><th>From</th><th>To</th>
     <%
-        for (Transaction i : DBTransactionMapper.findAllTransactions()) {
+        for (Transaction i : TransactionMapper.findAllTransactions()) {
     %>
     <tr>
         <th><%=i.gettxID()%></th><th><%=i.getNumPallets()%></th><th><%=i.getDate()%></th><th><%=i.getFrom()%></th><th><%=i.getTo()%></th>
