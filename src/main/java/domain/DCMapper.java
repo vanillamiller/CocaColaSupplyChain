@@ -31,6 +31,30 @@ public class DCMapper {
         return result;
     }
 
+    public static List<DC> findMyDCs(int aRetailerID) throws SQLException {
+        List<DC> result = new ArrayList<>();
+
+        String sql = "SELECT DCs.DCID, DCs.name, DCs.accountBookID, DCs.numPallets from DCsRetailers NATURAL JOIN DCs where RetailerID = ?";
+        try (PreparedStatement sqlPrepared = DBConnection.prepare(sql)) {
+            sqlPrepared.setInt(1, aRetailerID);
+            ResultSet rs = sqlPrepared.executeQuery();
+
+            while (rs.next()) {
+                int DCID = rs.getInt(1);
+                String name = rs.getString(2);
+                int accountBookID = rs.getInt(3);
+                int numPallets = rs.getInt(4);
+                DC dc = new DC(DCID, name, accountBookID, numPallets);
+                result.add(dc);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("here D5");
+        }
+        System.out.println(result);
+        return result;
+    }
+
     public static DC findDC(int aDCID) throws SQLException {
         DC result = null;
         String sql = "SELECT DCID, name, accountBookID, numPallets FROM DCs WHERE DCID = ?";

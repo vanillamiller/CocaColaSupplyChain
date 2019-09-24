@@ -74,15 +74,16 @@ VALUES
 ('Coles Perth',14,0);
 
 
--- INSERT INTO DCsRetailers(
---     DCID,
---     RetailerID
--- )
--- VALUES
--- (1,1),
--- (1,2),
--- (2,3),
--- (4,4);
+INSERT INTO DCsRetailers(
+    DCID,
+    RetailerID
+)
+VALUES
+(1,1),
+(1,2),
+(2,3),
+(3,1),
+(4,4);
 --
 --
 -- INSERT INTO Transactions(

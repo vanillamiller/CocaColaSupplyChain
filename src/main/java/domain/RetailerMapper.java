@@ -31,6 +31,7 @@ public class RetailerMapper {
         return result;
     }
 
+
     public static Retailer findRetailer(int aRetailerID) throws SQLException {
         Retailer result = null;
         String sql = "SELECT retailerID, name, accountBookID, totalPalletsBought FROM Retailers WHERE RetailerID = ?";
