@@ -21,8 +21,8 @@
             <div class="card-body">
                 <h5 class="card-title">Are you an Internal CocaCola Entity or a Retailer?</h5>
 
-                <a href="internal.jsp" class="btn btn-danger">CocaCola Internal</a>
-                <a href="retailer.jsp" class="btn btn-primary">CocaCola Retailer</a>
+                <a href="internallogin.jsp" class="btn btn-primary">CocaCola Internal Entity</a>
+                <a href="retailerlogin.jsp" class="btn btn-primary">CocaCola Retailer</a>
             </div>
         </div>
 

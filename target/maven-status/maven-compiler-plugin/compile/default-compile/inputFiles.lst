@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyChain\CocaColaSupplyChain\src\main\java\domain\Transactor.java
 D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyChain\CocaColaSupplyChain\src\main\java\auth\DCGateway.java
 D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyChain\CocaColaSupplyChain\src\main\java\auth\RetailerLoginServlet.java
@@ -14,3 +15,21 @@ D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyCha
 D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyChain\CocaColaSupplyChain\src\main\java\mappers\UnitOfWork.java
 D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyChain\CocaColaSupplyChain\src\main\java\auth\DC.java
 D:\M-ENG\sem6\Software architecture and design\assignment\code\CocaColaSupplyChain\CocaColaSupplyChain\src\main\java\auth\DBConnection.java
+=======
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/auth/DC.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/domain/BusinessTransaction.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/mappers/TransactionMapper.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/auth/DBConnection.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/domain/Transaction.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/auth/DoJobServlet.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/domain/CocaColaSupplyChainEntity.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/auth/RetailerLoginServlet.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/domain/CocaColaCorporateEntity.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/domain/Transactor.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/mappers/UnitOfWork.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/domain/AccountBook.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/mappers/DistToBuyerAsscTable.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/auth/DCGateway.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/auth/LoginServlet.java
+/Users/tomglynch/CocaColaSupplyChain/src/main/java/mappers/IdentityMap.java
+>>>>>>> 1cd827c5f8f9dc2ed7b28952df07a5ff43efad74

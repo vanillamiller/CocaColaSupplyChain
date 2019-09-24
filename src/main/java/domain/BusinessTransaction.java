@@ -7,7 +7,7 @@ public class BusinessTransaction extends Transaction {
 
     private Currency price;
 
-    public BusinessTransaction(int numPallets, Date date, String from, String to, Currency price) {
+    public BusinessTransaction(int numPallets, Date date, Integer from, Integer to, Currency price) {
         super(numPallets, date, from, to);
         this.price = price;
     }
