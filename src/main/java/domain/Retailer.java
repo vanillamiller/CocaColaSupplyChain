@@ -1,65 +1,66 @@
 package domain;
 
-import java.sql.*;
+import mappers.DCMapper;
+import mappers.RetailerMapper;
 
-public class Retailer implements ClientEntity{
-	private int retailerID;
-	private String name;
+import java.sql.*;
+import java.util.*;
+
+public class Retailer extends Transactor implements ClientEntity{
+
+
 	private int accountBookID;
 	private int totalPalletsBought;
+	private RetailerMapper rmap;
+
+	public Retailer(int retailerID, String name){
+		super(retailerID, name);
+	}
+
 
 	public Retailer(int retailerID, String name, int accountBookID, int totalPalletsBought){
-		this.retailerID = retailerID;
-		this.name = name;
+		super(retailerID, name);
 		this.accountBookID = accountBookID;
 		this.totalPalletsBought = totalPalletsBought;
+		this.rmap=new RetailerMapper();
 	}
 
-	public int getretailerID(){
-		return retailerID;
-	}
-
-	public void setretailerID(int retailerID){
-		this.retailerID = retailerID;
-	}
-
-	public String getname(){
-		return name;
-	}
-
-	public void setname(String name){
-		this.name = name;
-	}
-
-	public int getaccountBookID(){
-		return accountBookID;
-	}
-
-	public void setaccountBookID(int accountBookID){
-		this.accountBookID = accountBookID;
-	}
-
-	public int gettotalPalletsBought(){
-		return totalPalletsBought;
-	}
-
-	public void settotalPalletsBought(int totalPalletsBought){
-		this.totalPalletsBought = totalPalletsBought;
-	}
+//	public int getaccountBookID(){
+//		return accountBookID;
+//	}
+//
+//	public void setaccountBookID(int accountBookID){
+//		this.accountBookID = accountBookID;
+//	}
+//
+//	public int gettotalPalletsBought(){
+//		return totalPalletsBought;
+//	}
+//
+//	public void settotalPalletsBought(int totalPalletsBought){
+//		this.totalPalletsBought = totalPalletsBought;
+//	}
 
 	public boolean buy(int buyPallets, int DCID) throws SQLException {
-		DC dc = DCMapper.findDC(DCID);
-		int palletsBought = dc.ship(buyPallets, this.retailerID);
-		if(palletsBought < 0){
+
+		DCMapper dmap=new DCMapper();
+		DC dc = dmap.find(DCID);
+
+		if(buyPallets < 0 || buyPallets > dc.getnumPallets()){
 			System.out.println("issue in buy, error code: " + buyPallets);
 			return false;
 		}else{
-			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
-			RetailerMapper.updateRetailer(getretailerID(),this.totalPalletsBought);
-
+			;
+			int palletsBought = dc.ship(buyPallets, this.getID());
+			this.totalPalletsBought = this.totalPalletsBought + palletsBought;
+			this.rmap.update(this.getID(),this.totalPalletsBought);
 			return true;
 		}
 
+	}
+
+	public List<Transaction> getTransactions(){
+		return new ArrayList<Transaction>();
 	}
 
 }

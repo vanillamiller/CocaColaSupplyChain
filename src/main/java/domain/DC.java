@@ -1,82 +1,66 @@
 package domain;
+import mappers.DCMapper;
+import mappers.TransactionMapper;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class DC implements SupplyChainEntity{
-	private int DCID;
-	private String name;
+public class DC extends Transactor implements SupplyChainEntity{
+
 	private int accountBookID;
 	private int numPallets;
-			
+	private DCMapper dcmap;
+
 	public DC(int DCID, String name, int accountBookID, int numPallets){
-		this.DCID = DCID;
-		this.name = name;
+		super(DCID, name);
 		this.accountBookID = accountBookID;
 		this.numPallets = numPallets;
-	}
-	
-	public int getDCID(){
-		return DCID;
+		this.dcmap=new DCMapper();
 	}
 
-	public void setDCID(int DCID){
-		this.DCID = DCID;
+	public DC(int DCID, String name){
+		super(DCID, name);
 	}
-
-	public String getname(){
-		return name;
-	}
-
-	public void setname(String name){
-		this.name = name;
-	}
-
-	public int getaccountBookID(){ return accountBookID;}
-
-	public void setaccountBookID(int accountBookID){ this.accountBookID = accountBookID;}
 
 	public int getnumPallets(){
-		return numPallets;
+		return this.numPallets;
+	}
+
+	public void setPallets(int numPallets){
+		this.numPallets=numPallets;
 	}
 
 	public int restockPallets(int restockPallets) throws SQLException {
 		this.numPallets = this.numPallets + restockPallets;
-		DCMapper.updateDC(getDCID(),this.numPallets);
+		this.dcmap.update(this.getID(),this.numPallets);
 		return this.numPallets;
 	}
 
 	public boolean canShip(int shipPallets) {
-		if (shipPallets > this.numPallets) {
-			return false;
-		} else {
-			return true;
-		}
+
+		return shipPallets <= this.getnumPallets();
+
 	}
 
 	public int ship(int shipPallets, int toID) throws SQLException {
-		if (canShip(shipPallets) == true) {
-			this.numPallets = this.numPallets - shipPallets;
-			DCMapper.updateDC(getDCID(),this.numPallets);
+		this.numPallets = this.numPallets - shipPallets;
+		this.dcmap.update(getID(), this.numPallets);
 //			create transaction
-			if(TransactionMapper.makeTransaction(shipPallets,this.DCID,toID)==true){
-				return this.numPallets;
-			}
-			else{
-				return -2;
-			}
-
-
-		}
-		else{
+		if (TransactionMapper.create(shipPallets, this.getID(), toID)) {
+			return this.numPallets;
+		} else {
 			return -1;
 		}
-
 	}
 
-//	public static List<DC> getAllDCs() {
-//		DCGateway dcg = new DCGateway();
-//		TODOTODOTODOTODOTODOTODOTODO
-//		return result;
-//	}
+	public List<Transaction> getTransactions(){
+		List<Transaction> ts;
+		ts=TransactionMapper.findAll(this.getID(),"DC");
+		return ts;
+	}
+
+
 		 
 }

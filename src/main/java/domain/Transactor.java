@@ -1,5 +1,7 @@
 package domain;
 
+import mappers.TransactorMapper;
+
 import java.util.*;
 
 public abstract class Transactor {
@@ -8,14 +10,19 @@ public abstract class Transactor {
     private String name;
     private List<Transaction> transactions;
 
-    public abstract void Transactor(int id, String name);
+    public Transactor(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-    public abstract int getID();
+    public int getID(){
+        return this.id;
+    };
 
-    public abstract String getName();
+    public String getName(){
+        return this.name;
+    };
 
     public abstract List<Transaction> getTransactions();
-
-    public abstract Transaction getTransactionByID();
 
 }

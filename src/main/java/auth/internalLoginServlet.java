@@ -31,7 +31,7 @@ public class internalLoginServlet extends HttpServlet {
             session.setAttribute("accessCount", accessCount);
         }
 
-
+        //session.setAttribute("uid", username);
         System.out.println("Session ID: " + session.getId() + " Times accessed: " + accessCount);
         response.sendRedirect("internaldashboard.jsp");
     }

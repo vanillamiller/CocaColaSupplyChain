@@ -1,4 +1,4 @@
-<%@ page import="domain.DCMapper" %>
+<%@ page import="mappers.DCMapper" %>
 <%@ page import="domain.DC" %><%--
   Created by IntelliJ IDEA.
   User: tomglynch
@@ -26,7 +26,7 @@
         Integer x = Integer.parseInt((String)session.getAttribute("retailerID"));
         for (DC i : DCMapper.findMyDCs(x)) {
     %>
-    <li><input type="radio" name="DCID" value="<%=i.getDCID()%>" checked required><%=i.getname()%> (<%=i.getnumPallets()%> available)</input></li>
+    <li><input type="radio" name="DCID" value="<%=i.getID()%>" checked required><%=i.getName()%> (<%=i.getnumPallets()%> available)</input></li>
      <% } %>
     </ul>
     <input type="submit" value="Buy">

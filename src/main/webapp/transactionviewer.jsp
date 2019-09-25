@@ -6,8 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="domain.TransactionMapper" %>
+<%@ page import="mappers.TransactionMapper" %>
 <%@ page import="domain.Transaction" %>
+<%@ page import="domain.DC" %>
+<%@ page import="mappers.CocaColaHQMapper" %>
+<%@ page import="domain.CocaColaHQ" %>
+<%@ page import="mappers.DCMapper" %>
+<%@ page import="mappers.RetailerMapper" %>
 
 <html>
 <head>
@@ -17,15 +22,40 @@
 <body>
 
 All transactions:
+
+
 <table style="width:500px">
+    <thead>
     <th>TransactionID</th><th>NumPallets</th><th>Date</th><th>From</th><th>To</th>
+    </thead>
+    <tbody>
     <%
-        for (Transaction i : TransactionMapper.findAllTransactions()) {
+        CocaColaHQ hq=CocaColaHQMapper.find(0);
+
+        DCMapper dcmap=new DCMapper();
+        RetailerMapper rmap=new RetailerMapper();
+
+        int curr, prev=-1;
+        for (Transaction i : hq.getTransactions()) {
+            System.out.println();
     %>
-    <tr>
-        <th><%=i.gettxID()%></th><th><%=i.getNumPallets()%></th><th><%=i.getDate()%></th><th><%=i.getFrom()%></th><th><%=i.getTo()%></th>
-    </tr>
-    <% } %>
-</table>
+
+    <%      curr=i.getFrom();
+            if(curr!=prev){%>
+                <tr><th colspan="5"><%=dcmap.find(i.getFrom()).getName()%></th></tr>
+            <% } %>
+        <tr>
+            <td><%=i.gettxID()%></td>
+            <td><%=i.getNumPallets()%></td>
+            <td><%=i.getDate()%></td>
+            <td><%=dcmap.find(i.getFrom()).getName()%></td>
+            <td><%=rmap.find(i.getTo()).getName()%></td>
+        </tr>
+
+    <%      prev=i.getFrom();
+        } %>
+    </tbody>
+    </table>
+
 </body>
 </html>

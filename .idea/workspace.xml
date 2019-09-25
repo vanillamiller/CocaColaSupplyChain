@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CocaColaSupplyChain" />
+      <artifact name="ccscm:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/makePalletServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/makePalletServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth/purchasePalletServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth/purchasePalletServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/CocaColaHQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/CocaColaHQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/DCMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/DCMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/RetailerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/RetailerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/BUnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailerlogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/transactionviewer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/transactionviewer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/makePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/auth/purchasePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/CocaColaHQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/CocaColaHQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/DCMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/DCMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/RetailerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/RetailerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/TransactionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/UnitOfWork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerlogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerlogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/makePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth/purchasePalletServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/CocaColaHQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/CocaColaHQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Retailer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/DCMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/DCMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/RetailerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/RetailerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/TransactionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UnitOfWork.class" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="4a92eaf0-5ae1-49ae-a79d-d2a1668918f3" />
+    </checked>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QupQZ44FC4qYcQ0kgzUcGsfRBA" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.24">
+    <configuration name="ccscm []" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9.0.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="CocaColaSupplyChain">
+          <settings>
+            <option name="CONTEXT_PATH" value="/CocaColaSupplyChain" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_24_ccscm" />
+        <option name="DEPLOY_TOMCAT_APPS" value="true" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52829" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ccscm:war exploded" />
+          <artifact name="ccscm:war" />
+          <artifact name="CocaColaSupplyChain" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.24" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_ccscm" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52829" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.ccscm []" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.24" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="" />
+      <created>1568630319597</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568539545488</updated>
+      <workItem from="1568539551300" duration="4077000" />
+      <workItem from="1568543652049" duration="17636000" />
+      <workItem from="1568626936844" duration="3259000" />
+      <workItem from="1568631023538" duration="367000" />
+      <workItem from="1569294390270" duration="618000" />
+      <workItem from="1569295025805" duration="41775000" />
+    </task>
+    <task id="LOCAL-00001" summary="commiting after regaining intellij workspace">
+      <created>1568627108360</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568627108360</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commiting after regaining intellij workspace">
+      <created>1568627173638</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568627173638</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commiting after regaining intellij workspace">
+      <created>1568627251014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568627251014</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

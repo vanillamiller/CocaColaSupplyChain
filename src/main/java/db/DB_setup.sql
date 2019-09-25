@@ -2,17 +2,23 @@ DROP TABLE DCs;
 DROP TABLE Retailers;
 DROP TABLE DCsRetailers;
 DROP TABLE Transactions;
-DROP TABLE Inventory;
+DROP TABLE COKEHQ;
 
 DROP TYPE colaForm;
 
 CREATE TYPE colaForm AS ENUM ('syrup', 'pallet');
 
+CREATE TABLE COKEHQ(
+    CHQID SERIAL PRIMARY KEY,
+    name VARCHAR(50)
+);
+
 CREATE TABLE DCs(
     DCID SERIAL PRIMARY KEY,
     name VARCHAR(50),
     accountBookID INTEGER,
-    numPallets INTEGER
+    numPallets INTEGER,
+    CHQID integer REFERENCES COKEHQ(CHQID)
 );
 
 CREATE TABLE Retailers(
@@ -49,18 +55,22 @@ CREATE TABLE Transactions(
 
 -- POPULATE WITH DUMMY DATA --
 
-
+INSERT INTO COKEHQ(
+    CHQID,
+    name
+)VALUES(0, 'Big Boss');
 
 INSERT INTO DCs(
     name,
     accountBookID,
-    numPallets
+    numPallets,
+    CHQID
 )
 VALUES
-('Melbourne DC',0,20),
-('Sydney DC',1,30),
-('Brisbane DC',2,10),
-('Perth DC',3,232);
+('Melbourne DC',0,20,0),
+('Sydney DC',1,30,0),
+('Brisbane DC',2,10,0),
+('Perth DC',3,232,0);
 
 INSERT INTO Retailers(
     name,

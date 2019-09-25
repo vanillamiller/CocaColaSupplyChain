@@ -48,6 +48,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
+
           <executions>
             <execution>
               <phase>package</phase>
@@ -57,7 +58,9 @@
                   <artifactItem>
                     <groupId>com.github.jsimone</groupId>
                     <artifactId>webapp-runner</artifactId>
+
                     <version>9.0.24.0</version>
+
                     <destFileName>webapp-runner.jar</destFileName>
                   </artifactItem>
                 </artifactItems>
