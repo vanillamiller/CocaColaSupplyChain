@@ -1,7 +1,7 @@
 package auth;
 
 import domain.Retailer;
-import domain.RetailerMapper;
+import mappers.RetailerMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

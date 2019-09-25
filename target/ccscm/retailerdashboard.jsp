@@ -1,4 +1,4 @@
-<%@ page import="domain.DCMapper" %>
+<%@ page import="mappers.DCMapper" %>
 <%@ page import="domain.DC" %><%--
   Created by IntelliJ IDEA.
   User: tomglynch

@@ -2,7 +2,6 @@
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="domain.DC" %>
-<%@ page import="domain.DCMapper" %>
 <%@ page import="domain.CocaColaHQ" %>
 
 
@@ -22,12 +21,13 @@
 
 
     Distribution Centers:
-    <%
-        for (DC i : DCMapper.findAllDCs()) {
+    <%  CocaColaHQ hq=new CocaColaHQ(0, "Big Boss");
+
+        for (DC i : hq.getDistList()) {
     %>
     <form action="makePalletServlet" method="post">
         <input type="number" name="quantity" min="1" required >
-        <button name="pluspallet" type="submit" value="<%=i.getDCID()%>" required>Add Pallet</button><%=i.getname()%> <%=i.getnumPallets()%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> <%=i.getnumPallets()%>
 <%--        has <%=i.getNumPallets()%> Pallets--%>
 <%--        <option value="<%=i.getDCID()%>"><%=i.getname()%></option>--%>
 <%--        <input type="submit" value="Mix, Bottle and Send to DC">--%>

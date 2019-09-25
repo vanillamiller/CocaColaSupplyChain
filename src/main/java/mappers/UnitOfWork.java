@@ -15,8 +15,7 @@ public class UnitOfWork {
 
     public static UnitOfWork getCurrent(){ return (UnitOfWork) current.get(); }
 
-//    public void registerNew(Object dobj){
-//        Assert.notNull(dobj.getId(), "id is null", );
-//    }
+    public void registerNew(Object obj){
 
+    }
 }

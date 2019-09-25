@@ -23,6 +23,4 @@ public abstract class Transactor {
 
     public abstract List<Transaction> getTransactions();
 
-    public abstract Transaction getTransactionByID();
-
 }

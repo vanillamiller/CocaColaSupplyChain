@@ -23,10 +23,8 @@ public class IdentityMap<E> {
         map.put(id, obj);
     }
 
-    public E get(long id) {
+    public E get(int id) {
         return map.get(id);
     }
-
-
 
 }

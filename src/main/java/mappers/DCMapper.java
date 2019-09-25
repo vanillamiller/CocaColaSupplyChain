@@ -1,4 +1,4 @@
-package domain;
+package mappers;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -6,12 +6,17 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import auth.DBConnection;
+import domain.DC;
+import domain.Transaction;
 import mappers.IdentityMap;
 
 public class DCMapper {
+
     public static List<DC> findAllDCs() {
+
         List<DC> result = new ArrayList<>();
         String sql = "SELECT DCID, name, accountBookID, numPallets FROM DCs ORDER BY name ASC";
+
         try {
             PreparedStatement sqlPrepared = DBConnection.prepare(sql);
             ResultSet rs = sqlPrepared.executeQuery();
@@ -56,9 +61,9 @@ public class DCMapper {
         return result;
     }
 
-    public static DC findDC(int aDCID) throws SQLException {
+    public static DC find(int aDCID) throws SQLException {
 
-        DC result = new DC(aDCID);
+        DC result = new DC(aDCID, "");
         IdentityMap<DC> map = IdentityMap.getInstance(result);
         result = map.get(aDCID);
 
@@ -86,7 +91,7 @@ public class DCMapper {
         return result;
     }
 
-    public static boolean updateDC(int DCID, int numPallets) throws SQLException {
+    public static boolean update(int DCID, int numPallets) throws SQLException {
 
         String sql = "UPDATE DCs SET numPallets = ? WHERE DCID = ?";
         try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
@@ -104,6 +109,8 @@ public class DCMapper {
         }
         return true;
     }
+
+
 }
 
 

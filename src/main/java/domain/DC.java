@@ -1,43 +1,25 @@
 package domain;
+import mappers.DCMapper;
+import mappers.TransactionMapper;
+
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class DC implements SupplyChainEntity{
-	private int DCID;
-	private String name;
+public class DC extends Transactor implements SupplyChainEntity{
 	private int accountBookID;
 	private int numPallets;
 			
 	public DC(int DCID, String name, int accountBookID, int numPallets){
-		this.DCID = DCID;
-		this.name = name;
+		super(DCID, name);
 		this.accountBookID = accountBookID;
 		this.numPallets = numPallets;
 	}
 
-	public DC(int DCID){
-		this.DCID=DCID;
+	public DC(int DCID, String name){
+		super(DCID, name);
 	}
-	
-	public int getDCID(){
-		return DCID;
-	}
-
-	public void setDCID(int DCID){
-		this.DCID = DCID;
-	}
-
-	public String getname(){
-		return name;
-	}
-
-	public void setname(String name){
-		this.name = name;
-	}
-
-	public int getaccountBookID(){ return accountBookID;}
-
-	public void setaccountBookID(int accountBookID){ this.accountBookID = accountBookID;}
 
 	public int getnumPallets(){
 		return numPallets;
@@ -45,24 +27,22 @@ public class DC implements SupplyChainEntity{
 
 	public int restockPallets(int restockPallets) throws SQLException {
 		this.numPallets = this.numPallets + restockPallets;
-		DCMapper.updateDC(getDCID(),this.numPallets);
+		DCMapper.update(this.getID(),this.numPallets);
 		return this.numPallets;
 	}
 
 	public boolean canShip(int shipPallets) {
-		if (shipPallets > this.numPallets) {
-			return false;
-		} else {
-			return true;
-		}
+
+		return shipPallets <= this.getnumPallets();
+
 	}
 
 	public int ship(int shipPallets, int toID) throws SQLException {
 		if (canShip(shipPallets) == true) {
 			this.numPallets = this.numPallets - shipPallets;
-			DCMapper.updateDC(getDCID(),this.numPallets);
+			DCMapper.update(getID(),this.numPallets);
 //			create transaction
-			if(TransactionMapper.makeTransaction(shipPallets,this.DCID,toID)==true){
+			if(TransactionMapper.makeTransaction(shipPallets,this.getID(),toID)==true){
 				return this.numPallets;
 			}
 			else{
@@ -75,10 +55,14 @@ public class DC implements SupplyChainEntity{
 
 	}
 
-//	public static List<DC> getAllDCs() {
-//		DCGateway dcg = new DCGateway();
-//		TODOTODOTODOTODOTODOTODOTODO
-//		return result;
-//	}
+	public List<Transaction> getTransactions(){
+
+		List<Transaction> ts=new ArrayList<Transaction>();
+		ts=TransactionMapper.findAllTransactions(this.getID(),"DC");
+		return ts;
+
+	}
+
+
 		 
 }
