@@ -15,6 +15,15 @@ public abstract class Transactor {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object other){
+        if(other.getClass().equals(this.getClass())) {
+            Transactor oth=(Transactor) other;
+            return (this.getID() == oth.getID());
+        }
+        return false;
+    }
+
     public int getID(){
         return this.id;
     };

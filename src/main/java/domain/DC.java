@@ -48,7 +48,7 @@ public class DC extends Transactor implements SupplyChainEntity{
 		this.numPallets = this.numPallets - shipPallets;
 		this.dcmap.update(getID(), this.numPallets);
 //			create transaction
-		if (TransactionMapper.create(shipPallets, this.getID(), toID)) {
+		if (TransactionMapper.insert(shipPallets, this.getID(), toID)) {
 			return this.numPallets;
 		} else {
 			return -1;

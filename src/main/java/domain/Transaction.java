@@ -23,6 +23,7 @@ public class Transaction {
         this.date = date;
         this.from = from;
         this.to = to;
+
     }
     public int gettxID() {
 

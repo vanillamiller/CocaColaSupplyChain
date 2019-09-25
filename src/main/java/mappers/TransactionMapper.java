@@ -44,7 +44,7 @@ public class TransactionMapper {
         return result;
     }
 
-    public static boolean create(int numPallets, int fromID, int toID) throws SQLException {
+    public static boolean insert(int numPallets, int fromID, int toID) throws SQLException {
 
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
