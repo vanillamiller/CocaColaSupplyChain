@@ -1,5 +1,7 @@
 package domain;
 
+import mappers.TransactorMapper;
+
 import java.util.*;
 
 public abstract class Transactor {

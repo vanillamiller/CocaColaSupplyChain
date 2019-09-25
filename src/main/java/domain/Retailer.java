@@ -11,6 +11,7 @@ public class Retailer extends Transactor implements ClientEntity{
 
 	private int accountBookID;
 	private int totalPalletsBought;
+	private RetailerMapper rmap;
 
 	public Retailer(int retailerID, String name){
 		super(retailerID, name);
@@ -21,6 +22,7 @@ public class Retailer extends Transactor implements ClientEntity{
 		super(retailerID, name);
 		this.accountBookID = accountBookID;
 		this.totalPalletsBought = totalPalletsBought;
+		this.rmap=new RetailerMapper();
 	}
 
 //	public int getaccountBookID(){
@@ -41,15 +43,17 @@ public class Retailer extends Transactor implements ClientEntity{
 
 	public boolean buy(int buyPallets, int DCID) throws SQLException {
 
-		DC dc = DCMapper.find(DCID);
+		DCMapper dmap=new DCMapper();
+		DC dc = dmap.find(DCID);
 
 		if(buyPallets < 0 || buyPallets > dc.getnumPallets()){
 			System.out.println("issue in buy, error code: " + buyPallets);
 			return false;
 		}else{
+			;
 			int palletsBought = dc.ship(buyPallets, this.getID());
-			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
-			RetailerMapper.updateRetailer(this.getID(),this.totalPalletsBought);
+			this.totalPalletsBought = this.totalPalletsBought + palletsBought;
+			this.rmap.update(this.getID(),this.totalPalletsBought);
 			return true;
 		}
 

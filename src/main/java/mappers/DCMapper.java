@@ -10,9 +10,9 @@ import domain.DC;
 import domain.Transaction;
 import mappers.IdentityMap;
 
-public class DCMapper {
+public class DCMapper extends TransactorMapper{
 
-    public static List<DC> findAll() {
+    public List<DC> findAll() {
 
         List<DC> result = new ArrayList<>();
         String sql = "SELECT DCID, name, accountBookID, numPallets FROM DCs ORDER BY name ASC";
@@ -37,10 +37,14 @@ public class DCMapper {
         return result;
     }
 
-    public static List<DC> findMyDCs(int aRetailerID) throws SQLException {
+    public List<DC> findMyDCs(int aRetailerID) throws SQLException {
         List<DC> result = new ArrayList<>();
-        System.out.println("here D9");
+
+        IdentityMap<DC> map=IdentityMap.getInstance(new DC(0,"garbage"));
+
+
         String sql = "SELECT DCs.DCID, DCs.name, DCs.accountBookID, DCs.numPallets from DCsRetailers NATURAL JOIN DCs where RetailerID = ?";
+
         try (PreparedStatement sqlPrepared = DBConnection.prepare(sql)) {
             sqlPrepared.setInt(1, aRetailerID);
             ResultSet rs = sqlPrepared.executeQuery();
@@ -61,7 +65,7 @@ public class DCMapper {
         return result;
     }
 
-    public static DC find(int aDCID) throws SQLException {
+    public DC find(int aDCID) {
 
         DC result = new DC(aDCID, "");
         IdentityMap<DC> map = IdentityMap.getInstance(result);
@@ -77,7 +81,6 @@ public class DCMapper {
                 String name = rs.getString(2);
                 int accountBookID = rs.getInt(3);
                 int numPallets = rs.getInt(4);
-
                 result = new DC(DCID, name, accountBookID, numPallets);
                 map.put(aDCID, result);
                 System.out.println(aDCID + "dc gone thru idMap");
@@ -91,13 +94,17 @@ public class DCMapper {
         return result;
     }
 
-    public static boolean update(int DCID, int numPallets) throws SQLException {
+    public boolean update(int DCID, int numPallets) {
+
+        IdentityMap<DC> map = IdentityMap.getInstance(new DC(0, "garbage"));
+
 
         String sql = "UPDATE DCs SET numPallets = ? WHERE DCID = ?";
         try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
             sqlPrepared.setInt(1, numPallets);
             sqlPrepared.setInt(2, DCID);
             int rs = sqlPrepared.executeUpdate();
+            map.get(DCID).setPallets(numPallets);
             System.out.println("here is the int: DD " + rs);
             System.out.println("sqlPrepared");
             System.out.println(sqlPrepared);

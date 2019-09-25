@@ -44,10 +44,12 @@ public class TransactionMapper {
         return result;
     }
 
-    public static boolean makeTransaction(int numPallets, int fromID, int toID) throws SQLException {
+    public static boolean create(int numPallets, int fromID, int toID) throws SQLException {
+
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
 
+        IdentityMap<Transaction> map=IdentityMap.getInstance(new Transaction());
 //        String sql = "UPDATE Transactions set numPallets = ?, date = ?, fromID = ?, toID = ?";
         String sql = "INSERT INTO Transactions(numPallets, date, fromID, toID) VALUES (?, ?, ?, ?)";
         try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){

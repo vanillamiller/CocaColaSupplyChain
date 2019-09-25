@@ -46,5 +46,6 @@ public class Transaction {
 
     public Integer getTo() {
 
-        return to; }
+        return to;
+    }
 }

@@ -8,10 +8,12 @@ import java.util.List;
 
 public class CocaColaHQ extends Transactor {
 
-    List<DC> distList=new ArrayList<DC>();
+    DCMapper dcmap;
+
 
     public CocaColaHQ(int id, String name){
         super(id, name);
+        this.dcmap=new DCMapper();
     };
 
     public List<Transaction> getTransactions(){
@@ -28,10 +30,9 @@ public class CocaColaHQ extends Transactor {
     }
 
     public List<DC> getDistList(){
-        if(this.distList.isEmpty()){
-            this.distList = DCMapper.findAll();
-        }
-        return this.distList;
+            return this.dcmap.findAll();
     }
+
+
 
 }

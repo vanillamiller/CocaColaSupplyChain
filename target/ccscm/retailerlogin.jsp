@@ -19,8 +19,8 @@
 
 <form action="retailerLoginServlet" method="post">
     User: <select name="user">
-    <%
-        for (Retailer retailer : RetailerMapper.findAllRetailers()) {
+    <%  RetailerMapper rmap=new RetailerMapper();
+        for (Retailer retailer : rmap.findAll()) {
     %>
     <option value="<%=retailer.getID()%>"><%=retailer.getName()%></option>
     <% } %>

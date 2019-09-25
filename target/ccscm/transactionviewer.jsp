@@ -29,7 +29,12 @@ All transactions:
     <th>TransactionID</th><th>NumPallets</th><th>Date</th><th>From</th><th>To</th>
     </thead>
     <tbody>
-    <%  CocaColaHQ hq=CocaColaHQMapper.find(0);
+    <%
+        CocaColaHQ hq=CocaColaHQMapper.find(0);
+
+        DCMapper dcmap=new DCMapper();
+        RetailerMapper rmap=new RetailerMapper();
+
         int curr, prev=-1;
         for (Transaction i : hq.getTransactions()) {
             System.out.println();
@@ -37,14 +42,14 @@ All transactions:
 
     <%      curr=i.getFrom();
             if(curr!=prev){%>
-                <tr><th colspan="5"><%=DCMapper.find(i.getFrom()).getName()%></th></tr>
+                <tr><th colspan="5"><%=dcmap.find(i.getFrom()).getName()%></th></tr>
             <% } %>
         <tr>
             <td><%=i.gettxID()%></td>
             <td><%=i.getNumPallets()%></td>
             <td><%=i.getDate()%></td>
-            <td><%=DCMapper.find(i.getFrom()).getName()%></td>
-            <td><%=RetailerMapper.find(i.getTo()).getName()%></td>
+            <td><%=dcmap.find(i.getFrom()).getName()%></td>
+            <td><%=rmap.find(i.getTo()).getName()%></td>
         </tr>
 
     <%      prev=i.getFrom();

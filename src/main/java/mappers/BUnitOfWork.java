@@ -2,18 +2,18 @@ package mappers;
 
 import java.util.*;
 
-public class UnitOfWork {
+public class BUnitOfWork {
     private static ThreadLocal current=new ThreadLocal();
 
     private List<Object> newObjects=new ArrayList<Object>();
     private List<Object> dirtyObjects=new ArrayList<Object>();
     private List<Object> deletedObjects=new ArrayList<Object>();
 
-    public static void newCurrent(){ setCurrent(new UnitOfWork()); }
+    public static void newCurrent(){ setCurrent(new BUnitOfWork()); }
 
-    public static void setCurrent(UnitOfWork uow){ current.set(uow); }
+    public static void setCurrent(BUnitOfWork uow){ current.set(uow); }
 
-    public static UnitOfWork getCurrent(){ return (UnitOfWork) current.get(); }
+    public static BUnitOfWork getCurrent(){ return (BUnitOfWork) current.get(); }
 
     public void registerNew(Object obj){
 
