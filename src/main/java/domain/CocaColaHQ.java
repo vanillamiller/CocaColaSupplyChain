@@ -16,9 +16,8 @@ public class CocaColaHQ extends Transactor {
 
     public List<Transaction> getTransactions(){
         List<Transaction> ts=new ArrayList<Transaction>();
-
         for(DC dc : this.getDistList()) {
-            ts.addAll(TransactionMapper.findAllTransactions(dc.getID(),"DC"));
+            ts.addAll(TransactionMapper.findAll(dc.getID(),"DC"));
         }
 
         return ts;
@@ -30,7 +29,7 @@ public class CocaColaHQ extends Transactor {
 
     public List<DC> getDistList(){
         if(this.distList.isEmpty()){
-            this.distList = DCMapper.findAllDCs();
+            this.distList = DCMapper.findAll();
         }
         return this.distList;
     }

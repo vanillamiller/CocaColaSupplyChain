@@ -3,6 +3,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="domain.DC" %>
 <%@ page import="domain.CocaColaHQ" %>
+<%@ page import="mappers.CocaColaHQMapper" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,7 +22,7 @@
 
 
     Distribution Centers:
-    <%  CocaColaHQ hq=new CocaColaHQ(0, "Big Boss");
+    <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
 
         for (DC i : hq.getDistList()) {
     %>

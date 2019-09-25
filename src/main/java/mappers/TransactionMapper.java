@@ -11,7 +11,7 @@ import mappers.IdentityMap;
 
 public class TransactionMapper {
 
-    public static List<Transaction> findAllTransactions(int id, String dcOrRet) {
+    public static List<Transaction> findAll(int id, String dcOrRet) {
 
         List<Transaction> result = new ArrayList<>();
         String sql;

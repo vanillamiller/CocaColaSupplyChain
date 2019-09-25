@@ -22,7 +22,7 @@ public class purchasePalletServlet extends HttpServlet {
 //        TODO when makePallet is called, need to increment pallet ID.
         Retailer retailer = null;
         try {
-            retailer = RetailerMapper.findRetailer(retailerID);
+            retailer = RetailerMapper.find(retailerID);
         } catch (SQLException e) {
             e.printStackTrace();
         }

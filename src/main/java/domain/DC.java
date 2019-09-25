@@ -56,11 +56,9 @@ public class DC extends Transactor implements SupplyChainEntity{
 	}
 
 	public List<Transaction> getTransactions(){
-
 		List<Transaction> ts=new ArrayList<Transaction>();
-		ts=TransactionMapper.findAllTransactions(this.getID(),"DC");
+		ts=TransactionMapper.findAll(this.getID(),"DC");
 		return ts;
-
 	}
 
 

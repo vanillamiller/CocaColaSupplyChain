@@ -12,7 +12,7 @@ import mappers.IdentityMap;
 
 public class DCMapper {
 
-    public static List<DC> findAllDCs() {
+    public static List<DC> findAll() {
 
         List<DC> result = new ArrayList<>();
         String sql = "SELECT DCID, name, accountBookID, numPallets FROM DCs ORDER BY name ASC";

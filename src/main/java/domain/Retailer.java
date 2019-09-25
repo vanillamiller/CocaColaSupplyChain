@@ -37,7 +37,7 @@ public class Retailer implements ClientEntity{
 		this.retailerID = retailerID;
 	}
 
-	public String getname(){
+	public String getName(){
 		return name;
 	}
 

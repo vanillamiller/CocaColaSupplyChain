@@ -38,7 +38,7 @@ public class RetailerMapper {
     }
 
 
-    public static Retailer findRetailer(int aRetailerID) throws SQLException {
+    public static Retailer find(int aRetailerID) throws SQLException {
 
         Retailer result = new Retailer(aRetailerID);
         IdentityMap<Retailer> map = IdentityMap.getInstance(result);
