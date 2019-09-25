@@ -13,7 +13,7 @@ public class RetailerMapper {
     public static List<Retailer> findAllRetailers() throws SQLException {
         List<Retailer> result = new ArrayList<>();
         String sql = "SELECT retailerID, name, accountBookID, totalPalletsBought FROM Retailers";
-        IdentityMap<Retailer> map = IdentityMap.getInstance(new Retailer());
+        IdentityMap<Retailer> map = IdentityMap.getInstance(new Retailer(0,"garbage"));
 
         try {
             PreparedStatement sqlPrepared = DBConnection.prepare(sql);
@@ -40,7 +40,7 @@ public class RetailerMapper {
 
     public static Retailer find(int aRetailerID) throws SQLException {
 
-        Retailer result = new Retailer(aRetailerID);
+        Retailer result = new Retailer(aRetailerID, "");
         IdentityMap<Retailer> map = IdentityMap.getInstance(result);
         result = map.get(aRetailerID);
         String sql = "SELECT retailerID, name, accountBookID, totalPalletsBought FROM Retailers WHERE RetailerID = ?";

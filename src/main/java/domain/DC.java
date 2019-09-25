@@ -38,22 +38,17 @@ public class DC extends Transactor implements SupplyChainEntity{
 	}
 
 	public int ship(int shipPallets, int toID) throws SQLException {
-		if (canShip(shipPallets) == true) {
-			this.numPallets = this.numPallets - shipPallets;
-			DCMapper.update(getID(),this.numPallets);
+		this.numPallets = this.numPallets - shipPallets;
+		DCMapper.update(getID(), this.numPallets);
 //			create transaction
-			if(TransactionMapper.makeTransaction(shipPallets,this.getID(),toID)==true){
-				return this.numPallets;
-			}
-			else{
-				return -2;
-			}
-		}
-		else{
+		if (TransactionMapper.makeTransaction(shipPallets, this.getID(), toID) == true) {
+			return this.numPallets;
+		} else {
 			return -1;
 		}
-
 	}
+
+
 
 	public List<Transaction> getTransactions(){
 		List<Transaction> ts=new ArrayList<Transaction>();

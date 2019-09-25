@@ -22,7 +22,7 @@
     <%
         for (Retailer retailer : RetailerMapper.findAllRetailers()) {
     %>
-    <option value="<%=retailer.getretailerID()%>"><%=retailer.getname()%></option>
+    <option value="<%=retailer.getID()%>"><%=retailer.getName()%></option>
     <% } %>
 
 </select><br>
