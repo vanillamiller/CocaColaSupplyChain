@@ -12,5 +12,6 @@ public abstract class TransactorMapper {
 
     public abstract List<? extends Transactor> findAll();
 
-    public abstract boolean update(int id, int numPallets);
+    public abstract boolean update(Transactor t);
+
 }

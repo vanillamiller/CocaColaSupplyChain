@@ -44,12 +44,15 @@ public class TransactionMapper {
         return result;
     }
 
-    public static boolean insert(int numPallets, int fromID, int toID) throws SQLException {
+    public static boolean insert(Transaction tx) {
 
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
+        int numPallets=tx.getNumPallets();
+        int fromID=tx.getFrom();
+        int toID=tx.getTo();
 
-        IdentityMap<Transaction> map=IdentityMap.getInstance(new Transaction());
+        IdentityMap<Transaction> map = IdentityMap.getInstance(new Transaction());
 //        String sql = "UPDATE Transactions set numPallets = ?, date = ?, fromID = ?, toID = ?";
         String sql = "INSERT INTO Transactions(numPallets, date, fromID, toID) VALUES (?, ?, ?, ?)";
         try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
@@ -66,6 +69,7 @@ public class TransactionMapper {
              System.out.println("here T5");
             return false;
         }
+        System.out.println("transaction mapper uow working");
         return true;
     }
 }

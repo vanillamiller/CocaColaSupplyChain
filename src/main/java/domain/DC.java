@@ -1,9 +1,11 @@
 package domain;
 import mappers.DCMapper;
 import mappers.TransactionMapper;
+import mappers.UnitOfWork;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -44,15 +46,11 @@ public class DC extends Transactor implements SupplyChainEntity{
 
 	}
 
-	public int ship(int shipPallets, int toID) throws SQLException {
+	public void ship(int shipPallets, int toID) throws SQLException {
 		this.numPallets = this.numPallets - shipPallets;
-		this.dcmap.update(getID(), this.numPallets);
-//			create transaction
-		if (TransactionMapper.insert(shipPallets, this.getID(), toID)) {
-			return this.numPallets;
-		} else {
-			return -1;
-		}
+//		this.dcmap.update(getID(), this.numPallets);
+		new Transaction(shipPallets, this.getID(), toID);
+		UnitOfWork.getCurrent().registerDirty(this);
 	}
 
 	public List<Transaction> getTransactions(){

@@ -1,4 +1,6 @@
 package domain;
+import mappers.UnitOfWork;
+
 import java.util.*;
 
 public class Transaction {
@@ -10,11 +12,11 @@ public class Transaction {
 
     public Transaction(){};
 
-    public Transaction(int numPallets, Date date, Integer from, Integer to) {
+    public Transaction(int numPallets, Integer from, Integer to) {
         this.numPallets = numPallets;
-        this.date = date;
         this.from = from;
         this.to = to;
+        UnitOfWork.getCurrent().registerNew(this);
     }
 
     public Transaction(int txID, int numPallets, Date date, Integer from, Integer to) {
@@ -23,8 +25,8 @@ public class Transaction {
         this.date = date;
         this.from = from;
         this.to = to;
-
     }
+
     public int gettxID() {
 
         return txID;

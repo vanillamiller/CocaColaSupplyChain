@@ -8,6 +8,7 @@ import java.util.List;
 import auth.DBConnection;
 import domain.DC;
 import domain.Transaction;
+import domain.Transactor;
 import mappers.IdentityMap;
 
 public class DCMapper extends TransactorMapper{
@@ -94,17 +95,17 @@ public class DCMapper extends TransactorMapper{
         return result;
     }
 
-    public boolean update(int DCID, int numPallets) {
-
+    public boolean update(Transactor t) {
+        DC dc = (DC) t;
         IdentityMap<DC> map = IdentityMap.getInstance(new DC(0, "garbage"));
 
 
         String sql = "UPDATE DCs SET numPallets = ? WHERE DCID = ?";
         try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
-            sqlPrepared.setInt(1, numPallets);
-            sqlPrepared.setInt(2, DCID);
+            sqlPrepared.setInt(1, dc.getnumPallets());
+            sqlPrepared.setInt(2, dc.getID());
             int rs = sqlPrepared.executeUpdate();
-            map.get(DCID).setPallets(numPallets);
+            map.get(dc.getID()).setPallets(dc.getnumPallets());
             System.out.println("here is the int: DD " + rs);
             System.out.println("sqlPrepared");
             System.out.println(sqlPrepared);

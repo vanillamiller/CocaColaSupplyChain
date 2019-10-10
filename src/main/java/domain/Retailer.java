@@ -51,8 +51,8 @@ public class Retailer extends Transactor implements ClientEntity{
 			return false;
 		}else{
 			;
-			int palletsBought = dc.ship(buyPallets, this.getID());
-			this.totalPalletsBought = this.totalPalletsBought + palletsBought;
+			dc.ship(buyPallets, this.getID());
+			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
 			this.rmap.update(this.getID(),this.totalPalletsBought);
 			return true;
 		}

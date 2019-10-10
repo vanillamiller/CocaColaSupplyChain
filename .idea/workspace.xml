@@ -8,21 +8,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/SupplyChainEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/SupplyChainEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/BUnitOfWork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/DCMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/DCMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/TransactorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ccscm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/CocaColaHQ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/DC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Retailer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/SupplyChainEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/SupplyChainEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/BUnitOfWork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/TransactionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/SupplyChainEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/SupplyChainEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transactor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/BUnitOfWork.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/TransactionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UnitOfWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/UnitOfWork.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +88,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -289,7 +297,10 @@
       <workItem from="1568626936844" duration="3259000" />
       <workItem from="1568631023538" duration="367000" />
       <workItem from="1569294390270" duration="618000" />
-      <workItem from="1569295025805" duration="45635000" />
+      <workItem from="1569295025805" duration="47996000" />
+      <workItem from="1569848266975" duration="1258000" />
+      <workItem from="1570411273257" duration="1398000" />
+      <workItem from="1570693163758" duration="4556000" />
     </task>
     <task id="LOCAL-00001" summary="commiting after regaining intellij workspace">
       <created>1568627108360</created>

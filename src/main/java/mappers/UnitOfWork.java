@@ -1,5 +1,6 @@
 package mappers;
 
+import domain.DC;
 import domain.Transaction;
 import domain.Transactor;
 
@@ -48,6 +49,9 @@ public class UnitOfWork {
     public void commit() {
         for (Transaction tx : newObjects) {
             TransactionMapper.insert(tx);
+        }
+        for (Transactor t : dirtyObjects) {
+
         }
     }
 
