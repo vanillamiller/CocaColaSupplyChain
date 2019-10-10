@@ -14,6 +14,9 @@ public class DC extends Transactor implements SupplyChainEntity{
 	private int accountBookID;
 	private int numPallets;
 	private DCMapper dcmap;
+	private List<Transaction> accountBook;
+
+	public DC(){ super(); }
 
 	public DC(int DCID, String name, int accountBookID, int numPallets){
 		super(DCID, name);
@@ -46,11 +49,20 @@ public class DC extends Transactor implements SupplyChainEntity{
 
 	}
 
-	public void ship(int shipPallets, int toID) throws SQLException {
-		this.numPallets = this.numPallets - shipPallets;
-//		this.dcmap.update(getID(), this.numPallets);
-		new Transaction(shipPallets, this.getID(), toID);
-		UnitOfWork.getCurrent().registerDirty(this);
+	public boolean ship(int shipPallets, int toID) throws SQLException {
+
+		if(this.canShip(shipPallets)){
+
+			this.numPallets -= shipPallets;
+			new Transaction(shipPallets, this.getID(), toID);
+			UnitOfWork.getCurrent().registerDirty(this);
+			UnitOfWork.getCurrent().commit();
+
+			return true;
+
+		} else {
+			return false;
+		}
 	}
 
 	public List<Transaction> getTransactions(){

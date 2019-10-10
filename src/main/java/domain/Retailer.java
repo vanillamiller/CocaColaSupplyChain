@@ -1,6 +1,7 @@
 package domain;
 
 import mappers.DCMapper;
+import mappers.IdentityMap;
 import mappers.RetailerMapper;
 import mappers.UnitOfWork;
 
@@ -12,28 +13,24 @@ public class Retailer extends Transactor implements ClientEntity{
 
 	private int accountBookID;
 	private int totalPalletsBought;
-	private RetailerMapper rmap;
+
+	private List<Transaction> accountBook;
 
 	public Retailer(int retailerID, String name){
 		super(retailerID, name);
 	}
 
-
 	public Retailer(int retailerID, String name, int accountBookID, int totalPalletsBought){
 		super(retailerID, name);
 		this.accountBookID = accountBookID;
 		this.totalPalletsBought = totalPalletsBought;
-		this.rmap=new RetailerMapper();
 	}
 
-//	public int getaccountBookID(){
-//		return accountBookID;
-//	}
-//
-//	public void setaccountBookID(int accountBookID){
-//		this.accountBookID = accountBookID;
-//	}
-//
+	public int getaccountBookID(){
+	    IdentityMap map=IdentityMap.getInstance(this.getClass());
+		return accountBookID;
+	}
+
 	public int gettotalPalletsBought(){
 		return totalPalletsBought;
 	}
@@ -44,18 +41,25 @@ public class Retailer extends Transactor implements ClientEntity{
 
 	public boolean buy(int buyPallets, int DCID) throws SQLException {
 
-		DCMapper dmap=new DCMapper();
-		DC dc = dmap.find(DCID);
+		DCMapper map=new DCMapper();
+		DC dc = map.find(DCID);
 
 		if(buyPallets < 0 || buyPallets > dc.getnumPallets()){
 			System.out.println("issue in buy, error code: " + buyPallets);
 			return false;
 		}else{
 
-			dc.ship(buyPallets, this.getID());
-			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
-			UnitOfWork.getCurrent().registerDirty(this);
-			return true;
+            UnitOfWork.newCurrent();
+
+			if(dc.ship(buyPallets, this.getID())) {
+				this.totalPalletsBought+=buyPallets;
+				UnitOfWork.getCurrent().registerDirty(this);
+				UnitOfWork.getCurrent().commit();
+				return true;
+			} else {
+				return false;
+			}
+
 		}
 
 	}

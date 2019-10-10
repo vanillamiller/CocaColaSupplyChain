@@ -44,7 +44,7 @@ public class TransactionMapper {
         return result;
     }
 
-    public static boolean insert(Transaction tx) {
+    public static void insert(Transaction tx) throws SQLException {
 
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
@@ -55,7 +55,8 @@ public class TransactionMapper {
         IdentityMap<Transaction> map = IdentityMap.getInstance(new Transaction());
 //        String sql = "UPDATE Transactions set numPallets = ?, date = ?, fromID = ?, toID = ?";
         String sql = "INSERT INTO Transactions(numPallets, date, fromID, toID) VALUES (?, ?, ?, ?)";
-        try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
+//        PreparedStatement sqlPrepared = DBConnection.prepare(sql)
+            PreparedStatement sqlPrepared = DBConnection.prepare(sql);
             sqlPrepared.setInt(1, numPallets);
             sqlPrepared.setTimestamp(2, ts);
             sqlPrepared.setInt(3, fromID);
@@ -63,14 +64,16 @@ public class TransactionMapper {
             sqlPrepared.executeUpdate();
             System.out.println("sqlPrepared");
             System.out.println(sqlPrepared);
-        }
-         catch (SQLException e) {
-            System.out.println(e.getMessage());
-             System.out.println("here T5");
-            return false;
-        }
-        System.out.println("transaction mapper uow working");
-        return true;
+            System.out.println("transaction mapper uow working");
+            System.out.println("transaction mapper uow working");
+//        }
+//         catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//             System.out.println("here T5");
+//            return false;
+//        }
+//        System.out.println("transaction mapper uow working");
+//        return true;
     }
 }
 

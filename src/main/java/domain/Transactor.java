@@ -10,6 +10,7 @@ public abstract class Transactor {
     private String name;
     private List<Transaction> transactions;
 
+    public Transactor(){};
     public Transactor(int id, String name) {
         this.id = id;
         this.name = name;

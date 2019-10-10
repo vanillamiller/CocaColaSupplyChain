@@ -1,8 +1,6 @@
 package mappers;
 
-import domain.DC;
-import domain.Transaction;
-import domain.Transactor;
+import domain.*;
 
 import java.util.*;
 import java.lang.*;
@@ -47,11 +45,20 @@ public class UnitOfWork {
     }
 
     public void commit() {
+        try{
+
         for (Transaction tx : newObjects) {
             TransactionMapper.insert(tx);
         }
         for (Transactor t : dirtyObjects) {
-
+            if (t.getClass()== DC.class){
+                new DCMapper().update(t);
+            } else if (t.getClass()== Retailer.class){
+                new RetailerMapper().update(t);
+            }
+        }
+        } catch(Exception e) {
+            e.printStackTrace();
         }
     }
 
