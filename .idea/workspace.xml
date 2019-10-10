@@ -11,26 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/SupplyChainEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/SupplyChainEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/DCMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/DCMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/TransactorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/TransactorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/UnitOfWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/retailerdashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/SupplyChainEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/SupplyChainEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Transactor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/BUnitOfWork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/mappers/TransactionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/retailerdashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/SupplyChainEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/SupplyChainEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/TransactionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UnitOfWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/UnitOfWork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/RetailerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/RetailerMapper.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -300,7 +281,7 @@
       <workItem from="1569295025805" duration="47996000" />
       <workItem from="1569848266975" duration="1258000" />
       <workItem from="1570411273257" duration="1398000" />
-      <workItem from="1570693163758" duration="4556000" />
+      <workItem from="1570693163758" duration="5816000" />
     </task>
     <task id="LOCAL-00001" summary="commiting after regaining intellij workspace">
       <created>1568627108360</created>

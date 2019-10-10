@@ -2,6 +2,7 @@ package domain;
 
 import mappers.DCMapper;
 import mappers.RetailerMapper;
+import mappers.UnitOfWork;
 
 import java.sql.*;
 import java.util.*;
@@ -33,9 +34,9 @@ public class Retailer extends Transactor implements ClientEntity{
 //		this.accountBookID = accountBookID;
 //	}
 //
-//	public int gettotalPalletsBought(){
-//		return totalPalletsBought;
-//	}
+	public int gettotalPalletsBought(){
+		return totalPalletsBought;
+	}
 //
 //	public void settotalPalletsBought(int totalPalletsBought){
 //		this.totalPalletsBought = totalPalletsBought;
@@ -50,10 +51,10 @@ public class Retailer extends Transactor implements ClientEntity{
 			System.out.println("issue in buy, error code: " + buyPallets);
 			return false;
 		}else{
-			;
+
 			dc.ship(buyPallets, this.getID());
 			this.totalPalletsBought = this.totalPalletsBought + buyPallets;
-			this.rmap.update(this.getID(),this.totalPalletsBought);
+			UnitOfWork.getCurrent().registerDirty(this);
 			return true;
 		}
 

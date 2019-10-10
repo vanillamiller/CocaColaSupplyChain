@@ -68,14 +68,14 @@ public class RetailerMapper extends TransactorMapper {
         return result;
     }
 
-    public boolean update(int id, int numPallets) {
+    public boolean update(Transactor t) {
 
         //IdentityMap<Retailer> map = IdentityMap.getInstance(new Retailer(0, "garbage"));
-
+        Retailer r=(Retailer) t;
         String sql = "UPDATE Retailers SET totalPalletsBought = ? WHERE RetailerID = ?";
         try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
-            sqlPrepared.setInt(1, numPallets);
-            sqlPrepared.setInt(2, id);
+            sqlPrepared.setInt(1, r.gettotalPalletsBought());
+            sqlPrepared.setInt(2, r.getID());
             int rs = sqlPrepared.executeUpdate();
             //map.get(retailerID).
             System.out.println("here is the int: " + rs);
