@@ -38,6 +38,7 @@ public class DC extends Transactor implements SupplyChainEntity{
 	}
 
 	public int restockPallets(int restockPallets) throws SQLException {
+
 		this.numPallets = this.numPallets + restockPallets;
 		UnitOfWork.getCurrent().registerDirty(this);
 		return this.numPallets;
