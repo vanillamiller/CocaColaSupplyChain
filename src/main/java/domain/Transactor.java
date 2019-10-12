@@ -4,10 +4,11 @@ import mappers.TransactorMapper;
 
 import java.util.*;
 
-public abstract class Transactor {
+public abstract class Transactor extends User {
 
     private int id;
     private String name;
+    private String password;
     private List<Transaction> transactions;
 
     public Transactor(){};
@@ -35,4 +36,11 @@ public abstract class Transactor {
 
     public abstract List<Transaction> getTransactions();
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

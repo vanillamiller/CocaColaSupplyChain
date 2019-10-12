@@ -20,6 +20,7 @@ public class Retailer extends Transactor implements ClientEntity{
 		super(retailerID, name);
 	}
 
+	public Retailer(){ super(); }
 	public Retailer(int retailerID, String name, int accountBookID, int totalPalletsBought){
 		super(retailerID, name);
 		this.accountBookID = accountBookID;

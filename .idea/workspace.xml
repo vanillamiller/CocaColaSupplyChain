@@ -3,15 +3,30 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="CocaColaSupplyChain" />
-      <artifact name="ccscm:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5ff014b-c58a-48eb-bc0a-d73c838466cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Bottler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/auth/AppRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/session/AppSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/shiro.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Bottler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Factory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/Bottler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/domain/Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/DC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/DC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Retailer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Transactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/classes/domain/Retailer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ccscm/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ccscm/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/DC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/DC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Retailer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Retailer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/Transactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/Transactor.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +87,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunDashboard">
@@ -179,8 +195,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="ccscm:war exploded" />
-          <artifact name="ccscm:war" />
           <artifact name="CocaColaSupplyChain" />
         </option>
       </method>
@@ -284,7 +298,10 @@
       <workItem from="1570693163758" duration="6661000" />
       <workItem from="1570712225623" duration="3644000" />
       <workItem from="1570746755950" duration="4995000" />
-      <workItem from="1570789751036" duration="452000" />
+      <workItem from="1570789751036" duration="1099000" />
+      <workItem from="1570830420545" duration="501000" />
+      <workItem from="1570830943177" duration="643000" />
+      <workItem from="1570831849268" duration="7441000" />
     </task>
     <task id="LOCAL-00001" summary="commiting after regaining intellij workspace">
       <created>1568627108360</created>
