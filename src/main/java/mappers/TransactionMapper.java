@@ -65,15 +65,6 @@ public class TransactionMapper {
             System.out.println("sqlPrepared");
             System.out.println(sqlPrepared);
             System.out.println("transaction mapper uow working");
-            System.out.println("transaction mapper uow working");
-//        }
-//         catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//             System.out.println("here T5");
-//            return false;
-//        }
-//        System.out.println("transaction mapper uow working");
-//        return true;
     }
 }
 

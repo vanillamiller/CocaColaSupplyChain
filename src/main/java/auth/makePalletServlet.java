@@ -1,6 +1,6 @@
 package auth;
 
-import domain.DC;
+import domain.internal.DC;
 import mappers.DCMapper;
 
 import javax.servlet.ServletException;

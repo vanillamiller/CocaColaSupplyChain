@@ -1,7 +1,6 @@
 package mappers;
 import auth.DBConnection;
-import domain.CocaColaHQ;
-import domain.DC;
+import domain.internal.CocaColaHQ;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

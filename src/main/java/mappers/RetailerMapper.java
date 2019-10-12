@@ -2,12 +2,9 @@ package mappers;
 
         import java.sql.*;
         import java.util.ArrayList;
-        import java.util.Date;
-        import java.util.LinkedList;
         import java.util.List;
         import auth.DBConnection;
-        import domain.DC;
-        import domain.Retailer;
+        import domain.external.Retailer;
         import domain.Transactor;
 
 public class RetailerMapper extends TransactorMapper {
@@ -92,27 +89,5 @@ public class RetailerMapper extends TransactorMapper {
 }
 
 
-//public class DBRetailerMapper {
-//    public static List<Retailer> retailers;
-//
-//    public static List<Retailer> getAllretailers(){
-//        if (retailers == null) {
-//            retailers = new LinkedList<Retailer>();
-//            retailers.add(new Retailer(0,"ColesMelbourne",0));
-//            retailers.add(new Retailer(1,"ColesSydney",1));
-//            retailers.add(new Retailer(2,"ColesBrisbane",2));
-//            retailers.add(new Retailer(3,"ColesMelbourne2",3));
-//        }
-//        return retailers;
-//    }
-//    public static Retailer findretailer(int retailerID) {
-//        for (Retailer ret: getAllretailers()) {
-//            if (ret.getretailerID() == (retailerID)) {
-//                return ret;
-//            }
-//        }
-//        return null;
-//    }
-//
-//}
+
 

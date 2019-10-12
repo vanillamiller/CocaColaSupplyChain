@@ -1,4 +1,4 @@
-package domain;
+package domain.external;
 
 import java.sql.SQLException;
 

@@ -1,6 +1,9 @@
 package auth;
 import domain.*;
 
+import domain.external.Retailer;
+import domain.internal.CocaColaHQ;
+import domain.internal.DC;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

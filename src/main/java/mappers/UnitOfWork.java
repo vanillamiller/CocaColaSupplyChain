@@ -1,6 +1,8 @@
 package mappers;
 
 import domain.*;
+import domain.external.Retailer;
+import domain.internal.DC;
 
 import java.util.*;
 import java.lang.*;

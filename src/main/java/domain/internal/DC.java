@@ -1,15 +1,15 @@
-package domain;
+package domain.internal;
+import domain.Transaction;
+import domain.Transactor;
 import mappers.DCMapper;
 import mappers.TransactionMapper;
 import mappers.UnitOfWork;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
-public class DC extends Transactor implements SupplyChainEntity{
+public class DC extends Transactor implements POS {
 
 	private int accountBookID;
 	private int numPallets;
@@ -37,11 +37,13 @@ public class DC extends Transactor implements SupplyChainEntity{
 		this.numPallets=numPallets;
 	}
 
-	public int restockPallets(int restockPallets) throws SQLException {
+	public int restockPallets(int restockPallets, int fromID) throws SQLException {
 
-		this.numPallets = this.numPallets + restockPallets;
-		UnitOfWork.getCurrent().registerDirty(this);
-		return this.numPallets;
+		if() {
+			this.numPallets += restockPallets;
+			UnitOfWork.getCurrent().registerDirty(this);
+		}
+
 	}
 
 	public boolean canShip(int shipPallets) {

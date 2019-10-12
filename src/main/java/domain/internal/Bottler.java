@@ -1,6 +1,5 @@
-package domain;
+package domain.internal;
 
-import domain.SupplyChainEntity;
 import domain.Transaction;
 import domain.Transactor;
 
@@ -8,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factory extends Transactor implements SupplyChainEntity {
+public class Bottler extends Transactor implements SupplyChainEntity {
 
-    public Factory(){}
+    public Bottler(){}
     @Override
     public List<Transaction> getTransactions() {
         return new ArrayList<Transaction>();
@@ -19,6 +18,6 @@ public class Factory extends Transactor implements SupplyChainEntity {
 
     public boolean ship(int shipPallets, int toID) throws SQLException {
 
-        return false;
+
     }
 }

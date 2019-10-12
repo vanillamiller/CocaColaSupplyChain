@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="mappers.TransactionMapper" %>
 <%@ page import="domain.Transaction" %>
-<%@ page import="domain.DC" %>
+<%@ page import="domain.internal.DC" %>
 <%@ page import="mappers.CocaColaHQMapper" %>
-<%@ page import="domain.CocaColaHQ" %>
+<%@ page import="domain.internal.CocaColaHQ" %>
 <%@ page import="mappers.DCMapper" %>
 <%@ page import="mappers.RetailerMapper" %>
 

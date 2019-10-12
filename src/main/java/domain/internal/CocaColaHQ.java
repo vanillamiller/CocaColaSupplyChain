@@ -1,5 +1,7 @@
-package domain;
+package domain.internal;
 
+import domain.Transaction;
+import domain.Transactor;
 import mappers.DCMapper;
 import mappers.TransactionMapper;
 
@@ -9,7 +11,6 @@ import java.util.List;
 public class CocaColaHQ extends Transactor {
 
     DCMapper dcmap;
-
 
     public CocaColaHQ(int id, String name){
         super(id, name);

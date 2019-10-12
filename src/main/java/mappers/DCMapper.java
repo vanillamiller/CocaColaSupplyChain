@@ -2,14 +2,10 @@ package mappers;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import auth.DBConnection;
-import domain.DC;
-import domain.Transaction;
+import domain.internal.DC;
 import domain.Transactor;
-import mappers.IdentityMap;
 
 public class DCMapper extends TransactorMapper{
 

@@ -1,6 +1,6 @@
 package auth;
 
-import domain.Retailer;
+import domain.external.Retailer;
 import mappers.RetailerMapper;
 
 import javax.servlet.ServletException;

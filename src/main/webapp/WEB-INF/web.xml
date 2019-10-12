@@ -4,6 +4,23 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+    <listener>
+        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>ShiroFilter</filter-name>
+        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ShiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
   <display-name>CocaColaSupplyChain</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -51,21 +68,5 @@
         <url-pattern>/retailerLoginServlet</url-pattern>
     </servlet-mapping>
 
-<!--    <listener>-->
-<!--        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>-->
-<!--    </listener>-->
-<!--    <filter>-->
-<!--        <filter-name>ShiroFilter</filter-name>-->
-<!--        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>-->
-<!--    </filter>-->
-
-<!--    <filter-mapping>-->
-<!--        <filter-name>ShiroFilter</filter-name>-->
-<!--        <url-pattern>/*</url-pattern>-->
-<!--        <dispatcher>REQUEST</dispatcher>-->
-<!--        <dispatcher>FORWARD</dispatcher>-->
-<!--        <dispatcher>INCLUDE</dispatcher>-->
-<!--        <dispatcher>ERROR</dispatcher>-->
-<!--    </filter-mapping>-->
 </web-app>
 

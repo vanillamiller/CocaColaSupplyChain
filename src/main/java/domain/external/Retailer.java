@@ -1,14 +1,17 @@
-package domain;
+package domain.external;
 
+import domain.Transaction;
+import domain.Transactor;
+import domain.external.ClientEntity;
+import domain.internal.DC;
 import mappers.DCMapper;
 import mappers.IdentityMap;
-import mappers.RetailerMapper;
 import mappers.UnitOfWork;
 
 import java.sql.*;
 import java.util.*;
 
-public class Retailer extends Transactor implements ClientEntity{
+public class Retailer extends Transactor implements ClientEntity {
 
 
 	private int accountBookID;

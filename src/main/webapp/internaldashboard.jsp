@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="domain.DC" %>
-<%@ page import="domain.CocaColaHQ" %>
+<%@ page import="domain.internal.DC" %>
+<%@ page import="domain.internal.CocaColaHQ" %>
 <%@ page import="mappers.CocaColaHQMapper" %>
 
 
