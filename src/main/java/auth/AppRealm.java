@@ -13,16 +13,15 @@ import java.util.Set;
 
 public class AppRealm extends JdbcRealm {
 
-//    @Override
-//    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
-//      throws AuthenticationException {
-//
-//        UsernamePasswordToken userPassToken=(UsernamePasswordToken) token;
-//        final String username=userPassToken.getUsername();
-//        final Transaction user=
-////        final User user=User.getUser(username);
-//
-//    }
+    @Override
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
+      throws AuthenticationException {
+
+        UsernamePasswordToken userPassToken=(UsernamePasswordToken) token;
+        final String username=userPassToken.getUsername();
+//        final User user=User.getUser(username);
+        return null;
+    }
 
     @Override
     protected AuthorizationInfo getAuthorizationInfo(PrincipalCollection principals){
