@@ -1,134 +1,105 @@
-DROP TABLE DCs;
-DROP TABLE Retailers;
-DROP TABLE DCsRetailers;
+DROP TABLE Order;
 DROP TABLE Transactions;
-DROP TABLE COKEHQ;
+DROP TABLE Inventory;
+DROP TABLE Transactors;
+DROP TABLE TransactorMapper;
 
-DROP TYPE colaForm;
+CREATE TYPE roletype AS ENUM ('dc', 'cl','hq','bt');
 
-CREATE TYPE colaForm AS ENUM ('syrup', 'pallet');
+CREATE TABLE Transactors(
 
-CREATE TABLE COKEHQ(
-    CHQID SERIAL PRIMARY KEY,
-    name VARCHAR(50)
-);
-
-CREATE TABLE DCs(
-    DCID SERIAL PRIMARY KEY,
+    ID SERIAL PRIMARY KEY,
     name VARCHAR(50),
-    accountBookID INTEGER,
-    numPallets INTEGER,
-    CHQID integer REFERENCES COKEHQ(CHQID)
+
+    role roletype NOT NULL,
+    username VARCHAR(24) NOT NULL,
+    password VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE Retailers(
-    RetailerID SERIAL PRIMARY KEY,
-    name VARCHAR(50),
-    accountBookID INTEGER,
-    totalPalletsBought INTEGER
+CREATE TABLE Inventory(
+    transactorID INTEGER REFERENCES Transactors(ID),
+    numregular INTEGER,
+    numvanilla INTEGER,
+    numzero INTEGER
 );
 
-
-CREATE TABLE DCsRetailers(
-     DCRetailerID SERIAL PRIMARY KEY,
-     DCID INTEGER,
-     RetailerID INTEGER
+CREATE TABLE TransactorMapper(
+     fromID INTEGER,
+     toID INTEGER
 );
-
 
 CREATE TABLE Transactions(
     txID SERIAL PRIMARY KEY,
-    numPallets INTEGER,
+    business BOOLEAN NOT NULL,
+    price money,
+    order INTEGER,
     date TIMESTAMP,
     fromID INTEGER,
     toID INTEGER
 );
 
-
--- CREATE TABLE Inventory(
--- 	inventoryID SERIAL PRIMARY KEY,
--- 	DCID INTEGER,
--- 	sold BOOLEAN
--- );
-
-
+CREATE TABLE Order(
+    txID INTEGER REFERENCES Transactions(txID),
+    numregular INTEGER,
+    numvanilla INTEGER,
+    numzero INTEGER
+);
 
 -- POPULATE WITH DUMMY DATA --
 
-INSERT INTO COKEHQ(
-    CHQID,
-    name
-)VALUES(0, 'Big Boss');
-
-INSERT INTO DCs(
+INSERT INTO Transactors(
     name,
-    accountBookID,
-    numPallets,
-    CHQID
+    role,
+    username,
+    password
 )
 VALUES
-('Melbourne DC',0,20,0),
-('Sydney DC',1,30,0),
-('Brisbane DC',2,10,0),
-('Perth DC',3,232,0);
+--dcs
+('Melbourne DC','dc','melbdc','a'),
+('Sydney DC','dc','syddc','a'),
+('Brisbane DC','dc','brisdc','a'),
+('Perth DC','dc','perthdc','a'),
+--clients
+('Coles Collingwood','cl','colescoll','a'),
+('Coles Fitzroy','cl','colesfitz','a'),
+('Coles Sydney','cl','colessyd','a'),
+('Coles Perth','cl','colesperth','a'),
+--factory
+('HQ Syrup Factory','hq','syrup factory hq','a'),
+--bottling plants
+('Melbourne bottling plant','bt','melbbot','a'),
+('Sydney bottling plant','bt','sydbot','a');
 
-INSERT INTO Retailers(
-    name,
-    accountBookID,
-    totalPalletsBought
+INSERT INTO Inventory(
+    transactorID
 )
 VALUES
-('Coles Collingwood',11,0),
-('Coles Fitzroy',12,0),
-('Coles Sydney',13,0),
-('Coles Perth',14,0);
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10),
+(11);
 
-
-INSERT INTO DCsRetailers(
-    DCID,
-    RetailerID
+INSERT INTO TransactorMapper(
+    fromID,
+    toID
 )
 VALUES
-(1,1),
-(1,2),
-(2,3),
-(3,1),
-(4,4);
---
---
--- INSERT INTO Transactions(
---     numPallets,
---     date,
---     fromID,
---     toID
--- )
--- VALUES
--- (2, CURRENT_TIMESTAMP, 1, 2),
--- (7, CURRENT_TIMESTAMP, 2, 3),
--- (7, CURRENT_TIMESTAMP, 1, 2),
--- (3, CURRENT_TIMESTAMP, 4, 4),
--- (6, CURRENT_TIMESTAMP, 1, 1),
--- (8, CURRENT_TIMESTAMP, 2, 3),
--- (1, CURRENT_TIMESTAMP, 1, 2),
--- (23, CURRENT_TIMESTAMP, 1, 2);
-
-
--- INSERT INTO Inventory(
---     DCID,
---     sold
--- )
--- VALUES
--- (1,true),
--- (2,true),
--- (3,true),
--- (4,true),
--- (5,true),
--- (6,true),
--- (7,true),
--- (8,true),
--- (9,false),
--- (10,false),
--- (11,false),
--- (12,false),
--- (13,false),
--- (14,false);
+(1,5),
+(1,6),
+(2,7),
+(3,5),
+(4,8),
+(9,10),
+(9,11),
+(10,1),
+(10,3),
+(10,4),
+(11,2),
+(11,3);

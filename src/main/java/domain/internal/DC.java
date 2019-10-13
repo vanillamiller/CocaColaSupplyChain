@@ -9,11 +9,13 @@ import java.sql.*;
 import java.util.List;
 
 
-public class DC extends Transactor implements POS {
+public class DC extends Transactor implements SupplyChainEntity {
 
 	private int accountBookID;
 	private int numPallets;
 	private DCMapper dcmap;
+
+	private List<Sends> suppliers;
 	private List<Transaction> accountBook;
 
 	public DC(){ super(); }
@@ -37,13 +39,14 @@ public class DC extends Transactor implements POS {
 		this.numPallets=numPallets;
 	}
 
-	public int restockPallets(int restockPallets, int fromID) throws SQLException {
+	public boolean restock(int restockPallets, int fromID) throws SQLException {
 
-		if() {
-			this.numPallets += restockPallets;
-			UnitOfWork.getCurrent().registerDirty(this);
-		}
-
+//		if(getTransactor) {
+//			UnitOfWork.newCurrent();
+//			this.numPallets += restockPallets;
+//			UnitOfWork.getCurrent().registerDirty(this);
+//		}
+		return false;
 	}
 
 	public boolean canShip(int shipPallets) {

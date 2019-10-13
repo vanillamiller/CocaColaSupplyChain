@@ -17,7 +17,10 @@ public class Bottler extends Transactor implements SupplyChainEntity {
 
 
     public boolean ship(int shipPallets, int toID) throws SQLException {
+        return false;
+    }
 
-
+    public boolean restock(int numProducts, int fromID){
+        return false;
     }
 }
