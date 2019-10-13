@@ -3,12 +3,13 @@ package domain.products;
 import mappers.UnitOfWork;
 
 import java.util.Currency;
+import java.util.UUID;
 
 public class Pallet extends Product {
 
     private Currency price;
 
-    public Pallet(int pid, Flavor flav){
+    public Pallet(UUID pid, Flavor flav){
        super(pid, flav);
     }
 

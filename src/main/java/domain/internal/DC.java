@@ -2,9 +2,8 @@ package domain.internal;
 import domain.Transaction;
 import domain.Transactor;
 import domain.products.Order;
-import mappers.DCMapper;
-import mappers.TransactionMapper;
-import mappers.UnitOfWork;
+import domain.products.Product;
+import mappers.*;
 
 import java.sql.*;
 import java.util.List;
@@ -15,7 +14,6 @@ public class DC extends Transactor implements SupplyChainEntity {
 	private int accountBookID;
 	private int numPallets;
 	private DCMapper dcmap;
-
 	private Inventory inventory;
 	private List<Transaction> accountBook;
 
@@ -23,22 +21,16 @@ public class DC extends Transactor implements SupplyChainEntity {
 
 	public DC(int DCID, String name, int accountBookID, int numPallets){
 		super(DCID, name);
-		this.accountBookID = accountBookID;
-		this.numPallets = numPallets;
-		this.dcmap=new DCMapper();
+	}
+
+	public void getInventory(){
+		this.inventory=ProductMapper.findall(this.getID());
 	}
 
 	public DC(int DCID, String name){
 		super(DCID, name);
 	}
 
-	public int getnumPallets(){
-		return this.numPallets;
-	}
-
-	public void setPallets(int numPallets){
-		this.numPallets=numPallets;
-	}
 
 	public boolean restock(int restockPallets, int fromID) throws SQLException {
 
@@ -50,26 +42,25 @@ public class DC extends Transactor implements SupplyChainEntity {
 		return false;
 	}
 
-	public boolean canShip(Order order){
+	public boolean ship(Order order) {
+				try {
+					Product curr;
+					for (Product p : order.list()) {
+						if (inventory.get().contains(p)) {
+							curr = inventory.get().get(inventory.get().lastIndexOf(p));
+							curr.ship(order.getReceiver());
+							inventory.remove(p);
+						}
+					}
+					new Transaction(order, this.getID(), order.getReceiver());
+					UnitOfWork.getCurrent().registerDirty(this);
+					UnitOfWork.getCurrent().commit();
+				} catch (SQLException e){
+					e.printStackTrace();
+					return false;
+				}
+				return true;
 
-		return inventory.numVanilla()>=order.getNumVanilla() && inventory.numRegular()>=order.getNumRegular()
-				&& inventory.numZero()>=order.getNumZero();
-
-	}
-	public boolean ship(Order order, int toID) throws SQLException {
-
-		if(this.canShip(order)){
-
-			this.numPallets -= shipPallets;
-			new Transaction(shipPallets, this.getID(), toID);
-			UnitOfWork.getCurrent().registerDirty(this);
-			UnitOfWork.getCurrent().commit();
-
-			return true;
-
-		} else {
-			return false;
-		}
 	}
 
 	public List<Transaction> getTransactions(){

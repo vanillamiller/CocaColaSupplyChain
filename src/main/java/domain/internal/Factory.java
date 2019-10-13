@@ -2,12 +2,13 @@ package domain.internal;
 
 import domain.Transaction;
 import domain.Transactor;
+import domain.products.Order;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factory extends Transactor implements Sends {
+public class Factory extends Transactor {
 
     public Factory(){}
 
@@ -17,10 +18,8 @@ public class Factory extends Transactor implements Sends {
     }
 
 
-    public boolean ship(int shipPallets, int toID) throws SQLException {
-
+    public boolean ship(Order order)  {
         return false;
-
     }
 
 }

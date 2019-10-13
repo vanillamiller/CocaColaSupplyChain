@@ -17,7 +17,7 @@
 <body>
 
 
-<form action="retailerLoginServlet" method="post">
+<form action="loginServlet" method="post">
     User: <select name="user">
     <%  RetailerMapper rmap=new RetailerMapper();
         for (Retailer retailer : rmap.findAll()) {

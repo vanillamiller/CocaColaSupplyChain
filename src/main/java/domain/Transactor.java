@@ -1,10 +1,11 @@
 package domain;
 
+import domain.internal.Sends;
 import mappers.TransactorMapper;
 
 import java.util.*;
 
-public abstract class Transactor extends User {
+public abstract class Transactor implements Sends {
 
     private int id;
     private String name;

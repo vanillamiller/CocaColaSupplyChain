@@ -10,11 +10,11 @@ import domain.products.Pallet;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.util.UUID;
 
 public class ProductMapper {
 
-    public Inventory findall(int id){
+    public static Inventory findall(int id){
 
         Inventory inv=new Inventory();
         String sql="SELECT id, form, flavor FROM Products WHERE location="+id;
@@ -24,7 +24,7 @@ public class ProductMapper {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                int pid=rs.getInt(1);
+                UUID pid= (UUID) rs.getObject(1);
                 String form=rs.getString(2);
                 String flavor=rs.getString(3);
                 if(form.equals("barrel"))
@@ -40,7 +40,12 @@ public class ProductMapper {
         return inv;
     }
 
-    public void update() throws SQLException {
+    public static void update(UUID pid, int to) throws SQLException {
+
+        String sql="UPDATE products SET location="+to+"WHERE pid="+pid;
+
+            PreparedStatement stmt=DBConnection.prepare(sql);
+            stmt.execute();
 
     }
 

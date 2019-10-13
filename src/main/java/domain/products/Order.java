@@ -2,41 +2,30 @@ package domain.products;
 
 import mappers.UnitOfWork;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
 
-    private int numVanilla, numRegular, numZero;
+    private List<Product> order=new ArrayList<Product>();
+    private int receiver;
 
-    public Order(int numVanilla, int numRegular, int numZero){
-        this.numRegular=numRegular;
-        this.numVanilla=numVanilla;
-        this.numZero=numZero;
+    public void add(Product p){
+        this.order.add(p);
     }
 
-//    public process(){
-//        UnitOfWork.getCurrent().registerNew(this);
-//    }
+    public void remove(Product p){ this.order.remove(p); }
 
-    public int getNumVanilla() {
-        return numVanilla;
+    public List<Product> list(){
+        return order;
     }
 
-    public void setNumVanilla(int numVanilla) {
-        this.numVanilla = numVanilla;
+    public int getReceiver() {
+        return receiver;
     }
 
-    public int getNumRegular() {
-        return numRegular;
+    public void setReciever(int reciever) {
+        this.receiver=reciever;
     }
 
-    public void setNumRegular(int numRegular) {
-        this.numRegular = numRegular;
-    }
-
-    public int getNumZero() {
-        return numZero;
-    }
-
-    public void setNumZero(int numZero) {
-        this.numZero = numZero;
-    }
 }

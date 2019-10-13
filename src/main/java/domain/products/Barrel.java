@@ -3,10 +3,11 @@ package domain.products;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 public class Barrel extends RawProduct {
 
-    public Barrel(int pid, Flavor flav){
+    public Barrel(UUID pid, Flavor flav){
         super(pid, flav);
     }
 

@@ -1,11 +1,14 @@
 package domain.external;
 
+import domain.SupplierFacade;
 import domain.Transaction;
 import domain.Transactor;
 import domain.external.ClientEntity;
 import domain.internal.DC;
+import domain.products.Order;
 import mappers.DCMapper;
 import mappers.IdentityMap;
+import mappers.TransactorMapper;
 import mappers.UnitOfWork;
 
 import java.sql.*;
@@ -43,29 +46,17 @@ public class Retailer extends Transactor implements ClientEntity {
 //		this.totalPalletsBought = totalPalletsBought;
 //	}
 
-	public boolean buy(int buyPallets, int DCID) throws SQLException {
+	public boolean buy(Order order, int id) {
 
-		DCMapper map=new DCMapper();
-		DC dc = map.find(DCID);
+		Transactor supplier=TransactorMapper.find(id);
+		if(supplier.ship(order)) {
+			UnitOfWork.newCurrent();
 
-		if(buyPallets < 0 || buyPallets > dc.getnumPallets()){
-			System.out.println("issue in buy, error code: " + buyPallets);
-			return false;
-		}else{
-
-            UnitOfWork.newCurrent();
-
-			if(dc.ship(buyPallets, this.getID())) {
-				this.totalPalletsBought+=buyPallets;
-				UnitOfWork.getCurrent().registerDirty(this);
-				UnitOfWork.getCurrent().commit();
-				return true;
-			} else {
-				return false;
-			}
-
+			UnitOfWork.getCurrent().registerDirty(this);
+			UnitOfWork.getCurrent().commit();
+			return true;
 		}
-
+		return false;
 	}
 
 	public List<Transaction> getTransactions(){
