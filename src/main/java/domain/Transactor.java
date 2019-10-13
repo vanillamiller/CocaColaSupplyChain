@@ -12,6 +12,7 @@ public abstract class Transactor extends User {
     private List<Transaction> transactions;
 
     public Transactor(){};
+
     public Transactor(int id, String name) {
         this.id = id;
         this.name = name;
@@ -38,9 +39,5 @@ public abstract class Transactor extends User {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

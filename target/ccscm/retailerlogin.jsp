@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="mappers.RetailerMapper" %>
-<%@ page import="domain.Retailer" %>
+<%@ page import="domain.external.Retailer" %>
 
 <html>
 <head>

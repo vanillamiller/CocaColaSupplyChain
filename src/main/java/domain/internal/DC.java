@@ -1,6 +1,7 @@
 package domain.internal;
 import domain.Transaction;
 import domain.Transactor;
+import domain.products.Order;
 import mappers.DCMapper;
 import mappers.TransactionMapper;
 import mappers.UnitOfWork;
@@ -15,7 +16,7 @@ public class DC extends Transactor implements SupplyChainEntity {
 	private int numPallets;
 	private DCMapper dcmap;
 
-	private List<Sends> suppliers;
+	private Inventory inventory;
 	private List<Transaction> accountBook;
 
 	public DC(){ super(); }
@@ -49,15 +50,15 @@ public class DC extends Transactor implements SupplyChainEntity {
 		return false;
 	}
 
-	public boolean canShip(int shipPallets) {
+	public boolean canShip(Order order){
 
-		return shipPallets <= this.getnumPallets();
+		return inventory.numVanilla()>=order.getNumVanilla() && inventory.numRegular()>=order.getNumRegular()
+				&& inventory.numZero()>=order.getNumZero();
 
 	}
+	public boolean ship(Order order, int toID) throws SQLException {
 
-	public boolean ship(int shipPallets, int toID) throws SQLException {
-
-		if(this.canShip(shipPallets)){
+		if(this.canShip(order)){
 
 			this.numPallets -= shipPallets;
 			new Transaction(shipPallets, this.getID(), toID);

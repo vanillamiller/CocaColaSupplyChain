@@ -4,4 +4,5 @@
 -- SELECT * FROM Transactions;
 -- SELECT * FROM Inventory;
 
-SELECT toid FROM transactormapper WHERE fromid=1;
+--
+SELECT id, form, flavor FROM Products WHERE location=1;

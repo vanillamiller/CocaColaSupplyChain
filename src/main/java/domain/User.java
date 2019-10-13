@@ -1,24 +1,19 @@
 package domain;
 
-public abstract class User {
+import mappers.TransactorMapper;
 
-    private String userName;
-    private String passWord;
+public class User {
 
+    public static Transactor getUser(String username){
 
-    public String getUserName() {
-        return userName;
+        return TransactorMapper.find(username);
+
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public static Transactor getUser(int id){
+
+        return TransactorMapper.find(id);
+
     }
 
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
 }

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Barrel extends RawProduct {
 
-    public Barrel(Flavor flav){
-        super(flav);
+    public Barrel(int pid, Flavor flav){
+        super(pid, flav);
     }
 
     public List<Product> transform(){

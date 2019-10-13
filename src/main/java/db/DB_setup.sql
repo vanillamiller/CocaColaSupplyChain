@@ -1,26 +1,20 @@
 DROP TABLE Order;
 DROP TABLE Transactions;
-DROP TABLE Inventory;
 DROP TABLE Transactors;
 DROP TABLE TransactorMapper;
 
 CREATE TYPE roletype AS ENUM ('dc', 'cl','hq','bt');
+CREATE TYPE form AS ENUM('barrel','pallet');
+CREATE TYPE flavor AS ENUM ('REGULAR','VANILLA','ZERO');
 
 CREATE TABLE Transactors(
-
-    ID SERIAL PRIMARY KEY,
+    --basic
+    id SERIAL PRIMARY KEY,
     name VARCHAR(50),
-
+    --auth credentials
     role roletype NOT NULL,
     username VARCHAR(24) NOT NULL,
     password VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE Inventory(
-    transactorID INTEGER REFERENCES Transactors(ID),
-    numregular INTEGER,
-    numvanilla INTEGER,
-    numzero INTEGER
 );
 
 CREATE TABLE TransactorMapper(
@@ -29,7 +23,7 @@ CREATE TABLE TransactorMapper(
 );
 
 CREATE TABLE Transactions(
-    txID SERIAL PRIMARY KEY,
+    id uuid PRIMARY KEY,
     business BOOLEAN NOT NULL,
     price money,
     order INTEGER,
@@ -38,8 +32,15 @@ CREATE TABLE Transactions(
     toID INTEGER
 );
 
+CREATE TABLE Products(
+    id uuid PRIMARY KEY,
+    form form NOT NULL,
+    flavor flavor NOT NULL,
+    location INTEGER REFERENCES Transactors(id)
+);
+
 CREATE TABLE Order(
-    txID INTEGER REFERENCES Transactions(txID),
+    txID INTEGER REFERENCES Transactions(id),
     numregular INTEGER,
     numvanilla INTEGER,
     numzero INTEGER
@@ -70,21 +71,6 @@ VALUES
 ('Melbourne bottling plant','bt','melbbot','a'),
 ('Sydney bottling plant','bt','sydbot','a');
 
-INSERT INTO Inventory(
-    transactorID
-)
-VALUES
-(1),
-(2),
-(3),
-(4),
-(5),
-(6),
-(7),
-(8),
-(9),
-(10),
-(11);
 
 INSERT INTO TransactorMapper(
     fromID,

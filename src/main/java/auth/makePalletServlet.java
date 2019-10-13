@@ -1,7 +1,9 @@
 package auth;
 
+import domain.Transactor;
 import domain.internal.DC;
 import mappers.DCMapper;
+import mappers.TransactorMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +16,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "makePalletServlet")
 public class makePalletServlet extends HttpServlet {
-    DCMapper dcmap=new DCMapper();
+    //DCMapper dcmap=new DCMapper();
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,15 +25,15 @@ public class makePalletServlet extends HttpServlet {
         System.out.println("CREATE: " + quantity + " new pallets for: " + DCID);
 
 //        TODO when makePallet is called, need to increment pallet ID.
-        DC dc=dcmap.find(DCID);
+        Transactor dc= TransactorMapper.find(DCID);
 
 
 
-        try {
-            dc.restockPallets(quantity);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            //dc.restockPallets(quantity);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
         request.getRequestDispatcher("internaldashboard.jsp").forward(request, response);
     }

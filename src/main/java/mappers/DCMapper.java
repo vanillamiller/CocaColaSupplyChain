@@ -7,7 +7,7 @@ import auth.DBConnection;
 import domain.internal.DC;
 import domain.Transactor;
 
-public class DCMapper extends TransactorMapper{
+public class DCMapper {
 
     public List<DC> findAll() {
 

@@ -7,7 +7,7 @@ package mappers;
         import domain.external.Retailer;
         import domain.Transactor;
 
-public class RetailerMapper extends TransactorMapper {
+public class RetailerMapper {
 
     public List<Retailer> findAll() {
         List<Retailer> result = new ArrayList<>();
