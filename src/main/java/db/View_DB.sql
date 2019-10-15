@@ -5,4 +5,6 @@
 -- SELECT * FROM Inventory;
 
 --
-SELECT id, form, flavor FROM Products WHERE location=1;
+-- INSERT INTO Transactions WHER
+
+SELECT id, name, role, password FROM Transactors WHERE username ='melbdc';

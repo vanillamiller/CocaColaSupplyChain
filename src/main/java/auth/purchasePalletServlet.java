@@ -1,7 +1,9 @@
 package auth;
 
-import domain.external.Retailer;
-import mappers.RetailerMapper;
+import domain.Order;
+import domain.Retailer;
+import domain.RetailerMapper;
+import domain.TransactorMapper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +16,7 @@ import java.sql.SQLException;
 @WebServlet(name = "purchasePalletServlet")
 public class purchasePalletServlet extends HttpServlet {
 
-    private RetailerMapper rmap=new RetailerMapper();
+//    private RetailerMapper rmap=new RetailerMapper();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int DCID = Integer.parseInt(request.getParameter("DCID"));
@@ -27,16 +29,14 @@ public class purchasePalletServlet extends HttpServlet {
         Retailer retailer = null;
 //        try {
 
-            retailer = this.rmap.find(retailerID);
+            retailer = (Retailer) TransactorMapper.find(retailerID);
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
         boolean result = false;
-        try {
-            result = retailer.buy(quantity, DCID);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        result = retailer.buy(new Order(), DCID);
+
         if(result==true){
             //           TODO generate transaction!
         }else{

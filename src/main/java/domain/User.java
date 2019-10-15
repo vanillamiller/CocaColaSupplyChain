@@ -1,7 +1,5 @@
 package domain;
 
-import mappers.TransactorMapper;
-
 public class User {
 
     public static Transactor getUser(String username){

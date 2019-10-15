@@ -1,15 +1,11 @@
 package domain;
 
-import domain.internal.Sends;
-import mappers.TransactorMapper;
-
 import java.util.*;
 
-public abstract class Transactor implements Sends {
+public abstract class Transactor {
 
     private int id;
-    private String name;
-    private String password;
+    private String username, password, name;
     private List<Transaction> transactions;
 
     public Transactor(){};
@@ -19,11 +15,19 @@ public abstract class Transactor implements Sends {
         this.name = name;
     }
 
+    public static Transactor get(int id){
+        return TransactorMapper.find(id);
+    }
+
+    public static Transactor get(String username){
+        return TransactorMapper.find(username);
+    }
+
     @Override
     public boolean equals(Object other){
         if(other.getClass().equals(this.getClass())) {
             Transactor oth=(Transactor) other;
-            return (this.getID() == oth.getID());
+            return this.getID()==oth.getID();
         }
         return false;
     }
@@ -36,7 +40,13 @@ public abstract class Transactor implements Sends {
         return this.name;
     };
 
-    public abstract List<Transaction> getTransactions();
+    public List<Transaction> getTransactions(){
+        return TransactionMapper.findAll(this.id);
+    }
+
+    public void setPassword(String pass){ this.password=pass; }
+
+    public void setUsername(String username) { this.username=username; }
 
     public String getPassword() {
         return password;

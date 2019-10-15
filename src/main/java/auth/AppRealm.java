@@ -1,16 +1,16 @@
 package auth;
 import domain.*;
 
-import domain.external.Retailer;
-import domain.internal.Bottler;
-import domain.internal.CocaColaHQ;
-import domain.internal.DC;
+import domain.Retailer;
+import domain.Bottler;
+import domain.CocaColaHQ;
+import domain.DC;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.jdbc.JdbcRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import session.AppSession;
+import domain.AppSession;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,12 +23,13 @@ public class AppRealm extends JdbcRealm {
 
         UsernamePasswordToken userPassToken=(UsernamePasswordToken) token;
         final String username=userPassToken.getUsername();
-        final Transactor user=User.getUser(username);
+        final Transactor user=Transactor.get(username);
+        System.out.println(user.getName()+" name should be here");
         if(user==null) {
             System.out.println("No account found with the username " + username);
             return null;
         }
-
+        System.out.println("id: "+user.getID()+" password: "+user.getPassword());
         return new SimpleAuthenticationInfo(user.getID(), user.getPassword(), getName());
     }
 

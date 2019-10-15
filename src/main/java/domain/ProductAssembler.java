@@ -1,8 +1,6 @@
 package domain;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import domain.products.Product;
 
 public class ProductAssembler {
 

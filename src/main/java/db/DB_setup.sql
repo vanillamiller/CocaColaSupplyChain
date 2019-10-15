@@ -1,6 +1,6 @@
-DROP TABLE Order;
-DROP TABLE Transactions;
-DROP TABLE Transactors;
+
+DROP TABLE Transactions CASCADE;
+DROP TABLE Transactors CASCADE;
 DROP TABLE TransactorMapper;
 
 CREATE TYPE roletype AS ENUM ('dc', 'cl','hq','bt');
@@ -25,7 +25,7 @@ CREATE TABLE TransactorMapper(
 CREATE TABLE Transactions(
     id uuid PRIMARY KEY,
     business BOOLEAN NOT NULL,
-    price money,
+    price,
     order INTEGER,
     date TIMESTAMP,
     fromID INTEGER,
@@ -47,7 +47,6 @@ CREATE TABLE Order(
 );
 
 -- POPULATE WITH DUMMY DATA --
-
 INSERT INTO Transactors(
     name,
     role,
@@ -70,7 +69,6 @@ VALUES
 --bottling plants
 ('Melbourne bottling plant','bt','melbbot','a'),
 ('Sydney bottling plant','bt','sydbot','a');
-
 
 INSERT INTO TransactorMapper(
     fromID,

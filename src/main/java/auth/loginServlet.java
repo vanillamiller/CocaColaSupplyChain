@@ -7,7 +7,7 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import session.AppSession;
+import domain.AppSession;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -16,25 +16,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-@WebServlet(name = "loginServlet")
+@WebServlet(name = "login")
 public class loginServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String view="/views/login.jsp";
+
+        String view="index.jsp";
 
         ServletContext servletContext=getServletContext();
         RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
         requestDispatcher.forward(request, response);
-//        PrintWriter writer = response.getWriter();
-//        writer.println("<h3> Hello in html </h3>");
-//		writer.println("<p>Hello from Get username: " + un + " and pword: " + pw + ".</p>");
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+
     }
 
     /**
@@ -52,11 +48,13 @@ public class loginServlet extends HttpServlet {
 
         try{
             current.login(token);
-            view="views/retailerDashboard.jsp";
+            view="/retailerDashboard.jsp";
             Transactor user= User.getUser(username);
             AppSession.init(user);
-        }catch(UnknownAccountException | IncorrectCredentialsException){
-            view="/views/login-error.jsp";
+        }catch(UnknownAccountException | IncorrectCredentialsException e){
+            e.printStackTrace();
+            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            view="/internallogin.jsp";
         }finally{
             ServletContext servletContext=getServletContext();
             RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
@@ -94,7 +92,7 @@ public class loginServlet extends HttpServlet {
 //        }else{
 //            System.out.println("Retail user " + user + " failed to log in");
 //            request.setAttribute("errorMessage", "Invalid user or password");
-//            request.getRequestDispatcher("retailerlogin.jsp").forward(request, response);
+//            request.getRequestDispatcher("login.jsp").forward(request, response);
 //        }
 
 

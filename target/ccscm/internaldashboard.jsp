@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="domain.internal.DC" %>
-<%@ page import="domain.internal.CocaColaHQ" %>
-<%@ page import="mappers.CocaColaHQMapper" %>
+<%@ page import="domain.DC" %>
+<%@ page import="domain.CocaColaHQ" %>
+<%@ page import="domain.CocaColaHQMapper" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

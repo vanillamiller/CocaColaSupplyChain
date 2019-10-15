@@ -1,3 +1,5 @@
+<%@ page import="domain.AppSession" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +21,25 @@
                 <h2>Welcome to the CocaCola's Point of Sales system</h2>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Are you an Internal CocaCola Entity or a Retailer?</h5>
+                <% if (!AppSession.isAuthenticatated()) {%>
+                <form action="login" method="post">
+                    Username: <input type="text" name="username">
+                    Password: <input type="text" name="password">
+                    <input type="submit" value="login">
+                </form>
+                <%} else{%>
+                <div> you have already logged in</div>
+                <% } %>
+                <%
+                    if(request.getAttribute("errorMessage") != null ){ %>
+                <%= request.getAttribute("errorMessage") %>
+                <% } %>
 
-                <a href="internallogin.jsp" class="btn btn-primary">CocaCola Internal Entity</a>
-                <a href="retailerlogin.jsp" class="btn btn-primary">CocaCola Retailer</a>
             </div>
         </div>
 
     </div>
+
 </div>
 
 <div class="fixed-bottom">

@@ -1,11 +1,6 @@
 package domain;
 
-import java.lang.reflect.Type;
-import java.util.List;
-
 import com.google.gson.*;
-import domain.products.Order;
-import domain.products.Product;
 
 public class OrderAssembler {
 

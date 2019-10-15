@@ -1,5 +1,5 @@
-<%@ page import="mappers.DCMapper" %>
-<%@ page import="domain.internal.DC" %><%--
+<%@ page import="domain.DCMapper" %>
+<%@ page import="domain.DC" %><%--
   Created by IntelliJ IDEA.
   User: tomglynch
   Date: 18/9/19

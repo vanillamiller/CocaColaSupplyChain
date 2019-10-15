@@ -1,6 +1,4 @@
 package domain;
-import domain.products.Order;
-import mappers.UnitOfWork;
 
 import java.util.*;
 
@@ -19,11 +17,9 @@ public class Transaction {
         UnitOfWork.getCurrent().registerNew(this);
     }
 
-//    public Transaction(int txID, int numPallets, Date date, Integer from, Integer to) {
-//        this.date = date;
-//        this.from = from;
-//        this.to = to;
-//    }
+    public Order getOrder(){
+        return this.order;
+    }
 
     public Date getDate() {
 

@@ -6,13 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="mappers.TransactionMapper" %>
+<%@ page import="domain.TransactionMapper" %>
 <%@ page import="domain.Transaction" %>
-<%@ page import="domain.internal.DC" %>
-<%@ page import="mappers.CocaColaHQMapper" %>
-<%@ page import="domain.internal.CocaColaHQ" %>
-<%@ page import="mappers.DCMapper" %>
-<%@ page import="mappers.RetailerMapper" %>
+<%@ page import="domain.DC" %>
+<%@ page import="domain.CocaColaHQMapper" %>
+<%@ page import="domain.CocaColaHQ" %>
+<%@ page import="domain.DCMapper" %>
+<%@ page import="domain.RetailerMapper" %>
 
 <html>
 <head>
