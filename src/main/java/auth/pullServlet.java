@@ -14,7 +14,6 @@ import java.sql.SQLException;
 public class pullServlet extends HttpServlet {
 
 //    private RetailerMapper rmap=new RetailerMapper();
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int toID = Integer.parseInt(request.getParameter("toID"));
         int fromID = Integer.parseInt(request.getParameter("fromID"));
