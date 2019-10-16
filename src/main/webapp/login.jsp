@@ -17,13 +17,11 @@
 </head>
 <body>
 
-
+<% System.out.println("WHAT THE HELL IM HERE");%>
 <form action="loginServlet" method="post">
 
-    <% if (!AppSession.isAuthenticatated()) {%>
+    <% if (!AppSession.isAuthenticated()) {%>
     User: <input type="text" name="username"><br>
-
-</select><br>
     Password: <input type="text" name="password"><br>
     <input type="submit" value="Login">
     <%} else{%>

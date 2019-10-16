@@ -20,7 +20,9 @@ public abstract class Transactor {
     }
 
     public static Transactor get(String username){
-        return TransactorMapper.find(username);
+        Transactor x = TransactorMapper.find(username);
+        System.out.println("well here we are in transactorget" + x);
+        return x;
     }
 
     @Override

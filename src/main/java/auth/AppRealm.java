@@ -23,8 +23,13 @@ public class AppRealm extends JdbcRealm {
 
         UsernamePasswordToken userPassToken=(UsernamePasswordToken) token;
         final String username=userPassToken.getUsername();
+        System.out.println("this is the username im apprealm: " + username);
         final Transactor user=Transactor.get(username);
-        System.out.println(user.getName()+" name should be here");
+        System.out.println("this is the user object in apprealm: " + user);
+        System.out.println("apprealm1 " + user.getPassword());
+        System.out.println("apprealm2 " + user.getName());
+        System.out.println("apprealm3 " + user.getClass());
+//        System.out.println(user.getName()+" name should be here");
         if(user==null) {
             System.out.println("No account found with the username " + username);
             return null;
@@ -46,18 +51,24 @@ public class AppRealm extends JdbcRealm {
         final Transactor user=Transactor.get(id);
 
         if(user==null){
-            System.out.println("no account for use with username "+id);
+            System.out.println("no account for use with username id "+id);
             return null;
         }
 
-        if(user instanceof DC)
+        if(user instanceof DC) {
             roles.add(AppSession.DC_ROLE);
-        else if(user instanceof Retailer)
+        }
+        else if(user instanceof Retailer) {
+            System.out.println("YES ITS A RETAILER");
             roles.add(AppSession.CLIENT_ROLE);
-        else if(user instanceof CocaColaHQ)
+        }
+        else if(user instanceof CocaColaHQ) {
             roles.add(AppSession.FACTORYHQ_ROLE);
-        else if(user instanceof Bottler)
+        }
+        else if(user instanceof Bottler) {
             roles.add(AppSession.BOTTLER_ROLE);
+            System.out.println("OH CRAP A BOTTLER");
+        }
         return new SimpleAuthorizationInfo(roles);
     }
 }

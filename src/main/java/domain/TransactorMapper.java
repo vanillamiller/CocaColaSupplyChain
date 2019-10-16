@@ -18,7 +18,7 @@ public class TransactorMapper {
     public static Transactor find(String username){
 
             String sql = "SELECT id, name, role, password FROM Transactors WHERE username = ?";
-            Transactor result;
+            Transactor result = null;
             try (PreparedStatement sqlPrepared = DBConnection.prepare(sql)) {
 
                 sqlPrepared.setString(1, username);
@@ -30,6 +30,7 @@ public class TransactorMapper {
                 String name = rs.getString("name");
                 String role=rs.getString("role");
                 String password=rs.getString("password");
+                System.out.println("in transactor mapper find string, just getting name: " + name + " and role: " + role);
 
                 switch(role){
                     case "hq":
@@ -44,19 +45,23 @@ public class TransactorMapper {
                         result.setUsername(username);
                         return result;
 
-                    case "cli":
+                    case "cl":
                         result=new Retailer(id, name);
                         result.setPassword(password);
                         result.setUsername(username);
+                        System.out.println("HERE WE ARE CL IN TRANSACTION MAPPER STRING");
+                        return result;
 
-                    case "bot":
+                    case "bt":
                         result=new Bottler(id, name);
                         result.setPassword(password);
                         result.setUsername(username);
-
+                        System.out.println("HERE WE ARE BT IN TRANSACTION MAPPER STRING");
+                        return result;
                 }
 
-                System.out.println(name + "dc gone thru idMap");
+                System.out.println(name + " gone thru idMap");
+                return result;
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
                 System.out.println("here D3");
@@ -76,16 +81,16 @@ public class TransactorMapper {
                 rs.next();
                 String name = rs.getString(2);
                 String role=rs.getString(3);
-
+                System.out.println("in transactor mapper find int, just getting name: " + name + " and role: " + role);
                 switch(role){
                     case "hq":
                         return new CocaColaHQ(id, name);
                     case "dc":
                         return new DC(id, name);
-                    case "cli":
-                        return new Retailer(id, name);
-                    case "bot":
-                        return new Bottler(id, name);
+                    case "cl":
+                        System.out.println("THIS THIS THIS THEREDSAFIHFH CLCLCLCLC");
+                    case "bt":
+                        System.out.println("THIS THIS THIS THEREDSAFIHFH BTBTBTBTB");
                 }
 
             } catch (SQLException e) {
@@ -117,9 +122,9 @@ public class TransactorMapper {
                         break;
                     case "dc":
                         current=new DC(id, name);
-                    case "cli":
+                    case "cl":
                         current=new Retailer(id, name);
-                    case "bot":
+                    case "bt":
                         current=new Bottler(id, name);
                 }
                 result.add(current);
@@ -150,14 +155,15 @@ public class TransactorMapper {
                 String name = rs.getString(2);
                 String role = rs.getString(2);
 
+
                 switch(role){
                     case "hq":
                         current=new CocaColaHQ(id, name);
                     case "dc":
                         current=new DC(id, name);
-                    case "cli":
+                    case "cl":
                         current=new Retailer(id, name);
-                    case "bot":
+                    case "bt":
                         current=new Bottler(id, name);
                 }
                 result.add(current);

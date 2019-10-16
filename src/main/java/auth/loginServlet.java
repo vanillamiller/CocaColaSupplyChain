@@ -19,20 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.crypto.dsig.TransformService;
 import java.io.IOException;
 
-@WebServlet(name = "login")
+@WebServlet(name = "loginServlet")
 public class loginServlet extends HttpServlet {
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String view="/index.jsp";
-
-        ServletContext servletContext=getServletContext();
-        RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
-        requestDispatcher.forward(request, response);
-
-    }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -53,6 +42,10 @@ public class loginServlet extends HttpServlet {
             view="internaldashboard.jsp";
             Transactor user= Transactor.get(username);
             AppSession.init(user);
+            if(AppSession.hasRole("cl")){
+                view="retailerdashboard.jsp";
+                System.out.println("ttttttt0");
+            }
             System.out.println("ttttttt1");
             response.sendRedirect(view);
         }catch(UnknownAccountException | IncorrectCredentialsException e) {

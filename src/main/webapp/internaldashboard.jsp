@@ -18,7 +18,7 @@
 <a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
 <br>
 
-    <% if (AppSession.isAuthenticatated()) {%>
+    <% if (AppSession.isAuthenticated()) {%>
         <% if(AppSession.hasRole("hq")) {%>
             Distribution Centers:
             <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
