@@ -14,10 +14,10 @@ public class CocaColaHQMapper {
         result=map.get(id);
 
         if(result==null){
-            String sql = "SELECT CHQID, name FROM COKEHQ WHERE CHQID=?";
+            String sql = "SELECT id, name FROM TRANSACTORS WHERE role='hq'";
             try (PreparedStatement sqlPrepared = DBConnection.prepare(sql)) {
 
-                sqlPrepared.setInt(1, id);
+//                sqlPrepared.setObject(1,"hq");
                 ResultSet rs = sqlPrepared.executeQuery();
                 rs.next();
 

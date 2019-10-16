@@ -133,6 +133,45 @@ public class TransactorMapper {
 
     }
 
+
+    public static List<Transactor> getall(){
+
+        List<Transactor> result = new ArrayList<>();
+        String sql = "SELECT id, name, role FROM Transactors ORDER BY name ASC";
+
+        try {
+            Transactor current=null;
+            PreparedStatement sqlPrepared = DBConnection.prepare(sql);
+            ResultSet rs = sqlPrepared.executeQuery();
+
+            while (rs.next()) {
+
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String role = rs.getString(2);
+
+                switch(role){
+                    case "hq":
+                        current=new CocaColaHQ(id, name);
+                    case "dc":
+                        current=new DC(id, name);
+                    case "cli":
+                        current=new Retailer(id, name);
+                    case "bot":
+                        current=new Bottler(id, name);
+                }
+                result.add(current);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("COULDNT GETALL TRANSACTORS");
+        }
+        System.out.println(result);
+        return result;
+
+    }
+
+
     public static void update(Transactor t){
 
     }

@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.crypto.dsig.TransformService;
 import java.io.IOException;
 
 @WebServlet(name = "login")
@@ -25,7 +26,7 @@ public class loginServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String view="index.jsp";
+        String view="/index.jsp";
 
         ServletContext servletContext=getServletContext();
         RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
@@ -37,28 +38,31 @@ public class loginServlet extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("dsfssgsgfdgsdfgsdfgsdfgsdf");
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         UsernamePasswordToken token=new UsernamePasswordToken(username, password);
-        token.setRememberMe(true);
+        token.setRememberMe(false);
 
         Subject current=SecurityUtils.getSubject();
-        String view="index.jsp";
+        String view="/index.jsp";
 
         try{
             current.login(token);
-            view="/retailerDashboard.jsp";
-            Transactor user= User.getUser(username);
+            System.out.println("successful login");
+            view="/internaldashboard.jsp";
+            Transactor user= Transactor.get(username);
             AppSession.init(user);
         }catch(UnknownAccountException | IncorrectCredentialsException e){
             e.printStackTrace();
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            view="/internallogin.jsp";
+            System.out.println("failed to login");
+            view="/login.jsp";
         }finally{
+            System.out.println("CCCCCCC");
             ServletContext servletContext=getServletContext();
             RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
             requestDispatcher.forward(request, response);
+            response.sendRedirect(view);
         }
 //        String user, pw = null;
 //        user = request.getParameter("user");

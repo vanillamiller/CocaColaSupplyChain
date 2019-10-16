@@ -8,7 +8,6 @@ public class SupplierFacade {
 
     public SupplierFacade(int id){
         this.id=id;
-        this.inv=;
     }
 
     public boolean canShip(Order order){
@@ -20,7 +19,9 @@ public class SupplierFacade {
         return supplier.ship(order);
     }
 
-    public
+    public Inventory getInventory(){
+        return ProductMapper.findall(this.id);
+    }
 
 
 }

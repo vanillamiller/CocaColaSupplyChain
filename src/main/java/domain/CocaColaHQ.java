@@ -20,6 +20,12 @@ public class CocaColaHQ extends Transactor {
         return ts;
     }
 
+    public static List<Transactor> getAllTransactors(){
+        List<Transactor> ts=new ArrayList<Transactor>();
+        ts=TransactorMapper.getall();
+        return ts;
+    }
+
     public Transaction getTransactionByID(){
         return new Transaction();
     }

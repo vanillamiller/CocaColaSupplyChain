@@ -6,13 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="domain.TransactionMapper" %>
-<%@ page import="domain.Transaction" %>
-<%@ page import="domain.DC" %>
-<%@ page import="domain.CocaColaHQMapper" %>
-<%@ page import="domain.CocaColaHQ" %>
-<%@ page import="domain.DCMapper" %>
-<%@ page import="domain.RetailerMapper" %>
+<%@ page import="domain.TransactorMapper" %>
+<%@ page import="domain.*" %>
 
 <html>
 <head>
@@ -30,10 +25,10 @@ All transactions:
     </thead>
     <tbody>
     <%
-        CocaColaHQ hq=CocaColaHQMapper.find(0);
+//        CocaColaHQ hq=CocaColaHQMapper.find(0);
 
-        DCMapper dcmap=new DCMapper();
-        RetailerMapper rmap=new RetailerMapper();
+        Transactor t = Transactor.get(AppSession.getUser());
+
 
         int curr, prev=-1;
         for (Transaction i : hq.getTransactions()) {
@@ -45,8 +40,8 @@ All transactions:
                 <tr><th colspan="5"><%=dcmap.find(i.getFrom()).getName()%></th></tr>
             <% } %>
         <tr>
-            <td><%=i.gettxID()%></td>
-            <td><%=i.getNumPallets()%></td>
+<%--            <td><%=i.gettxID()%></td>--%>
+<%--            <td><%=i.getNumPallets()%></td>--%>
             <td><%=i.getDate()%></td>
             <td><%=dcmap.find(i.getFrom()).getName()%></td>
             <td><%=rmap.find(i.getTo()).getName()%></td>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="CocaColaSupplyChain">
+    <output-path>$PROJECT_DIR$/out/artifacts/CocaColaSupplyChain</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ccscm/web/Web" />
+    </root>
+  </artifact>
+</component>

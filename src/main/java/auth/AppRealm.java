@@ -43,7 +43,7 @@ public class AppRealm extends JdbcRealm {
         }
 
         int id=(Integer) principals.getPrimaryPrincipal();
-        final Transactor user=User.getUser(id);
+        final Transactor user=Transactor.get(id);
 
         if(user==null){
             System.out.println("no account for use with username "+id);

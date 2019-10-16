@@ -1,7 +1,5 @@
 package domain;
 
-import domain.Transactor;
-import domain.User;
 import org.apache.shiro.SecurityUtils;
 
 public class AppSession {

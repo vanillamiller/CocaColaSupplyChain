@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="domain.DC" %>
-<%@ page import="domain.CocaColaHQ" %>
-<%@ page import="domain.CocaColaHQMapper" %>
-<%@ page import="domain.AppSession" %>
+<%@ page import="domain.*" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,18 +22,21 @@
         <% if(AppSession.hasRole("hq")) {%>
             Distribution Centers:
             <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
-                for (DC i : hq.getDistList()) {
+                for (Transactor i : hq.getDistList()) {
             %>
 
     <form action="makePalletServlet" method="post">
         <input type="number" name="quantity" min="1" required >
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> <%=i.getnumPallets()%>
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> <%=i.getnumPallets()%>
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> <%=i.getnumPallets()%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> DESERIALISED STOCKDTO GOES HERE
     </form><br>
             <% } %>
         <% } %>
     <% } %>
+
+
+
 
 
 
