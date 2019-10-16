@@ -50,20 +50,26 @@ public class loginServlet extends HttpServlet {
         try{
             current.login(token);
             System.out.println("successful login");
-            view="/internaldashboard.jsp";
+            view="internaldashboard.jsp";
             Transactor user= Transactor.get(username);
             AppSession.init(user);
-        }catch(UnknownAccountException | IncorrectCredentialsException e){
+            System.out.println("ttttttt1");
+            response.sendRedirect(view);
+        }catch(UnknownAccountException | IncorrectCredentialsException e) {
             e.printStackTrace();
             System.out.println("failed to login");
-            view="/login.jsp";
-        }finally{
-            System.out.println("CCCCCCC");
-            ServletContext servletContext=getServletContext();
-            RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
-            requestDispatcher.forward(request, response);
-            response.sendRedirect(view);
+            view = "index.jsp";
+            request.setAttribute("errorMessage", "Invalid user or password");
+            System.out.println("ttttttt2");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
+//        }finally{
+//            System.out.println("CCCCCCC");
+////            ServletContext servletContext=getServletContext();
+////            RequestDispatcher requestDispatcher=servletContext.getRequestDispatcher(view);
+////            requestDispatcher.forward(request, response);
+//
+//        }
 //        String user, pw = null;
 //        user = request.getParameter("user");
 //        pw = request.getParameter("password");
