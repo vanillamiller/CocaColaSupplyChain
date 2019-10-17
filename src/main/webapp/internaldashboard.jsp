@@ -44,7 +44,8 @@
                 Zero: <input type="number" name="quantityzero" value="0" min="0" required >
                 <button name="fromID" type="submit" value="<%=i.getID()%>" required>Place Order</button>
                 <br>
-                Current stock: <%=StockDTO.toJson(i.getStock())%> TODO in JSON atm, need to make it back to regular.<br>
+                <%StockDTO thisone = StockDTO.toJson(i.getStock())%>
+                Current stock: Regular: <%=thisone.getNumRegular()%> Vanilla: <%=thisone.getNumVanilla()%> Zero: <%=thisone.getNumZero()%>
 
 
 
