@@ -50,8 +50,9 @@ public abstract class Transactor {
 
     public String getStock() throws RemoteException {
         System.out.println("HERE IS AM IN TRANSACTOR");
-        return SupplierFacade.getStock(this.id);
+        return SupplierFacade.getStockJson(this.id);
     }
+
 
     public List<Transaction> getTransactions(){
         return TransactionMapper.findAll(this.id);

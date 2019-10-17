@@ -20,7 +20,7 @@ public class StockDTO {
         this.numZero = 0;
     }
 
-    public static String toJson(StockDTO sdto) {
+    public static String toJson(String sdto) {
         Gson gson = new Gson();
         return gson.toJson(sdto);
     }

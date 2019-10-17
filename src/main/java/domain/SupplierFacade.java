@@ -12,7 +12,7 @@ public class SupplierFacade {
         this.id=id;
         this.inv = this.getInventory();
     }
-    public static String getStock(int id) throws RemoteException {
+    public static StockDTO getStock(int id) throws RemoteException {
 //        System.out.println("THIS IS THE WEHRE WE ARE UP TO YOLOLOL");
         Inventory inv = ProductMapper.findall(id);
         System.out.println("THIS IS THE WEHRE WE ARE UP TO YOLOLOL");
@@ -23,13 +23,13 @@ public class SupplierFacade {
         result.setNumVanilla(inv.num_vanilla());
         result.setNumZero(inv.num_zero());
         System.out.println("THIS IS THE RESULT:" + result);
-        return StockDTO.toJson(result);
+        return result;
     }
 
-//    public String getStockJson(int id) throws RemoteException {
-//        StockDTO dto = getStock(id);
-//        return dto.toString();
-//    }
+    public static String getStockJson(int id) throws RemoteException {
+        StockDTO dto = getStock(id);
+        return dto.toString();
+    }
 
     public boolean canShip(Order order){
         return inv.get().containsAll(order.list());

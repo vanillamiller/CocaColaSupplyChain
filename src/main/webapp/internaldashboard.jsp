@@ -4,6 +4,7 @@
 <%@ page import="domain.*" %>
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,7 +44,9 @@
                 Zero: <input type="number" name="quantityzero" value="0" min="0" required >
                 <button name="fromID" type="submit" value="<%=i.getID()%>" required>Place Order</button>
                 <br>
-                Current stock: <%=i.getStock()%> TODO in JSON atm, need to make it back to regular.<br>
+                Current stock: <%=StockDTO.toJson(i.getStock())%> TODO in JSON atm, need to make it back to regular.<br>
+
+
 
             <% } %>
             </form><br>
