@@ -1,6 +1,8 @@
 package domain;
 
+import java.rmi.RemoteException;
 import java.util.*;
+import java.util.function.Supplier;
 
 public abstract class Transactor {
 
@@ -45,6 +47,11 @@ public abstract class Transactor {
     public String getName(){
         return this.name;
     };
+
+    public String getStock() throws RemoteException {
+        System.out.println("HERE IS AM IN TRANSACTOR");
+        return SupplierFacade.getStock(this.id);
+    }
 
     public List<Transaction> getTransactions(){
         return TransactionMapper.findAll(this.id);

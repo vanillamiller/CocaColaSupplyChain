@@ -31,13 +31,19 @@
 <%--                <button name="plussyrup" type="submit" required>Make Syrup</button>--%>
 <%--            </form><br>--%>
         <% } else { %>
-            Suppliers:
+            Submit your order from a supplier:
             <form action="pullServlet" method="post">
-            <%  Transactor hq= AppSession.getUser();
-                for (Transactor i : hq.getMyTransactors()) {
+            <%  Transactor t= AppSession.getUser();
+                for (Transactor i : t.getMyTransactors()) {
             %>
-                <input type="number" name="quantity" min="1" required >
-                <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Pull Product</button><%=i.getName()%> DESERIALISED STOCKDTO GOES HERE <br>
+                <b><%=i.getName()%></b><br>
+                <input type="hidden" name="toID" value=<%=t.getID()%>>
+                Regular: <input type="number" name="quantityreg" value="0" min="0" required >
+                Vanilla: <input type="number" name="quantityvan" value="0" min="0" required >
+                Zero: <input type="number" name="quantityzero" value="0" min="0" required >
+                <button name="fromID" type="submit" value="<%=i.getID()%>" required>Place Order</button>
+                <br>
+                Current stock: <%=i.getStock()%> TODO in JSON atm, need to make it back to regular.<br>
 
             <% } %>
             </form><br>

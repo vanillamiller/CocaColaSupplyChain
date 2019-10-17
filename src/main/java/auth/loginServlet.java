@@ -42,10 +42,10 @@ public class loginServlet extends HttpServlet {
             view="internaldashboard.jsp";
             Transactor user= Transactor.get(username);
             AppSession.init(user);
-            if(AppSession.hasRole("cl")){
-                view="retailerdashboard.jsp";
-                System.out.println("ttttttt0");
-            }
+//            if(AppSession.hasRole("cl")){
+//                view="retailerdashboard.jsp";
+//                System.out.println("ttttttt0");
+//            }
             System.out.println("ttttttt1");
             response.sendRedirect(view);
         }catch(UnknownAccountException | IncorrectCredentialsException e) {

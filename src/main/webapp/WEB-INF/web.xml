@@ -59,7 +59,14 @@
         <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
 
-
+    <servlet>
+        <servlet-name>pullServlet</servlet-name>
+        <servlet-class>auth.pullServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pullServlet</servlet-name>
+        <url-pattern>/pullServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 

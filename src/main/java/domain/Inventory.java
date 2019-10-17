@@ -18,9 +18,11 @@ public class Inventory {
 
     public int num_vanilla(){
         int count=0;
-        for(Product p : products){
-            if(p.equals(new Pallet(Flavor.VANILLA))){
-                count++;
+        if(products!=null) {
+            for (Product p : products) {
+                if (p.equals(new Pallet(Flavor.VANILLA))) {
+                    count++;
+                }
             }
         }
         return count;
@@ -28,9 +30,12 @@ public class Inventory {
 
     public int num_regular(){
         int count=0;
-        for(Product p : products){
-            if(p.equals(new Pallet(Flavor.REGULAR))){
-                count++;
+        if(products!=null) {
+            System.out.println("here are the products in products: " + products);
+            for (Product p : products) {
+                if (p.equals(new Pallet(Flavor.REGULAR))) {
+                    count++;
+                }
             }
         }
         return count;
@@ -38,9 +43,11 @@ public class Inventory {
 
     public int num_zero(){
         int count=0;
-        for(Product p : products){
-            if(p.equals(new Pallet(Flavor.REGULAR))){
-                count++;
+        if(products!=null) {
+            for (Product p : products) {
+                if (p.equals(new Pallet(Flavor.REGULAR))) {
+                    count++;
+                }
             }
         }
         return count;

@@ -14,6 +14,11 @@ public class StockDTO {
         this.numVanilla = inv.num_vanilla();
         this.numZero = inv.num_zero();
     }
+    public StockDTO() {
+        this.numRegular = 0;
+        this.numVanilla = 0;
+        this.numZero = 0;
+    }
 
     public static String toJson(StockDTO sdto) {
         Gson gson = new Gson();
@@ -25,13 +30,13 @@ public class StockDTO {
         return gson.fromJson(json, StockDTO.class);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public int getNumVanilla() {
         return numVanilla;
