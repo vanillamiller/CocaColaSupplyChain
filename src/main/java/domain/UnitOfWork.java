@@ -6,7 +6,8 @@ import java.lang.*;
 public class UnitOfWork {
     private static ThreadLocal current=new ThreadLocal();
 
-    private List<Transaction> newObjects=new ArrayList<Transaction>();
+
+    private List<Created> newObjects=new ArrayList<Created>();
     private List<Transactor> dirtyObjects=new ArrayList<Transactor>();
     private List<Transactor> deletedObjects=new ArrayList<Transactor>();
 
@@ -21,6 +22,13 @@ public class UnitOfWork {
         assert !deletedObjects.contains(tx);
         assert !newObjects.contains(tx);
         newObjects.add(tx);
+    }
+
+    public void registerNew(Barrel b){
+        assert !dirtyObjects.contains(b);
+        assert !deletedObjects.contains(b);
+        assert !newObjects.contains(b);
+        newObjects.add(b);
     }
 
     public void registerDirty(Transactor t) {
@@ -45,12 +53,12 @@ public class UnitOfWork {
     public void commit() {
         try{
 
-        for (Transaction tx : newObjects) {
-            TransactionMapper.insert(tx);
-        }
-        for (Transactor t : dirtyObjects) {
-            TransactorMapper.update(t);
-        }
+            for (Created c : newObjects) {
+                if(c instanceof Transaction)
+                    TransactionMapper.insert(c);
+                if(c instanceof Barrel)
+                    ProductMapper.insert(c);
+            }
         } catch(Exception e) {
             e.printStackTrace();
         }

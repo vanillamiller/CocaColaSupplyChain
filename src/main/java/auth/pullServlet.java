@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "purchasePalletServlet")
+@WebServlet(name = "pullServlet")
 public class pullServlet extends HttpServlet {
 
 //    private RetailerMapper rmap=new RetailerMapper();

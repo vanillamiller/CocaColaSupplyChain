@@ -20,10 +20,11 @@
 
     <% if (AppSession.isAuthenticated()) {%>
         <% if (AppSession.hasRole("hq")) {%>
-            <form action="makeSyrupServlet" method="post">
-                <input type="number" name="quantity" min="1" required >
-                <button name="plussyrup" type="submit" required>Make Syrup</button>
-            </form><br>
+            Hi CCHQ. No need to make syrup, it's done automatically when the bottler requests more!
+<%--            <form action="makeSyrupServlet" method="post">--%>
+<%--                <input type="number" name="quantity" min="1" required >--%>
+<%--                <button name="plussyrup" type="submit" required>Make Syrup</button>--%>
+<%--            </form><br>--%>
         <% } else { %>
             Suppliers:
             <form action="pullServlet" method="post">
@@ -37,13 +38,6 @@
             </form><br>
     <% } %>
 <% } %>
-
-
-
-
-
-
-
 
 </body>
 </html>

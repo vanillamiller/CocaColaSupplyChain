@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import auth.DBConnection;
+import java.util.UUID;
+
 
 public class TransactionMapper {
 
@@ -37,13 +39,15 @@ public class TransactionMapper {
 
 
 
-    public static void insert(Transaction tx) throws SQLException {
+    public static void insert(Created c) throws SQLException {
+        Transaction tx=(Transaction) c;
         WriteLockManager wlm = WriteLockManager.getInstance();
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
         Order order=tx.getOrder();
         int fromID=tx.getFrom();
         int toID=tx.getTo();
+        UUID uuid= UUID.randomUUID();
 
         try {
             wlm.acquireWriteLock(tx);

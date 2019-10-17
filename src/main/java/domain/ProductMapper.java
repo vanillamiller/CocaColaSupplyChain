@@ -43,12 +43,25 @@ public class ProductMapper {
 
         String sql="UPDATE products SET location="+to+"WHERE pid="+pid;
 
-            PreparedStatement stmt=DBConnection.prepare(sql);
-            stmt.execute();
+        PreparedStatement stmt=DBConnection.prepare(sql);
+        stmt.execute();
 
     }
 
     public void delete() throws SQLException {
 
+    }
+
+    public static void insert(Created c) throws SQLException {
+
+        Barrel barrel=(Barrel) c;
+        UUID uuid = UUID.randomUUID();
+        String sql="INSERT INTO Products(uuid, form, flavor, location) VALUES(?,?,?)";
+        PreparedStatement stmt=DBConnection.prepare(sql);
+        stmt.setObject(1,uuid);
+        stmt.setString(2, "barrel");
+        stmt.setString(3, barrel.getFlavor().toString());
+        stmt.setInt(4,barrel.getTo());
+        stmt.execute();
     }
 }

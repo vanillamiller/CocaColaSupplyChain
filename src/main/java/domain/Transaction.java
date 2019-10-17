@@ -2,7 +2,7 @@ package domain;
 
 import java.util.*;
 
-public class Transaction {
+public class Transaction implements Created {
     private Date date;
     private Order order;
     private Integer from;
@@ -14,6 +14,9 @@ public class Transaction {
         this.order=order;
         this.from=from;
         this.to=to;
+        this.create();
+    }
+    public void create(){
         UnitOfWork.getCurrent().registerNew(this);
     }
 

@@ -1,4 +1,5 @@
 package domain;
 
-public class Created {
+public interface Created {
+    public void create();
 }
