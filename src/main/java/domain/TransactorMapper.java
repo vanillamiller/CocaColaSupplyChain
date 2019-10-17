@@ -88,9 +88,9 @@ public class TransactorMapper {
                     case "dc":
                         return new DC(id, name);
                     case "cl":
-                        System.out.println("THIS THIS THIS THEREDSAFIHFH CLCLCLCLC");
+                        return new Retailer(id, name);
                     case "bt":
-                        System.out.println("THIS THIS THIS THEREDSAFIHFH BTBTBTBTB");
+                        return new Bottler(id, name);
                 }
 
             } catch (SQLException e) {
@@ -171,6 +171,46 @@ public class TransactorMapper {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             System.out.println("COULDNT GETALL TRANSACTORS");
+        }
+        System.out.println(result);
+        return result;
+
+    }
+
+
+    public static List<Transactor> findMyTransactors(int toID){
+
+        List<Transactor> result = new ArrayList<>();
+        String sql = "SELECT * FROM TRANSACTORS LEFT JOIN TransactorRelations ON TRANSACTORS.id=TransactorRelations.fromid WHERE TransactorRelations.toid=" + toID + ";";
+
+
+        try {
+            Transactor current=null;
+            PreparedStatement sqlPrepared = DBConnection.prepare(sql);
+            ResultSet rs = sqlPrepared.executeQuery();
+
+            while (rs.next()) {
+
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String role = rs.getString(3);
+
+                switch(role){
+                    case "hq":
+                        current=new CocaColaHQ(id, name);
+                        break;
+                    case "dc":
+                        current=new DC(id, name);
+                    case "cl":
+                        current=new Retailer(id, name);
+                    case "bt":
+                        current=new Bottler(id, name);
+                }
+                result.add(current);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("COULDNT FIND THIS TRANSACTORS PARENTS");
         }
         System.out.println(result);
         return result;

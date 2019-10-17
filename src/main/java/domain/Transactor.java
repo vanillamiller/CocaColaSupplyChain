@@ -34,6 +34,10 @@ public abstract class Transactor {
         return false;
     }
 
+    public List<Transactor> getMyTransactors(){
+        return TransactorMapper.findMyTransactors(this.id);
+    }
+
     public int getID(){
         return this.id;
     };

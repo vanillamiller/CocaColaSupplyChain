@@ -14,26 +14,31 @@
 </head>
 <body>
 
-<h2>Welcome to the CocaCola HQ</h2>
+<h2>Welcome to the Internal Dashboard</h2>
 <a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
 <br>
 
     <% if (AppSession.isAuthenticated()) {%>
-        <% if(AppSession.hasRole("hq")) {%>
-            Distribution Centers:
-            <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
-                for (Transactor i : hq.getDistList()) {
+        <% if (AppSession.hasRole("hq")) {%>
+            <form action="makeSyrupServlet" method="post">
+                <input type="number" name="quantity" min="1" required >
+                <button name="plussyrup" type="submit" required>Make Syrup</button>
+            </form><br>
+        <% } else { %>
+            Suppliers:
+            <form action="pullServlet" method="post">
+            <%  Transactor hq= AppSession.getUser();
+                for (Transactor i : hq.getMyTransactors()) {
             %>
+                <input type="number" name="quantity" min="1" required >
+                <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Pull Product</button><%=i.getName()%> DESERIALISED STOCKDTO GOES HERE <br>
 
-    <form action="makePalletServlet" method="post">
-        <input type="number" name="quantity" min="1" required >
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> DESERIALISED STOCKDTO GOES HERE
-    </form><br>
             <% } %>
-        <% } %>
+            </form><br>
     <% } %>
+<% } %>
+
+
 
 
 

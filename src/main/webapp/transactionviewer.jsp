@@ -25,14 +25,14 @@ All transactions:
     </thead>
     <tbody>
     <%
-//        CocaColaHQ hq=CocaColaHQMapper.find(0);
 
-        Transactor t = Transactor.get(AppSession.getUser());
-
+        System.out.println("this is the app session getuser: " + AppSession.getUser());
+        Transactor t = AppSession.getUser();
+        System.out.println("this is the app session t: " + t);
 
         int curr, prev=-1;
-        for (Transaction i : hq.getTransactions()) {
-            System.out.println();
+        for (Transaction i : t.getTransactions()) {
+            System.out.println(i);
     %>
 
     <%      curr=i.getFrom();
@@ -49,8 +49,12 @@ All transactions:
 
     <%      prev=i.getFrom();
         } %>
+
+
+
+
     </tbody>
-    </table>
+</table>
 
 </body>
 </html>

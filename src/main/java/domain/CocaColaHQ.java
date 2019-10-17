@@ -31,7 +31,7 @@ public class CocaColaHQ extends Transactor {
     }
 
     public List<Transactor> getDistList(){
-            return TransactorMapper.findall("hello");
+            return TransactorMapper.findall("dc");
     }
 
 }
