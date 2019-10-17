@@ -13,8 +13,13 @@
 
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">CocaCola Supply Chain Portal</span>
+</nav>
+<div class="container">
 
-<h2>Welcome to the Internal Dashboard</h2>
+<h2>Welcome to <%=AppSession.getUser().getName()%> Dashboard</h2>
+
 <a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
 <br>
 
@@ -38,6 +43,6 @@
             </form><br>
     <% } %>
 <% } %>
-
+</div>
 </body>
 </html>

@@ -2,9 +2,12 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.SQLException;
+
 
 public class CocaColaHQ extends Transactor {
 
+    Factory factory=new Factory();
 
 
     public CocaColaHQ(int id, String name){
@@ -28,6 +31,17 @@ public class CocaColaHQ extends Transactor {
 
     public Transaction getTransactionByID(){
         return new Transaction();
+    }
+
+
+    public boolean ship(Order order){
+        try {
+            factory.produce(order);
+            return true;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public List<Transactor> getDistList(){

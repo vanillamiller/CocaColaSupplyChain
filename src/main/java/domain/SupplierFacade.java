@@ -8,6 +8,7 @@ public class SupplierFacade {
 
     public SupplierFacade(int id){
         this.id=id;
+        this.inv = this.getInventory();
     }
 
     public boolean canShip(Order order){
@@ -15,7 +16,8 @@ public class SupplierFacade {
     }
 
     public boolean processOrder(Order order, int from){
-        InternalTransactor supplier=(InternalTransactor) TransactorMapper.find(from);
+//        TODO check if canShip here first
+        InternalTransactor supplier = (InternalTransactor) TransactorMapper.find(from);
         return supplier.ship(order);
     }
 

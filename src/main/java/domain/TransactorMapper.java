@@ -218,6 +218,7 @@ public class TransactorMapper {
     }
 
 
+
     public static void update(Transactor t){
 
     }

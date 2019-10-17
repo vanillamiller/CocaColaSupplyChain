@@ -22,6 +22,7 @@ public class Barrel extends RawProduct implements Created {
 
     public List<Product> transform(){
         return new ArrayList<Product>(Collections.nCopies(100, new Pallet(this.getFlavor())));
+//        TODO barrel may need to be deleted
     }
 
 
