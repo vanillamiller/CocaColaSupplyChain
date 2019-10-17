@@ -1,7 +1,11 @@
 
-DROP TABLE Transactions CASCADE;
 DROP TABLE Transactors CASCADE;
-DROP TABLE TransactorMapper;
+DROP TABLE TransactorRelations CASCADE;
+DROP TABLE Transactions CASCADE;
+DROP TABLE Products CASCADE;
+DROP TABLE Orders CASCADE;
+
+
 
 CREATE TYPE roletype AS ENUM ('dc', 'cl','hq','bt');
 CREATE TYPE form AS ENUM('barrel','pallet');
@@ -17,16 +21,16 @@ CREATE TABLE Transactors(
     password VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE TransactorMapper(
-     fromID INTEGER,
-     toID INTEGER
+CREATE TABLE TransactorRelations(
+     fromID INTEGER REFERENCES Transactors(id),
+     toID INTEGER REFERENCES Transactors(id)
 );
 
 CREATE TABLE Transactions(
     id uuid PRIMARY KEY,
     business BOOLEAN NOT NULL,
-    price,
-    order INTEGER,
+    price INTEGER,
+--     order INTEGER,
     date TIMESTAMP,
     fromID INTEGER,
     toID INTEGER
@@ -39,8 +43,8 @@ CREATE TABLE Products(
     location INTEGER REFERENCES Transactors(id)
 );
 
-CREATE TABLE Order(
-    txID INTEGER REFERENCES Transactions(id),
+CREATE TABLE Orders(
+    txID uuid REFERENCES Transactions(id),
     numregular INTEGER,
     numvanilla INTEGER,
     numzero INTEGER
@@ -64,26 +68,26 @@ VALUES
 ('Coles Fitzroy','cl','colesfitz','a'),
 ('Coles Sydney','cl','colessyd','a'),
 ('Coles Perth','cl','colesperth','a'),
+('Coles Brisbane','cl','colesbris','a'),
 --factory
-('HQ Syrup Factory','hq','syrup factory hq','a'),
+('HQ Syrup Factory','hq','syruphq','a'),
 --bottling plants
 ('Melbourne bottling plant','bt','melbbot','a'),
 ('Sydney bottling plant','bt','sydbot','a');
 
-INSERT INTO TransactorMapper(
+INSERT INTO TransactorRelations(
     fromID,
     toID
 )
 VALUES
-(1,5),
-(1,6),
-(2,7),
-(3,5),
-(4,8),
-(9,10),
-(9,11),
-(10,1),
-(10,3),
-(10,4),
-(11,2),
-(11,3);
+(10,11),
+(10,12),
+(11, 1),
+(11, 4),
+(12, 2),
+(12, 3),
+(1, 5),
+(1, 6),
+(2, 7),
+(3, 9),
+(4, 8);

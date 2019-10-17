@@ -1,5 +1,6 @@
 <%@ page import="domain.DCMapper" %>
-<%@ page import="domain.DC" %><%--
+<%@ page import="domain.DC" %>
+<%@ page import="domain.TransactorMapper" %><%--
   Created by IntelliJ IDEA.
   User: tomglynch
   Date: 18/9/19
@@ -23,7 +24,7 @@
     From which DC?:<br>
     <ul>
     <%
-        DCMapper dcmap=new DCMapper();
+        TransactorMapper dcmap=new TransactorMapper();
         Integer x = Integer.parseInt((String)session.getAttribute("retailerID"));
         for (DC i : dcmap.findMyDCs(x)) {
     %>
