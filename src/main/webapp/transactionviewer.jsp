@@ -27,7 +27,7 @@ All transactions:
     <%
 //        CocaColaHQ hq=CocaColaHQMapper.find(0);
 
-        Transactor t = Transactor.get(AppSession.getUser());
+        Transactor t = AppSession.getUser();
 
 
         int curr, prev=-1;

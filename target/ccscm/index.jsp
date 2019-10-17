@@ -21,8 +21,8 @@
                 <h2>Welcome to the CocaCola's Point of Sales system</h2>
             </div>
             <div class="card-body">
-                <% if (!AppSession.isAuthenticatated()) {%>
-                <form action="login" method="post">
+                <% if (!AppSession.isAuthenticated()) {%>
+                <form action="loginServlet" method="post">
                     Username: <input type="text" name="username">
                     Password: <input type="text" name="password">
                     <input type="submit" value="login">

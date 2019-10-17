@@ -4,21 +4,20 @@ import domain.Transaction;
 import domain.Transactor;
 import domain.Order;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factory extends Transactor {
+public class Factory {
 
     public Factory(){}
 
-    @Override
-    public List<Transaction> getTransactions() {
-        return new ArrayList<Transaction>();
-    }
-
-
-    public boolean ship(Order order)  {
-        return false;
+    public void produce(Order order) throws SQLException {
+        UnitOfWork.newCurrent();
+        UnitOfWork.getCurrent();
+        for (Product p : order.get()){
+            new Barrel(p.getFlavor()).ship(order.getReceiver());
+        }
     }
 
 }

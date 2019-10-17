@@ -14,12 +14,15 @@
 </head>
 <body>
 
-<h2>Welcome to the CocaCola HQ</h2>
-<a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
-<br>
-
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">CocaCola Supply Chain Portal</span>
+</nav>
+<div class="container">
     <% if (AppSession.isAuthenticated()) {%>
         <% if(AppSession.hasRole("hq")) {%>
+            <h2>Welcome to the CocaCola HQ</h2>
+            <a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
+            <br>
             Distribution Centers:
             <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
                 for (Transactor i : hq.getDistList()) {
@@ -29,13 +32,20 @@
         <input type="number" name="quantity" min="1" required >
         <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
         <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> DESERIALISED STOCKDTO GOES HERE
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
     </form><br>
             <% } %>
         <% } %>
+        <% if(AppSession.hasRole("bt")) {%>
+            <h2>Welcome to <%=AppSession.getUser().getName()%> Dashboard</h2>
+        <%}%>
+        <% if(AppSession.hasRole("dc")) {%>
+            <h2>Welcome to <%=AppSession.getUser().getName()%> Dashboard</h2>
+            <div>hello </div>
+        <%}%>
     <% } %>
 
-
+</div>
 
 
 

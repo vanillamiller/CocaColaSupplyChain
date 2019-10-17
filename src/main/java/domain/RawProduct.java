@@ -8,6 +8,7 @@ public abstract class RawProduct extends Product {
     public RawProduct(UUID pid, Flavor flav) {
         super(pid, flav);
     }
+    public RawProduct(Flavor flav){ super(flav); }
     public abstract List<Product> transform();
 
 }

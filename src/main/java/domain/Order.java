@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Order {
 
-    private List<Product> order=new ArrayList<Product>();
+    private List<Product> order;
     private int receiver;
 
     public void add(Product p){
@@ -24,6 +24,10 @@ public class Order {
 
     public void setReciever(int reciever) {
         this.receiver=reciever;
+    }
+
+    public List<Product> get(){
+        return this.order;
     }
 
 }

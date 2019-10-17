@@ -1,11 +1,12 @@
 package domain;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CocaColaHQ extends Transactor {
 
-
+    Factory factory=new Factory();
 
     public CocaColaHQ(int id, String name){
         super(id, name);
@@ -32,6 +33,16 @@ public class CocaColaHQ extends Transactor {
 
     public List<Transactor> getDistList(){
             return TransactorMapper.findall("hello");
+    }
+
+    public boolean ship(Order order){
+        try {
+            factory.produce(order);
+            return true;
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }

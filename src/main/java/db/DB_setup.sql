@@ -36,7 +36,7 @@ CREATE TABLE Products(
     id uuid PRIMARY KEY,
     form form NOT NULL,
     flavor flavor NOT NULL,
-    location INTEGER REFERENCES Transactors(id)
+    location INTEGER REFERENCES Transactors(id) NOT NULL
 );
 
 CREATE TABLE Order(

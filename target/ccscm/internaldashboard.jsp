@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
-<%@ page import="domain.DC" %>
-<%@ page import="domain.CocaColaHQ" %>
-<%@ page import="domain.CocaColaHQMapper" %>
+<%@ page import="domain.*" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,24 +14,39 @@
 </head>
 <body>
 
-<h2>Welcome to the CocaCola HQ</h2>
-<a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
-<br>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">CocaCola Supply Chain Portal</span>
+</nav>
+<div class="container">
+    <% if (AppSession.isAuthenticated()) {%>
+        <% if(AppSession.hasRole("hq")) {%>
+            <h2>Welcome to the CocaCola HQ</h2>
+            <a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
+            <br>
+            Distribution Centers:
+            <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
+                for (Transactor i : hq.getDistList()) {
+            %>
 
-
-    Distribution Centers:
-    <%  CocaColaHQ hq= CocaColaHQMapper.find(0);
-
-        for (DC i : hq.getDistList()) {
-    %>
     <form action="makePalletServlet" method="post">
         <input type="number" name="quantity" min="1" required >
-        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%> <%=i.getnumPallets()%>
-<%--        has <%=i.getNumPallets()%> Pallets--%>
-<%--        <option value="<%=i.getDCID()%>"><%=i.getname()%></option>--%>
-<%--        <input type="submit" value="Mix, Bottle and Send to DC">--%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
+        <button name="pluspallet" type="submit" value="<%=i.getID()%>" required>Add Pallet</button><%=i.getName()%>
     </form><br>
+            <% } %>
+        <% } %>
+        <% if(AppSession.hasRole("bt")) {%>
+            <h2>Welcome to <%=AppSession.getUser().getName()%> Dashboard</h2>
+        <%}%>
+        <% if(AppSession.hasRole("dc")) {%>
+            <h2>Welcome to <%=AppSession.getUser().getName()%> Dashboard</h2>
+            <div>hello </div>
+        <%}%>
     <% } %>
+
+</div>
+
 
 
 

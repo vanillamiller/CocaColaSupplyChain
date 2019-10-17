@@ -3,3 +3,5 @@
 -- -- WHERE  usename = 'user_name';
 
 SELECT * FROM transactors;
+
+INSERT

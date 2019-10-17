@@ -178,7 +178,45 @@ public class TransactorMapper {
     }
 
 
-    public static void update(Transactor t){
+    public static List<Transactor> getSuppliers(int id){
+
+            List<Transactor> result = new ArrayList<Transactor>();
+            String sql = "SELECT id, name, role FROM Transactors WHERE fromID=(SELECT fromID FROM TransactorMapper WHERE toID=?)";
+
+            try {
+                Transactor current=null;
+                PreparedStatement sqlPrepared = DBConnection.prepare(sql);
+                sqlPrepared.setInt(1, id);
+                ResultSet rs = sqlPrepared.executeQuery();
+
+                while (rs.next()) {
+
+                    int tid = rs.getInt(1);
+                    String name = rs.getString(2);
+                    String role=rs.getString(3);
+
+                    switch(role){
+                        case "hq" :
+                            current=new CocaColaHQ(tid, name);
+                            break;
+                        case "dc":
+                            current=new DC(tid, name);
+                            break;
+                        case "bt":
+                            current=new Bottler(tid, name);
+                            break;
+                    }
+
+                    result.add(current);
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+                System.out.println("could not load suppliers");
+            }
+            System.out.println(result);
+            return result;
 
     }
+
+
 }

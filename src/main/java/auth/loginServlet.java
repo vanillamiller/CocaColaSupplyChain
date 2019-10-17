@@ -1,5 +1,6 @@
 package auth;
 
+import domain.SupplierFacade;
 import domain.Transactor;
 import domain.User;
 import org.apache.shiro.SecurityUtils;
@@ -42,6 +43,8 @@ public class loginServlet extends HttpServlet {
             view="internaldashboard.jsp";
             Transactor user= Transactor.get(username);
             AppSession.init(user);
+            SupplierFacade sf=new SupplierFacade(user.getID());
+
             if(AppSession.hasRole("cl")){
                 view="retailerdashboard.jsp";
                 System.out.println("ttttttt0");
@@ -53,6 +56,7 @@ public class loginServlet extends HttpServlet {
             System.out.println("failed to login");
             view = "index.jsp";
             request.setAttribute("errorMessage", "Invalid user or password");
+
             System.out.println("ttttttt2");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

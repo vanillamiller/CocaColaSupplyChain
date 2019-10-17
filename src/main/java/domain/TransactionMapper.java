@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
 import auth.DBConnection;
 
 public class TransactionMapper {
@@ -37,13 +39,15 @@ public class TransactionMapper {
 
 
 
-    public static void insert(Transaction tx) throws SQLException {
+    public static void insert(Created c) throws SQLException {
+        Transaction tx=(Transaction) c;
         WriteLockManager wlm = WriteLockManager.getInstance();
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
         Order order=tx.getOrder();
         int fromID=tx.getFrom();
         int toID=tx.getTo();
+        UUID uuid= UUID.randomUUID();
 
         try {
             wlm.acquireWriteLock(tx);
@@ -66,5 +70,37 @@ public class TransactionMapper {
             e.printStackTrace();
         }
     }
+
+//        public boolean update(Transactor t){
+//
+//        if (t instanceof DC)
+//            t=(DC) t;
+//        if (t instanceof Bottler)
+//            t=(Bottler) t;
+//        if (t instanceof CocaColaHQ)
+//            t=(CocaColaHQ) t;
+//        if (t instanceof Retailer)
+//            t=(Retailer) t;
+//
+//        IdentityMap<Transactor> map = IdentityMap.getInstance(t);
+//
+//
+//        String sql = "UPDATE Transactors SET numPallets = ? WHERE DCID = ?";
+//        try(PreparedStatement sqlPrepared = DBConnection.prepare(sql)){
+//            sqlPrepared.setInt(1, dc.getnumPallets());
+//            sqlPrepared.setInt(2, dc.getID());
+//            int rs = sqlPrepared.executeUpdate();
+//            map.get(dc.getID()).setPallets(dc.getnumPallets());
+//            System.out.println("here is the int: DD " + rs);
+//            System.out.println("sqlPrepared");
+//            System.out.println(sqlPrepared);
+//        }
+//        catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//            System.out.println("here D4");
+//            return false;
+//        }
+//        return true;
+//    }
 }
 
