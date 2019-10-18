@@ -20,7 +20,6 @@ public class pullServlet extends HttpServlet {
         int quantityreg = Integer.parseInt(request.getParameter("quantityreg"));
         int quantityvan = Integer.parseInt(request.getParameter("quantityvan"));
         int quantityzero = Integer.parseInt(request.getParameter("quantityzero"));
-
         System.out.println("transactor " + toID + " wants quantityreg: " + quantityreg + " quantityvan: " + quantityvan + " quantityzero: " + quantityzero + " from: " + fromID);
 
         Transactor t = AppSession.getUser();
@@ -50,8 +49,14 @@ public class pullServlet extends HttpServlet {
             }
         }
         else{
+            UnitOfWork.newCurrent();
             for(int i=0;i<quantityreg;i++){
                 System.out.println("MOVE PALLET THROUGH");
+                ProductMapper.update(ProductMapper.findall(), AppSession.getUser().getID());
+
+
+
+                UnitOfWork.getCurrent().registerDirty();
             }
             for(int i=0;i<quantityvan;i++){
                 System.out.println("MOVE PALLET THROUGH");
@@ -77,6 +82,7 @@ public class pullServlet extends HttpServlet {
 //        }else{
 //            request.setAttribute("errorMessage", "Not enough pallets available");
 //        }
-//        request.getRequestDispatcher("retailerdashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("internaldashboard.jsp").forward(request, response);
+//        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

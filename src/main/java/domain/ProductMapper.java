@@ -16,6 +16,7 @@ public class ProductMapper {
     public static Inventory findall(int id){
 
         Inventory inv=new Inventory();
+        System.out.println("this is the inv HERE!)!)!)!)!)!)!:::: " + inv);
         String sql="SELECT id, form, flavor FROM Products WHERE location="+id;
 
         try {
@@ -30,10 +31,14 @@ public class ProductMapper {
 //                if(form.equals("barrel"))
 //                    inv.add(new Barrel(pid, Flavor.valueOf(flavor)));
 //                else
-                Pallet p = new Pallet(Flavor.valueOf(flavor), id);
-                Product p2 = p;
-                inv.add(p2);
-                System.out.println(inv.num_regular());
+
+                // create pallet from DB
+                Pallet p = new Pallet(pid, Flavor.valueOf(flavor));
+                // convert pallet to product
+//                Product p2 = p;
+                // add product to inv
+                inv.add(p);
+//                System.out.println(inv.num_regular());
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

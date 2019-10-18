@@ -2,17 +2,15 @@ package domain;
 
 import domain.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
 
-    private List<Product> products;
+    private List<Product> products=new ArrayList<Product>();
 
     public void add(Product p){
-        System.out.println("IN INVENTORY WE ARE");
         this.products.add(p);
-        System.out.println("IN INVENTORY WE ARE2");
-
     }
 
     public void remove(Product p){
@@ -48,7 +46,7 @@ public class Inventory {
         int count=0;
         if(products!=null) {
             for (Product p : products) {
-                if (p.equals(new Pallet(Flavor.REGULAR, AppSession.getUser().getID()))) {
+                if (p.equals(new Pallet(Flavor.ZERO, AppSession.getUser().getID()))) {
                     count++;
                 }
             }

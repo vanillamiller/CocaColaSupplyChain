@@ -15,7 +15,7 @@ public class Pallet extends Product implements Created {
     public Pallet(Flavor flav, int toid){
         super(flav);
         this.toid=toid;
-        System.out.println("this is the class of pallet " + this.getClass());
+//        System.out.println("this is the class of pallet " + this.getClass());
     }
 
 
