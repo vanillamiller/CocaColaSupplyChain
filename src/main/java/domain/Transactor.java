@@ -1,5 +1,7 @@
 package domain;
 
+import com.google.gson.JsonElement;
+
 import java.rmi.RemoteException;
 import java.util.*;
 import java.util.function.Supplier;
@@ -48,11 +50,19 @@ public abstract class Transactor {
         return this.name;
     };
 
-    public String getStock() throws RemoteException {
-        System.out.println("HERE IS AM IN TRANSACTOR");
-        return SupplierFacade.getStockJson(this.id);
+    public JsonElement getStock() throws RemoteException {
+        System.out.println("HERE IS AM IN TRANSACTOR REG");
+        JsonElement s = SupplierFacade.getStockJson(this.id);
+        System.out.println("this is s: "+ s);
+//        System.out.println(StockDTO.readJsonString(s));
+//        s = StockDTO.toJson(s);
+        return s;
     }
 
+    public JsonElement getStockDTO() throws RemoteException {
+        System.out.println("HERE IS AM IN TRANSACTOR STOCKDTO ONE" );
+        return SupplierFacade.getStockJson(this.id);
+    }
 
     public List<Transaction> getTransactions(){
         return TransactionMapper.findAll(this.id);

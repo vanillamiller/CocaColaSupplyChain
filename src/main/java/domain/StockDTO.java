@@ -3,6 +3,7 @@ package domain;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 public class StockDTO {
 
@@ -20,12 +21,12 @@ public class StockDTO {
         this.numZero = 0;
     }
 
-    public static String toJson(String sdto) {
+    public static JsonElement toJson(StockDTO sdto) {
         Gson gson = new Gson();
-        return gson.toJson(sdto);
+        return gson.toJsonTree(sdto);
     }
 
-    public static StockDTO fromJson(JsonElement json) {
+    public static StockDTO readJsonString(JsonElement json) {
         Gson gson = new Gson();
         return gson.fromJson(json, StockDTO.class);
     }

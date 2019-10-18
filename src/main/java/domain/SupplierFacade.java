@@ -1,5 +1,7 @@
 package domain;
 
+import com.google.gson.JsonElement;
+
 import java.rmi.RemoteException;
 
 public class SupplierFacade {
@@ -15,10 +17,7 @@ public class SupplierFacade {
     public static StockDTO getStock(int id) throws RemoteException {
 //        System.out.println("THIS IS THE WEHRE WE ARE UP TO YOLOLOL");
         Inventory inv = ProductMapper.findall(id);
-        System.out.println("THIS IS THE WEHRE WE ARE UP TO YOLOLOL");
-        System.out.println(inv);
         StockDTO result = new StockDTO();
-        System.out.println("THIS IS THE WEHRE WE ARE UP TO YOLOLOL");
         result.setNumRegular(inv.num_regular());
         result.setNumVanilla(inv.num_vanilla());
         result.setNumZero(inv.num_zero());
@@ -26,9 +25,10 @@ public class SupplierFacade {
         return result;
     }
 
-    public static String getStockJson(int id) throws RemoteException {
+    public static JsonElement getStockJson(int id) throws RemoteException {
         StockDTO dto = getStock(id);
-        return dto.toString();
+        JsonElement dtojson = StockDTO.toJson(dto);
+        return dtojson;
     }
 
     public boolean canShip(Order order){

@@ -5,6 +5,7 @@
 
 
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,10 +45,8 @@
                 Zero: <input type="number" name="quantityzero" value="0" min="0" required >
                 <button name="fromID" type="submit" value="<%=i.getID()%>" required>Place Order</button>
                 <br>
-                <%StockDTO thisone = StockDTO.toJson(i.getStock())%>
+                <% StockDTO thisone = StockDTO.readJsonString(i.getStock());%>
                 Current stock: Regular: <%=thisone.getNumRegular()%> Vanilla: <%=thisone.getNumVanilla()%> Zero: <%=thisone.getNumZero()%>
-
-
 
             <% } %>
             </form><br>
