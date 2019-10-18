@@ -57,5 +57,9 @@ public class Inventory {
         return products;
     }
 
+    public int size(){
+        return this.products.size();
+    }
+
 
 }

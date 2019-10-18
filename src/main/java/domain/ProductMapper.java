@@ -50,9 +50,12 @@ public class ProductMapper {
 
     public static void update(UUID pid, int to) throws SQLException {
 
-        String sql="UPDATE products SET location="+to+"WHERE pid="+pid;
+        String sql="UPDATE products SET location=? WHERE id=?";
 
         PreparedStatement stmt=DBConnection.prepare(sql);
+        stmt.setInt(1,to);
+        stmt.setObject(2, pid);
+        System.out.println("HERE WE ARE IN PRODUCT MAPPER THISFHUdfsfshf");
         stmt.execute();
 
     }

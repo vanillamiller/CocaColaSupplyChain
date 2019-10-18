@@ -50,4 +50,8 @@ public abstract class Product {
     }
 
     public abstract int getTo();
+
+    public UUID getpid(){
+        return this.pid;
+    }
 }

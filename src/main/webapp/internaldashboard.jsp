@@ -72,6 +72,10 @@
                 Vanilla Pallets: <input type="number" name="quantityvan" value="0" min="0" required >
                 Zero Pallets: <input type="number" name="quantityzero" value="0" min="0" required >
                 <button name="fromID" type="submit" value="<%=i.getID()%>" required>Order Pallets</button>
+                <%
+                    if(request.getAttribute("errorMessage") != null ){ %>
+                <%= request.getAttribute("errorMessage") %>
+                <% } %>
                 <br>
                 <br>
 

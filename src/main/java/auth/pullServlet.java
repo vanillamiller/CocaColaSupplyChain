@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(name = "pullServlet")
 public class pullServlet extends HttpServlet {
@@ -50,22 +51,47 @@ public class pullServlet extends HttpServlet {
         }
         else{
             UnitOfWork.newCurrent();
-            for(int i=0;i<quantityreg;i++){
-                System.out.println("MOVE PALLET THROUGH");
-                ProductMapper.update(ProductMapper.findall(), AppSession.getUser().getID());
-
-
-
-                UnitOfWork.getCurrent().registerDirty();
-            }
-            for(int i=0;i<quantityvan;i++){
-                System.out.println("MOVE PALLET THROUGH");
-            }
-            for(int i=0;i<quantityzero;i++){
-                System.out.println("MOVE PALLET THROUGH");
+            Inventory thisinv = ProductMapper.findall(fromID);
+            if(thisinv.num_regular()>=quantityreg && thisinv.num_vanilla()>=quantityvan && thisinv.num_zero()>=quantityzero){
+                for(int i=0;i<quantityreg;i++) {
+                    for (Product p : thisinv.get()) {
+                        if (p.getFlavor() == Flavor.REGULAR) {
+                            try {
+                                p.ship(AppSession.getUser().getID());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+                for(int i=0;i<quantityvan;i++){
+                    for (Product p : thisinv.get()) {
+                        if (p.getFlavor() == Flavor.VANILLA) {
+                            try {
+                                p.ship(AppSession.getUser().getID());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+                for(int i=0;i<quantityzero;i++){
+                    for (Product p : thisinv.get()) {
+                        if (p.getFlavor() == Flavor.ZERO) {
+                            try {
+                                p.ship(AppSession.getUser().getID());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }else{
+                request.setAttribute("errorMessage", "Not enough product available to process this order");
             }
         }
         UnitOfWork.getCurrent().commit();
+//        UnitOfWork.getCurrent().commit();
 //        Retailer retailer = null;
 //        try {
 
