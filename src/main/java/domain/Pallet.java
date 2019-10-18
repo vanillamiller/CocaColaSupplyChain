@@ -3,24 +3,32 @@ package domain;
 import java.util.Currency;
 import java.util.UUID;
 
-public class Pallet extends Product {
+public class Pallet extends Product implements Created {
 
-    private Currency price;
+    private int toid;
+
 
     public Pallet(UUID pid, Flavor flav){
-       super(pid, flav);
+        super(pid, flav);
     }
 
-    public Pallet(Flavor flav){
+    public Pallet(Flavor flav, int toid){
         super(flav);
-        //        UnitOfWork.getCurrent().registerNew(this);
+        this.toid=toid;
+
+        System.out.println("this is the class of pallet " + this.getClass());
+        this.create();
     }
 
-    public Currency getPrice() {
-        return price;
+
+//    public Pallet(Flavor flav){
+//        super(flav);
+//        //        UnitOfWork.getCurrent().registerNew(this);
+//    }
+
+
+    public void create() {
+        UnitOfWork.getCurrent().registerNew(this);
     }
 
-    public void setPrice(Currency price) {
-        this.price = price;
-    }
 }

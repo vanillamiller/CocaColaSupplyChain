@@ -32,6 +32,6 @@ public class Bottler extends InternalTransactor implements SupplyChainEntity {
         return false;
     }
     //    private List<Pallet> doWork(Barrel b){
-//        b.transform();
+
 //    }
 }

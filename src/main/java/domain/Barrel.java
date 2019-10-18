@@ -21,13 +21,13 @@ public class Barrel extends RawProduct implements Created {
     }
 
     public List<Product> transform(){
-        return new ArrayList<Product>(Collections.nCopies(100, new Pallet(this.getFlavor())));
+        return new ArrayList<Product>(Collections.nCopies(100, new Pallet(this.getFlavor(), AppSession.getUser().getID())));
 //        TODO barrel may need to be deleted
     }
 
 
     public void create() {
-        UnitOfWork.getCurrent().registerNew(this);
+//        UnitOfWork.getCurrent().registerNew(this);
     }
 
     public int getTo(){

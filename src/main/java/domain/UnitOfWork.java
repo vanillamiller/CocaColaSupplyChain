@@ -24,11 +24,11 @@ public class UnitOfWork {
         newObjects.add(tx);
     }
 
-    public void registerNew(Barrel b){
-        assert !dirtyObjects.contains(b);
-        assert !deletedObjects.contains(b);
-        assert !newObjects.contains(b);
-        newObjects.add(b);
+    public void registerNew(Pallet p){
+        assert !dirtyObjects.contains(p);
+        assert !deletedObjects.contains(p);
+        assert !newObjects.contains(p);
+        newObjects.add(p);
     }
 
     public void registerDirty(Transactor t) {

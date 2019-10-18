@@ -20,7 +20,7 @@ public class Inventory {
         int count=0;
         if(products!=null) {
             for (Product p : products) {
-                if (p.equals(new Pallet(Flavor.VANILLA))) {
+                if (p.equals(new Pallet(Flavor.VANILLA, AppSession.getUser().getID()))) {
                     count++;
                 }
             }
@@ -33,7 +33,7 @@ public class Inventory {
         if(products!=null) {
             System.out.println("here are the products in products: " + products);
             for (Product p : products) {
-                if (p.equals(new Pallet(Flavor.REGULAR))) {
+                if (p.equals(new Pallet(Flavor.REGULAR, AppSession.getUser().getID()))) {
                     count++;
                 }
             }
@@ -45,7 +45,7 @@ public class Inventory {
         int count=0;
         if(products!=null) {
             for (Product p : products) {
-                if (p.equals(new Pallet(Flavor.REGULAR))) {
+                if (p.equals(new Pallet(Flavor.REGULAR, AppSession.getUser().getID()))) {
                     count++;
                 }
             }

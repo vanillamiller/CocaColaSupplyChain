@@ -24,12 +24,34 @@ public class pullServlet extends HttpServlet {
         System.out.println("transactor " + toID + " wants quantityreg: " + quantityreg + " quantityvan: " + quantityvan + " quantityzero: " + quantityzero + " from: " + fromID);
 
         Transactor t = AppSession.getUser();
-        System.out.println(t.getStock());
+        System.out.println("this is current stock levels:" + t.getStock());
+
+
         if (AppSession.hasRole("bt")){
-//            TODO create barrel
+//            TODO create barrels, change to palletss
+            for(int i=0;i<quantityreg;i++){
+                System.out.println("ONE NEW BARREL");
+                Pallet p = new Pallet(Flavor.REGULAR, AppSession.getUser().getID());
+            }
+            for(int i=0;i<quantityvan;i++){
+                System.out.println("ONE NEW BARREL");
+                Pallet p = new Pallet(Flavor.VANILLA, AppSession.getUser().getID());
+            }
+            for(int i=0;i<quantityzero;i++){
+                System.out.println("ONE NEW BARREL");
+                Pallet p = new Pallet(Flavor.ZERO, AppSession.getUser().getID());
+            }
         }
         else{
-//            TODO move pallets through
+            for(int i=0;i<quantityreg;i++){
+                System.out.println("MOVE PALLET THROUGH");
+            }
+            for(int i=0;i<quantityvan;i++){
+                System.out.println("MOVE PALLET THROUGH");
+            }
+            for(int i=0;i<quantityzero;i++){
+                System.out.println("MOVE PALLET THROUGH");
+            }
         }
 //        Retailer retailer = null;
 //        try {

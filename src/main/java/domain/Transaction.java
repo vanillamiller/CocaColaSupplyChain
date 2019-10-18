@@ -30,12 +30,10 @@ public class Transaction implements Created {
     }
 
     public Integer getFrom() {
-
         return from;
     }
 
     public Integer getTo() {
-
         return to;
     }
 }

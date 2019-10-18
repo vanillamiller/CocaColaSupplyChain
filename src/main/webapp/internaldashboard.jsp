@@ -20,37 +20,64 @@
 </nav>
 <div class="container">
 
-<h2>Welcome to <%=AppSession.getUser().getName()%> Dashboard</h2>
 
-<a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
-<br>
 
     <% if (AppSession.isAuthenticated()) {%>
+    <h2>Welcome <%=AppSession.getUser().getName()%> to the Dashboard</h2><br>
+    All values are the quantity in pallets<br>
+    <b>Your current stock levels: </b><br>
+    <% StockDTO user = StockDTO.readJsonString(AppSession.getUser().getStock());%>
+    Regular: <%=user.getNumRegular()%> Vanilla: <%=user.getNumVanilla()%> Zero: <%=user.getNumZero()%><br>
+
+
+    <a href="transactionviewer.jsp" class="btn btn-primary">See all transactions</a>
+
+    <br>
         <% if (AppSession.hasRole("hq")) {%>
             Hi CCHQ. No need to make syrup, it's done automatically when the bottler requests more!
-<%--            <form action="makeSyrupServlet" method="post">--%>
-<%--                <input type="number" name="quantity" min="1" required >--%>
-<%--                <button name="plussyrup" type="submit" required>Make Syrup</button>--%>
-<%--            </form><br>--%>
-        <% } else { %>
+            <form action="makeSyrupServlet" method="post">
+                <input type="number" name="quantity" min="1" required >
+                <button name="toID" type="submit" value="<%=AppSession.getUser().getID()%>" required>Make Syrup</button>
+            </form><br>
+        <% } else if(AppSession.hasRole("bt")) { %>
             Submit your order from a supplier:
             <form action="pullServlet" method="post">
             <%  Transactor t= AppSession.getUser();
                 for (Transactor i : t.getMyTransactors()) {
             %>
-                <b><%=i.getName()%></b><br>
+                <h3><%=i.getName()%></h3><br>
                 <input type="hidden" name="toID" value=<%=t.getID()%>>
-                Regular: <input type="number" name="quantityreg" value="0" min="0" required >
-                Vanilla: <input type="number" name="quantityvan" value="0" min="0" required >
-                Zero: <input type="number" name="quantityzero" value="0" min="0" required >
-                <button name="fromID" type="submit" value="<%=i.getID()%>" required>Place Order</button>
+                Regular Syrup Barrels: <input type="number" name="quantityreg" value="0" min="0" required >
+                Vanilla Syrup Barrels: <input type="number" name="quantityvan" value="0" min="0" required >
+                Zero Syrup Barrels: <input type="number" name="quantityzero" value="0" min="0" required >
+                <button name="fromID" type="submit" value="<%=i.getID()%>" required>Order barrels and bottle coke</button>
                 <br>
-                <% StockDTO thisone = StockDTO.readJsonString(i.getStock());%>
-                Current stock: Regular: <%=thisone.getNumRegular()%> Vanilla: <%=thisone.getNumVanilla()%> Zero: <%=thisone.getNumZero()%>
+                Barrels are available at all times
+<%--                <% StockDTO fromuser = StockDTO.readJsonString(i.getStock());%>--%>
+<%--                Current stock: Regular: <%=fromuser.getNumRegular()%> Vanilla: <%=fromuser.getNumVanilla()%> Zero: <%=fromuser.getNumZero()%><br><br>--%>
 
             <% } %>
             </form><br>
-    <% } %>
+            <% } else { %>
+            Submit your order from a supplier:
+            <form action="pullServlet" method="post">
+                <%  Transactor t= AppSession.getUser();
+                    for (Transactor i : t.getMyTransactors()) {
+                %>
+                <h3><%=i.getName()%></h3><br>
+                <% StockDTO fromuser = StockDTO.readJsonString(i.getStock());%>
+                Current available stock: Regular: <%=fromuser.getNumRegular()%> Vanilla: <%=fromuser.getNumVanilla()%> Zero: <%=fromuser.getNumZero()%><br>
+                <input type="hidden" name="toID" value=<%=t.getID()%>>
+                Regular Pallets: <input type="number" name="quantityreg" value="0" min="0" required >
+                Vanilla Pallets: <input type="number" name="quantityvan" value="0" min="0" required >
+                Zero Pallets: <input type="number" name="quantityzero" value="0" min="0" required >
+                <button name="fromID" type="submit" value="<%=i.getID()%>" required>Order Pallets</button>
+                <br>
+                <br>
+
+                <% } %>
+            </form><br>
+            <% } %>
 <% } %>
 </div>
 </body>

@@ -54,8 +54,6 @@ public abstract class Transactor {
         System.out.println("HERE IS AM IN TRANSACTOR REG");
         JsonElement s = SupplierFacade.getStockJson(this.id);
         System.out.println("this is s: "+ s);
-//        System.out.println(StockDTO.readJsonString(s));
-//        s = StockDTO.toJson(s);
         return s;
     }
 
