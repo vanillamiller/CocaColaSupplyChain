@@ -6,6 +6,9 @@ DROP TABLE Products CASCADE;
 DROP TABLE Orders CASCADE;
 
 
+DROP TYPE roletype;
+DROP TYPE form;
+DROP TYPE flavor;
 
 CREATE TYPE roletype AS ENUM ('dc', 'cl','hq','bt');
 CREATE TYPE form AS ENUM('barrel','pallet');

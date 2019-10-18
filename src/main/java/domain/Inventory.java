@@ -9,7 +9,10 @@ public class Inventory {
     private List<Product> products;
 
     public void add(Product p){
+        System.out.println("IN INVENTORY WE ARE");
         this.products.add(p);
+        System.out.println("IN INVENTORY WE ARE2");
+
     }
 
     public void remove(Product p){

@@ -28,18 +28,25 @@ public class pullServlet extends HttpServlet {
 
 
         if (AppSession.hasRole("bt")){
-//            TODO create barrels, change to palletss
+//            TODO create barrels, change to pallets
+            UnitOfWork.newCurrent();
             for(int i=0;i<quantityreg;i++){
                 System.out.println("ONE NEW BARREL");
+
                 Pallet p = new Pallet(Flavor.REGULAR, AppSession.getUser().getID());
+                p.create();
             }
             for(int i=0;i<quantityvan;i++){
                 System.out.println("ONE NEW BARREL");
                 Pallet p = new Pallet(Flavor.VANILLA, AppSession.getUser().getID());
+                p.create();
+
             }
             for(int i=0;i<quantityzero;i++){
                 System.out.println("ONE NEW BARREL");
                 Pallet p = new Pallet(Flavor.ZERO, AppSession.getUser().getID());
+                p.create();
+
             }
         }
         else{
@@ -53,6 +60,7 @@ public class pullServlet extends HttpServlet {
                 System.out.println("MOVE PALLET THROUGH");
             }
         }
+        UnitOfWork.getCurrent().commit();
 //        Retailer retailer = null;
 //        try {
 

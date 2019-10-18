@@ -15,8 +15,9 @@ public class Factory {
     public void produce(Order order) throws SQLException {
         UnitOfWork.newCurrent();
         for (Product p : order.get()){
-            new Barrel(p.getFlavor(),order.getReceiver());
+//            new (p.getFlavor(),order.getReceiver()).create();
         }
+        UnitOfWork.getCurrent().commit();
     }
 
 }

@@ -49,4 +49,5 @@ public abstract class Product {
         return this.flavor;
     }
 
+    public abstract int getTo();
 }

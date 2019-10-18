@@ -15,17 +15,18 @@ public class Pallet extends Product implements Created {
     public Pallet(Flavor flav, int toid){
         super(flav);
         this.toid=toid;
-
         System.out.println("this is the class of pallet " + this.getClass());
-        this.create();
     }
 
 
-//    public Pallet(Flavor flav){
+
+    //    public Pallet(Flavor flav){
 //        super(flav);
 //        //        UnitOfWork.getCurrent().registerNew(this);
 //    }
-
+    public int getTo(){
+        return this.toid;
+    }
 
     public void create() {
         UnitOfWork.getCurrent().registerNew(this);

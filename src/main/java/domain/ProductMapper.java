@@ -23,13 +23,17 @@ public class ProductMapper {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
+                System.out.println("EACH INVENTORY ITEM HERE");
                 UUID pid= (UUID) rs.getObject(1);
                 String form=rs.getString(2);
                 String flavor=rs.getString(3);
-                if(form.equals("barrel"))
-                    inv.add(new Barrel(pid, Flavor.valueOf(flavor)));
-                else
-                    inv.add(new Pallet(pid, Flavor.valueOf(flavor)));
+//                if(form.equals("barrel"))
+//                    inv.add(new Barrel(pid, Flavor.valueOf(flavor)));
+//                else
+                Pallet p = new Pallet(Flavor.valueOf(flavor), id);
+                Product p2 = p;
+                inv.add(p2);
+                System.out.println(inv.num_regular());
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -53,15 +57,19 @@ public class ProductMapper {
     }
 
     public static void insert(Created c) throws SQLException {
-
-        Barrel barrel=(Barrel) c;
+        System.out.println("HERE WE ARE IN PRODUCT MAPPER");
+        Pallet p = (Pallet) c;
         UUID uuid = UUID.randomUUID();
-        String sql="INSERT INTO Products(uuid, form, flavor, location) VALUES(?,?,?)";
+        System.out.println(uuid);
+        System.out.println(p.getTo());
+        String sql="INSERT INTO Products(id, form, flavor, location) VALUES(?,?::form,?::flavor,?)";
         PreparedStatement stmt=DBConnection.prepare(sql);
         stmt.setObject(1,uuid);
-        stmt.setString(2, "barrel");
-        stmt.setString(3, barrel.getFlavor().toString());
-        stmt.setInt(4,barrel.getTo());
+        stmt.setObject(2, "pallet");
+        System.out.println("just writing this in the insert : "+ p.getFlavor().toString());
+        stmt.setObject(3, p.getFlavor().toString());
+        stmt.setInt(4,p.getTo());
         stmt.execute();
+
     }
 }

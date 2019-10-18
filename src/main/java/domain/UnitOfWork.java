@@ -56,7 +56,7 @@ public class UnitOfWork {
             for (Created c : newObjects) {
                 if(c instanceof Transaction)
                     TransactionMapper.insert(c);
-                if(c instanceof Barrel)
+                if(c instanceof Pallet)
                     ProductMapper.insert(c);
             }
         } catch(Exception e) {
